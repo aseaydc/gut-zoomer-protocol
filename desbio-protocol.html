@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gut Zoomer Complete Protocol Generator - DesBio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .patient-info {
+            background: #E3F2FD;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #1565C0;
+        }
+
+        .patient-info h2 {
+            color: #1565C0;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-field label {
+            font-weight: 600;
+            color: #1565C0;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .info-field input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .info-field input:focus {
+            outline: none;
+            border-color: #1565C0;
+        }
+
+        .markers-section {
+            margin: 30px 0;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0 20px 0;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .category-header:hover {
+            transform: translateX(5px);
+        }
+
+        .category-header h2 {
+            font-size: 1.6em;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .markers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .marker-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .marker-item:hover {
+            border-color: #1565C0;
+            box-shadow: 0 4px 12px rgba(21,101,192,0.2);
+        }
+
+        .marker-item.detected {
+            background: #E3F2FD;
+            border-color: #1565C0;
+            border-width: 3px;
+        }
+
+        .marker-item label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .marker-item input[type="checkbox"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .generate-btn {
+            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(21,101,192,0.3);
+            transition: all 0.3s;
+            display: block;
+            margin: 40px auto;
+            font-weight: 600;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(21,101,192,0.4);
+        }
+
+        .protocol-output {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 3px solid #1565C0;
+            display: none;
+        }
+
+        .protocol-output.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .protocol-output h2 {
+            color: #1565C0;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1565C0;
+        }
+
+        .patient-summary {
+            background: #E3F2FD;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #1565C0;
+        }
+
+        .patient-summary h3 {
+            color: #1565C0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .patient-summary p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .phase {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 6px solid #1565C0;
+        }
+
+        .phase h3 {
+            color: #1565C0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .phase-number {
+            background: #1565C0;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .product-item {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .product-item:hover {
+            border-color: #1565C0;
+            box-shadow: 0 4px 12px rgba(21,101,192,0.15);
+        }
+
+        .product-name {
+            color: #1565C0;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-name::before {
+            content: "✓";
+            background: #1565C0;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+
+        .dosing {
+            background: #FFF9C4;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 4px solid #FBC02D;
+        }
+
+        .dosing strong {
+            color: #F57F17;
+        }
+
+        .indication {
+            color: #555;
+            font-style: italic;
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .warning {
+            background: #FFEBEE;
+            border-left: 4px solid #C62828;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .warning strong {
+            color: #C62828;
+        }
+
+        .note {
+            background: #E3F2FD;
+            border-left: 4px solid #1976D2;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .note strong {
+            color: #1976D2;
+        }
+
+        .print-btn {
+            background: #43A047;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #388E3C;
+            transform: translateY(-2px);
+        }
+
+        .reset-btn {
+            background: #757575;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s;
+        }
+
+        .reset-btn:hover {
+            background: #616161;
+            transform: translateY(-2px);
+        }
+
+        .button-group {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .patient-info, .markers-section, .generate-btn, .button-group {
+                display: none !important;
+            }
+            
+            .protocol-output {
+                display: block !important;
+                border: none;
+                padding: 20px;
+            }
+        }
+
+        .category-content {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .category-content.collapsed {
+            max-height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Gut Zoomer Complete Protocol Generator</h1>
+            <p>DesBio Product Line - Evidence-Based Homeopathic & Nutritional Support</p>
+        </div>
+
+        <div class="content">
+            <div class="patient-info">
+                <h2>Patient Information</h2>
+                <div class="info-grid">
+                    <div class="info-field">
+                        <label>Patient Name:</label>
+                        <input type="text" id="patientName" placeholder="Enter patient name">
+                    </div>
+                    <div class="info-field">
+                        <label>Date of Birth:</label>
+                        <input type="date" id="patientDOB">
+                    </div>
+                    <div class="info-field">
+                        <label>Test Date:</label>
+                        <input type="date" id="testDate">
+                    </div>
+                    <div class="info-field">
+                        <label>Provider Name:</label>
+                        <input type="text" id="providerName" placeholder="Enter provider name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="markers-section">
+                <div class="note">
+                    <strong>📋 Instructions:</strong> Select ALL markers that tested positive or elevated on the Gut Zoomer Complete test. The protocol generator will create a comprehensive, phased treatment plan using DesBio products including homeopathics, nutritionals, and Series Symptom Relief kits.
+                </div>
+
+                <!-- GUT COMMENSAL BACTERIA -->
+                <div class="category-header" onclick="toggleCategory('commensals')">
+                    <h2>🦠 Gut Commensal Bacteria (150+ Species)</h2>
+                    <span class="toggle-icon" id="toggle-commensals">▼</span>
+                </div>
+                <div class="category-content" id="content-commensals">
+                    <div class="markers-grid" id="commensals-grid"></div>
+                </div>
+
+                <!-- PATHOGENIC BACTERIA -->
+                <div class="category-header" onclick="toggleCategory('pathogens')">
+                    <h2>☠️ Pathogenic Bacteria (28 Species)</h2>
+                    <span class="toggle-icon" id="toggle-pathogens">▼</span>
+                </div>
+                <div class="category-content" id="content-pathogens">
+                    <div class="markers-grid" id="pathogens-grid"></div>
+                </div>
+
+                <!-- PROTOZOANS -->
+                <div class="category-header" onclick="toggleCategory('protozoans')">
+                    <h2>🦠 Protozoans (14 Species)</h2>
+                    <span class="toggle-icon" id="toggle-protozoans">▼</span>
+                </div>
+                <div class="category-content" id="content-protozoans">
+                    <div class="markers-grid" id="protozoans-grid"></div>
+                </div>
+
+                <!-- HELMINTHS -->
+                <div class="category-header" onclick="toggleCategory('helminths')">
+                    <h2>🪱 Helminths/Worms (15 Species)</h2>
+                    <span class="toggle-icon" id="toggle-helminths">▼</span>
+                </div>
+                <div class="category-content" id="content-helminths">
+                    <div class="markers-grid" id="helminths-grid"></div>
+                </div>
+
+                <!-- FUNGI -->
+                <div class="category-header" onclick="toggleCategory('fungi')">
+                    <h2>🍄 Fungi/Yeast (6 Species)</h2>
+                    <span class="toggle-icon" id="toggle-fungi">▼</span>
+                </div>
+                <div class="category-content" id="content-fungi">
+                    <div class="markers-grid" id="fungi-grid"></div>
+                </div>
+
+                <!-- VIRUSES -->
+                <div class="category-header" onclick="toggleCategory('viruses')">
+                    <h2>🦠 Viruses (13 Species)</h2>
+                    <span class="toggle-icon" id="toggle-viruses">▼</span>
+                </div>
+                <div class="category-content" id="content-viruses">
+                    <div class="markers-grid" id="viruses-grid"></div>
+                </div>
+
+                <!-- INFLAMMATORY MARKERS -->
+                <div class="category-header" onclick="toggleCategory('inflammatory')">
+                    <h2>🔥 Gut Inflammatory Markers</h2>
+                    <span class="toggle-icon" id="toggle-inflammatory">▼</span>
+                </div>
+                <div class="category-content" id="content-inflammatory">
+                    <div class="markers-grid" id="inflammatory-grid"></div>
+                </div>
+
+                <!-- DIGESTIVE MARKERS -->
+                <div class="category-header" onclick="toggleCategory('digestive')">
+                    <h2>🍽️ Digestive & Malabsorption Markers</h2>
+                    <span class="toggle-icon" id="toggle-digestive">▼</span>
+                </div>
+                <div class="category-content" id="content-digestive">
+                    <div class="markers-grid" id="digestive-grid"></div>
+                </div>
+
+                <!-- GUT ANTIBODIES -->
+                <div class="category-header" onclick="toggleCategory('antibodies')">
+                    <h2>🛡️ Gut Antibodies</h2>
+                    <span class="toggle-icon" id="toggle-antibodies">▼</span>
+                </div>
+                <div class="category-content" id="content-antibodies">
+                    <div class="markers-grid" id="antibodies-grid"></div>
+                </div>
+
+                <!-- GUT METABOLITES -->
+                <div class="category-header" onclick="toggleCategory('metabolites')">
+                    <h2>⚗️ Gut Metabolites</h2>
+                    <span class="toggle-icon" id="toggle-metabolites">▼</span>
+                </div>
+                <div class="category-content" id="content-metabolites">
+                    <div class="markers-grid" id="metabolites-grid"></div>
+                </div>
+
+                <!-- IMMUNE & OTHER -->
+                <div class="category-header" onclick="toggleCategory('immune')">
+                    <h2>🛡️ Digestion & Immune Function</h2>
+                    <span class="toggle-icon" id="toggle-immune">▼</span>
+                </div>
+                <div class="category-content" id="content-immune">
+                    <div class="markers-grid" id="immune-grid"></div>
+                </div>
+            </div>
+
+            <button class="generate-btn" onclick="generateProtocol()">Generate DesBio Protocol 🔬</button>
+
+            <div class="protocol-output" id="protocolOutput"></div>
+
+            <div class="button-group" id="buttonGroup" style="display: none;">
+                <button class="print-btn" onclick="window.print()">🖨️ Print Protocol</button>
+                <button class="reset-btn" onclick="resetForm()">🔄 Reset Form</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const markers = {
+            commensals: [
+                "Acinetobacter", "Actinomyces", "Akkermansia muciniphila", "Alistipes", "Alloprevotella",
+                "Atopobium", "Atopobium parvulum", "Bacillus coagulans", "Bacillus subtilis", "Bacteroidales",
+                "Bacteroides", "Bacteroides caccae", "Bacteroides vulgatus", "Bacteroidetes", "Bifidobacterium",
+                "Bifidobacterium adolescentis", "Bifidobacterium animalis", "Bifidobacterium animalis subspecies lactis",
+                "Bifidobacterium bifidum", "Bifidobacterium breve", "Bifidobacterium catenulatum", "Bifidobacterium dentium",
+                "Bifidobacterium infantis", "Bifidobacterium lactis", "Bifidobacterium longum", "Blautia",
+                "Blautia hydrogenotrophica", "Blautia obeum", "Bradyrhizobiaceae", "Butyricimonas", "Butyrivibrio",
+                "Catenibacterium", "Christensenella minuta", "Clostridia cluster IV", "Clostridia cluster XIVa",
+                "Clostridia cluster XVIII", "Clostridiales Family XIV incertae sedis", "Clostridiales incertae sedis IV",
+                "Clostridium", "Clostridium hathewayi", "Clostridium ramosum", "Clostridium species", "Clostridium spp.",
+                "Clostridium symbiosum", "Collinsella", "Coprococcus", "Desulfovibrio", "Desulfovibrio piger",
+                "Dialister invisus", "Dorea", "Eggerthella lenta", "Enterobacteria", "Enterobacteriaceae",
+                "Enterococcus", "Enterococcus gallinarum", "Enterococcus species", "Enterococcus spp.",
+                "Escherichia coli", "Escherichia coli nissle", "Eubacterium", "Eubacterium rectale", "Eubacterium spp.",
+                "Faecalibacterium", "Faecalibacterium prausnitzii", "Fusobacterium", "Haemophilus", "Hafnia",
+                "Holdemania", "Klebsiella aerogenes", "Lachnospiraceae", "Lactobacillaceae", "Lactobacillus",
+                "Lactobacillus acidophilus", "Lactobacillus animalis", "Lactobacillus brevis", "Lactobacillus bulgaricus",
+                "Lactobacillus casei", "Lactobacillus fermentum", "Lactobacillus paracasei", "Lactobacillus plantarum",
+                "Lactobacillus reuteri", "Lactobacillus rhamnosus", "Lactobacillus rhamnosus GG", "Lactobacillus ruminis",
+                "Lactobacillus sakei", "Lactobacillus salivarius", "Lactobacillus spp.", "Lactococcus",
+                "Leuconostoc", "Marvinbryantia", "Methanobrevibacter smithii", "Mycoplana", "Oscillospira",
+                "Parabacteroides", "Pediococcus", "Peptostreptococcus species", "Phascolarctobacterium",
+                "Porphyromonas gingivalis", "Prevotella", "Prevotella copri", "Propionibacterium freudenreichi",
+                "Proteus mirabilis", "Pseudobutyrivibrio", "Pseudomonas", "Roseburia", "Roseburia intestinalis",
+                "Ruminococcaceae", "Ruminococcus", "Ruminococcus bromii", "Ruminococcus gnavus", "Ruminococcus spp.",
+                "Saccharomyces boulardii", "Solobacterium moorei", "Staphylococcaceae", "Staphylococcus",
+                "Staphylococcus epidermidis", "Staphylococcus pasteuri", "Staphylococcus species", "Streptococci",
+                "Streptococcus", "Streptococcus species", "Streptococcus spp.", "Streptococcus thermophilus",
+                "Tyzzerella", "Tyzzerella 4", "Veillonella", "Veillonellaceae", "β-galactosidase producing bacteria",
+                "β-glucuronidase producing bacteria"
+            ],
+            
+            pathogens: [
+                "Aeromonas spp.", "Bacillus cereus", "Campylobacter coli", "Campylobacter jejuni",
+                "Campylobacter spp.", "Campylobacter upsaliensis", "Clostridium difficile", "Clostridium difficile Toxin A",
+                "Clostridium difficile Toxin B", "Clostridium perfringens", "E. coli O157", "Edwardsiella tarda",
+                "Enteroaggregative E. coli (EAEC)", "Enteropathogenic E. coli (EPEC)", "Enterotoxigenic E. coli (ETEC) LT/ST",
+                "Helicobacter pylori", "Klebsiella pneumoniae", "Listeria", "Non-pylori Helicobacter spp.",
+                "Plesiomonas shigelloides", "Salmonella", "Shiga-like toxin-producing E. coli (STEC) Stx1/Stx2",
+                "Shigella/EIEC", "Staphylococcus aureus", "Vibrio cholerae", "Vibrio parahaemolyticus",
+                "Vibrio vulnificus", "Yersinia enterocolitica"
+            ],
+            
+            protozoans: [
+                "Balantidium coli", "Blastocystis hominis", "Chilomastix mesnili", "Cryptosporidium",
+                "Cyclospora cayetanensis", "Cyclospora spp.", "Dientamoeba fragilis", "Endolimax nana",
+                "Entamoeba coli", "Entamoeba histolytica", "Giardia lamblia", "Isospora belli",
+                "Pentatrichomonas hominis", "Trichomonas hominis"
+            ],
+            
+            helminths: [
+                "Ancylostoma duodenale", "Ascaris lumbricoides", "Diphyllobothrium latum", "Dipylidium caninum",
+                "Enterobius vermicularis", "Fasciola/Fasciolopsis", "Hymenolepis", "Larval nematode",
+                "Mansonella", "Necator americanus", "Schistosoma", "Strongyloides stercoralis",
+                "Taenia solium", "Taenia spp.", "Trichuris trichiura"
+            ],
+            
+            fungi: [
+                "Candida albicans", "Candida glabrata", "Candida spp.", "Geotrichum spp.",
+                "Microsporidium spp.", "Rodotorula spp."
+            ],
+            
+            viruses: [
+                "Adenovirus F40/41", "Astrovirus", "Cytomegalovirus", "Enterovirus",
+                "Epstein Barr virus", "Human Bocavirus", "Norovirus GI Virus", "Norovirus GII Virus",
+                "Rotavirus A", "Sapovirus I", "Sapovirus II", "Sapovirus IV", "Sapovirus V"
+            ],
+            
+            inflammatory: [
+                "Beta defensin 2 (elevated)", "Calprotectin (elevated)", "Fecal Eosinophil Protein X (elevated)",
+                "Fecal lactoferrin (elevated)", "Lysozyme (elevated)", "MMP 9 (elevated)", "S100A12 (elevated)"
+            ],
+            
+            digestive: [
+                "Meat fiber (elevated)", "Vegetable fiber (elevated)", "Total Fecal Fat (elevated)",
+                "Total Fecal Triglycerides (elevated)", "Long chain fatty acids (elevated)",
+                "Total Cholesterol (elevated)", "Total Phospholipids (elevated)", "Pancreatic elastase 1 (low)",
+                "Steatocrit (elevated)"
+            ],
+            
+            antibodies: [
+                "Tissue transglutaminase (tTg) (elevated)", "Deamidated gliadin peptide (DGP) (elevated)",
+                "Fecal Anti Gliadin (elevated)", "Actin antibody (elevated)",
+                "Lipopolysaccharide (LPS) antibody (elevated)", "Anti-Saccharomyces cerevisiae antibody (ASCA) (elevated)"
+            ],
+            
+            metabolites: [
+                "β-glucuronidase (elevated)", "Cholic acid (CA) (abnormal)", "Chenodeoxycholic acid (CDCA) (abnormal)",
+                "Deoxycholic acid (DCA) (abnormal)", "Lithocholic acid (LCA) (abnormal)", "LCA/DCA ratio (abnormal)",
+                "Acetate (low)", "Butyrate (low)", "Propionate (low)", "Valerate (low)",
+                "Total Short chain fatty acids (low)"
+            ],
+            
+            immune: [
+                "Fecal Immunochemical Test (FIT) (positive)", "Fecal Zonulin (elevated)",
+                "pH (abnormal)", "Secretory IgA (low)", "Secretory IgA (elevated)",
+                "Shannon's Diversity Index (low)", "Simpson's Diversity Index (low)",
+                "Firmicutes/Bacteroidetes ratio (abnormal)", "Prevotella/Bacteroidetes (P/B) ratio (abnormal)"
+            ]
+        };
+
+        function populateMarkers() {
+            Object.keys(markers).forEach(category => {
+                const grid = document.getElementById(`${category}-grid`);
+                markers[category].forEach(marker => {
+                    const div = document.createElement('div');
+                    div.className = 'marker-item';
+                    div.innerHTML = `
+                        <label>
+                            <input type="checkbox" value="${marker}" onchange="toggleMarkerHighlight(this)">
+                            ${marker}
+                        </label>
+                    `;
+                    grid.appendChild(div);
+                });
+            });
+        }
+
+        function toggleMarkerHighlight(checkbox) {
+            const markerItem = checkbox.closest('.marker-item');
+            if (checkbox.checked) {
+                markerItem.classList.add('detected');
+            } else {
+                markerItem.classList.remove('detected');
+            }
+        }
+
+        function toggleCategory(categoryName) {
+            const content = document.getElementById(`content-${categoryName}`);
+            const icon = document.getElementById(`toggle-${categoryName}`);
+            
+            content.classList.toggle('collapsed');
+            icon.classList.toggle('rotated');
+        }
+
+        function generateProtocol() {
+            const patientName = document.getElementById('patientName').value;
+            const patientDOB = document.getElementById('patientDOB').value;
+            const testDate = document.getElementById('testDate').value;
+            const providerName = document.getElementById('providerName').value;
+
+            const selectedMarkers = {
+                commensals: [],
+                pathogens: [],
+                protozoans: [],
+                helminths: [],
+                fungi: [],
+                viruses: [],
+                inflammatory: [],
+                digestive: [],
+                antibodies: [],
+                metabolites: [],
+                immune: []
+            };
+
+            Object.keys(selectedMarkers).forEach(category => {
+                document.querySelectorAll(`#${category}-grid input:checked`).forEach(checkbox => {
+                    selectedMarkers[category].push(checkbox.value);
+                });
+            });
+
+            const hasSelections = Object.values(selectedMarkers).some(arr => arr.length > 0);
+            if (!hasSelections) {
+                alert('Please select at least one marker to generate a protocol.');
+                return;
+            }
+
+            let protocolHTML = `
+                <h2>🔬 Personalized Gut Zoomer Protocol - DesBio</h2>
+                
+                <div class="patient-summary">
+                    <h3>Patient Information</h3>
+                    <p><strong>Patient:</strong> ${patientName || 'Not provided'}</p>
+                    <p><strong>Date of Birth:</strong> ${patientDOB || 'Not provided'}</p>
+                    <p><strong>Test Date:</strong> ${testDate || 'Not provided'}</p>
+                    <p><strong>Provider:</strong> ${providerName || 'Not provided'}</p>
+                    <p><strong>Protocol Generated:</strong> ${new Date().toLocaleDateString()}</p>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ CRITICAL DESBIO TREATMENT PRINCIPLES:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>DETOXIFICATION FIRST:</strong> Start Comprehensive Homeopathic Detox Kit minimum 1 week before antimicrobials</li>
+                        <li><strong>DRAINAGE SUPPORT:</strong> Detox I, II, III open lymphatic and organ drainage pathways</li>
+                        <li><strong>SERIES SYMPTOM RELIEF:</strong> DesBio's SSR kits provide homeopathic desensitization to specific organisms</li>
+                        <li><strong>GUT BARRIER REPAIR:</strong> Intestinal Restore and Leaky Gut Formula throughout all phases</li>
+                        <li><strong>ANTIMICROBIAL ROTATION:</strong> Use PathoGuard, Smart Silver, and specific homeopathics in sequence</li>
+                    </ul>
+                </div>
+            `;
+
+            // PHASE 1: DETOXIFICATION
+            protocolHTML += generateDesBioPhase1(selectedMarkers);
+
+            // PHASE 2: TARGETED TREATMENT
+            const needsAntimicrobial = selectedMarkers.pathogens.length > 0 || selectedMarkers.protozoans.length > 0 || 
+                                      selectedMarkers.helminths.length > 0 || selectedMarkers.fungi.length > 0 || 
+                                      selectedMarkers.viruses.length > 0;
+            
+            if (needsAntimicrobial) {
+                protocolHTML += generateDesBioPhase2(selectedMarkers);
+            }
+
+            // PHASE 3: RESTORATION
+            protocolHTML += generateDesBioPhase3(selectedMarkers);
+
+            // ONGOING SUPPORT
+            protocolHTML += generateDesBioOngoing(selectedMarkers);
+
+            document.getElementById('protocolOutput').innerHTML = protocolHTML;
+            document.getElementById('protocolOutput').classList.add('show');
+            document.getElementById('buttonGroup').style.display = 'block';
+            
+            document.getElementById('protocolOutput').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function generateDesBioPhase1(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">1</span>Detoxification & Drainage Phase (Weeks 1-2)</h3>
+                    <p><strong>Primary Goal:</strong> Establish detoxification pathways through brain, spinal, and matrix drainage before any antimicrobial therapy. DesBio's approach emphasizes homeopathic drainage and homotoxicology.</p>
+                    
+                    <div class="note">
+                        <strong>🔑 DESBIO'S COMPREHENSIVE DETOX APPROACH:</strong> The Comprehensive Homeopathic Detox Kit uses a sequential 7-day protocol that opens drainage from central nervous system → organs → extracellular matrix. This prevents Herxheimer reactions by ensuring elimination pathways are open.
+                    </div>
+
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">📦 Comprehensive Homeopathic Detox Kit (60+ days)</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Days 1-3: CerebroMax, SpinalMax, Matrix Support</div>
+                        <div class="indication">Central nervous system and matrix drainage - opens brain, spinal cord, and connective tissue pathways</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops of EACH product 3x daily in warm water</div>
+                        <div class="dosing"><strong>Rationale:</strong> Drainage begins centrally (brain/spinal) then moves peripherally</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Days 4-7 (and ongoing): Detox I, Detox II, Detox III</div>
+                        <div class="indication">Complete organ and lymphatic drainage - kidney, liver, lymph, and cellular detoxification</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops of EACH product 3x daily in warm water</div>
+                        <div class="dosing"><strong>Continue:</strong> These three products throughout entire protocol for ongoing drainage</div>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ OPTIONAL INTENSIVE DETOX:</strong> For severe toxic burden or systemic issues, add OmniCleanse Detox Kit for 14 days:
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>OmniCleanse Powdered Beverage:</strong> 1 serving in beverage daily (adults only)</li>
+                            <li><strong>OmniCleanse Capsules:</strong> 1 capsule 3x daily (adults only)</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🛡️ Core Gut Support (Start Immediately)</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Intestinal Restore</div>
+                        <div class="indication">Comprehensive gut restoration - immunoglobulins, L-glutamine, arabinogalactan, aloe for complete intestinal healing</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving (1 scoop) 1-3x daily mixed in water</div>
+                        <div class="dosing"><strong>Rationale:</strong> Provides bovine immunoglobulins for passive immunity + gut lining repair</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Leaky Gut Formula</div>
+                        <div class="indication">Homeopathic intestinal permeability support - addresses tight junction dysfunction and barrier repair</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily in warm water</div>
+                        <div class="dosing"><strong>Rationale:</strong> Homeopathic support for zonulin regulation and tight junction integrity</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">BioPro GI</div>
+                        <div class="indication">Multi-strain probiotic - Lactobacillus and Bifidobacterium species for microbiome support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1-2 capsules 1-2x daily away from food</div>
+                        <div class="dosing"><strong>Note:</strong> Can be taken during antibiotic use - separate by 2+ hours from antimicrobials</div>
+                    </div>
+            `;
+
+            if (markers.digestive.length > 0) {
+                html += `
+                    <div class="product-item">
+                        <div class="product-name">Gastrozyne</div>
+                        <div class="indication">Digestive enzyme support - indicated for: ${markers.digestive.join(', ')}</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 3x daily with every meal</div>
+                        <div class="dosing"><strong>Rationale:</strong> Comprehensive enzyme formula for protein, carb, and fat digestion</div>
+                    </div>
+                `;
+            }
+
+            html += `
+                    <div class="note">
+                        <strong>📅 PHASE 1 DURATION:</strong> Minimum 1-2 weeks before starting antimicrobial therapy. Continue Detox I, II, III and gut support products throughout entire protocol.
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function generateDesBioPhase2(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">2</span>Targeted Treatment Phase (Weeks 3-12+)</h3>
+                    <p><strong>Primary Goal:</strong> Address specific pathogens using DesBio's combination of homeopathic Series Symptom Relief (SSR) kits, nutritional antimicrobials, and Smart Silver colloidal silver.</p>
+                    
+                    <div class="warning">
+                        <strong>⚠️ CONTINUE DETOX SUPPORT:</strong> Maintain Detox I, II, III (10 drops each 3x daily) throughout this entire phase. Add HerX drops if Herxheimer reactions occur.
+                    </div>
+            `;
+
+            // PATHOGENIC BACTERIA
+            if (markers.pathogens.length > 0) {
+                html += `
+                    <h4 style="color: #C62828; margin: 20px 0 15px 0;">🦠 Bacterial Pathogen Protocol</h4>
+                    <p style="margin-bottom: 15px;"><strong>Detected Pathogens:</strong> ${markers.pathogens.join(', ')}</p>
+
+                    <div class="product-item">
+                        <div class="product-name">PathoGuard</div>
+                        <div class="indication">Broad-spectrum antimicrobial botanical blend - oregano, thyme, clove, wormwood for bacterial, fungal, and parasitic support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily (Month 1)</div>
+                        <div class="dosing"><strong>Duration:</strong> 4-8 weeks depending on pathogen severity</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Smart Silver</div>
+                        <div class="indication">Colloidal silver 10ppm - broad-spectrum antimicrobial effective against bacteria, viruses, fungi</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 tablespoon daily for adults, adjust for age/size</div>
+                        <div class="dosing"><strong>Duration:</strong> Throughout entire antimicrobial phase</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">DysBio Plus</div>
+                        <div class="indication">Homeopathic dysbiosis support - for bacterial overgrowth and GI imbalances</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                    </div>
+                `;
+
+                // H. pylori specific
+                if (markers.pathogens.some(p => p.includes('Helicobacter pylori'))) {
+                    html += `
+                        <div class="note">
+                            <strong>🎯 H. PYLORI SPECIFIC PROTOCOL:</strong>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li><strong>REFL:HS:</strong> 1-10 drops 3x daily (reflux and HCl support)</li>
+                                <li><strong>Gastrozyne:</strong> 1 capsule with meals (digestive enzyme support)</li>
+                                <li><strong>PathoGuard:</strong> 3 capsules daily for 8-12 weeks</li>
+                                <li><strong>Smart Silver:</strong> 1 Tbsp daily</li>
+                                <li><strong>Liposomal Vitamin C:</strong> 1-2 servings daily (immune support)</li>
+                                <li><strong>Duration:</strong> 8-12 weeks minimum, re-test to confirm eradication</li>
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                // C. diff specific
+                if (markers.pathogens.some(p => p.includes('Clostridium difficile'))) {
+                    html += `
+                        <div class="warning">
+                            <strong>⚠️ C. DIFFICILE PROTOCOL:</strong>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li><strong>BioPro GI:</strong> CRITICAL - increase to 2 capsules 2x daily</li>
+                                <li><strong>Intestinal Restore:</strong> 1 serving 3x daily</li>
+                                <li><strong>PathoGuard:</strong> 3 capsules daily</li>
+                                <li><strong>Smart Silver:</strong> 1 Tbsp 2-3x daily</li>
+                                <li><strong>OmniFiber:</strong> 1 serving daily (helps eliminate C. diff toxins)</li>
+                                <li><strong>Duration:</strong> Minimum 8-12 weeks with aggressive probiotic support</li>
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                // General bacterial SSR
+                html += `
+                    <div class="note">
+                        <strong>📋 CONSIDER SERIES SYMPTOM RELIEF KITS:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>BACT:Combination:</strong> Broad bacterial homeopathic support - 10 drops 3x daily</li>
+                            <li><strong>Specific SSR Kits:</strong> Available for Staph (STAP:SSR), Strep (STRE:SSR), and other specific bacteria</li>
+                            <li><strong>SSR Protocol:</strong> Kit 1 (1-10): 1 vial every 3rd day for 30 days, then Kit 2 (10-1): 1 vial every 3rd day for 30 days</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // PARASITES & PROTOZOANS
+            if (markers.protozoans.length > 0 || markers.helminths.length > 0) {
+                const allParasites = [...markers.protozoans, ...markers.helminths];
+                html += `
+                    <h4 style="color: #C62828; margin: 20px 0 15px 0;">🪱 Parasite Protocol</h4>
+                    <p style="margin-bottom: 15px;"><strong>Detected Parasites:</strong> ${allParasites.join(', ')}</p>
+
+                    <div class="note">
+                        <strong>📦 ENDOPARA CLEAR KIT OPTION:</strong> DesBio offers a comprehensive parasitekit with step-by-step practitioner guide.
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">VER (Vermifuge Homeopathic)</div>
+                        <div class="indication">Homeopathic antiparasitic support - broad spectrum for worms and parasites</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> 8-12 weeks minimum</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">PathoGuard</div>
+                        <div class="indication">Botanical antiparasitic - Month 1</div>
+                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">OmniFiber</div>
+                        <div class="indication">Fiber support - aids in parasite elimination</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Intestinal Restore</div>
+                        <div class="indication">Gut healing during parasite cleanse - Month 2</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily, then increase to 2-3x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">ToxAffix</div>
+                        <div class="indication">Binder - helps eliminate parasite debris</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily, every other day</div>
+                        <div class="dosing"><strong>Note:</strong> Take 45+ minutes away from medications and supplements</div>
+                    </div>
+                `;
+
+                // Giardia specific
+                if (markers.protozoans.some(p => p.includes('Giardia'))) {
+                    html += `
+                        <div class="note">
+                            <strong>🎯 GIARDIA LAMBLIA SERIES SYMPTOM RELIEF:</strong>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li><strong>GIAR:SSR Kit 1:</strong> 1 vial every 3rd day for 30 days (1-10 dilutions)</li>
+                                <li><strong>GIAR:SSR Kit 2:</strong> 1 vial every 3rd day for 30 days (10-1 dilutions)</li>
+                                <li><strong>HerX:</strong> 10 drops 3x daily if Herxheimer reactions occur</li>
+                                <li><strong>Liposomal Vitamin C:</strong> 1 serving daily</li>
+                                <li><strong>Smart Silver:</strong> 1 Tbsp daily</li>
+                                <li><strong>Optional 1M/10M Kits:</strong> After completing both SSR kits, GIAR:1M and GIAR:10M (1 vial weekly for 10 weeks each)</li>
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                // Amoeba specific
+                html += `
+                    <div class="note">
+                        <strong>🎯 AMOEBA SUPPORT:</strong> AMOE:Combination - 10 drops 3x daily for amoebic infections
+                    </div>
+                `;
+            }
+
+            // FUNGI/CANDIDA
+            if (markers.fungi.length > 0) {
+                html += `
+                    <h4 style="color: #C62828; margin: 20px 0 15px 0;">🍄 Antifungal Protocol</h4>
+                    <p style="margin-bottom: 15px;"><strong>Detected Fungi:</strong> ${markers.fungi.join(', ')}</p>
+
+                    <div class="note">
+                        <strong>📦 CANDIDA CLEAR KIT:</strong> DesBio offers a comprehensive Candida kit with complete practitioner guide. Includes Series Symptom Relief for homeopathic desensitization.
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Candida Series Symptom Relief (2 Kits - 60 days)</div>
+                        <div class="indication">Homeopathic Candida desensitization - core of DesBio's antifungal approach</div>
+                        <div class="dosing"><strong>CAND:SSR Kit 1 (1-10):</strong> 1 vial every 3rd day for 30 days</div>
+                        <div class="dosing"><strong>CAND:SSR Kit 2 (10-1):</strong> 1 vial every 3rd day for 30 days</div>
+                        <div class="dosing"><strong>Optional:</strong> CAND:1M and CAND:10M kits (1 vial weekly for 10 weeks each after completing SSR kits)</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">CAND:PLUS</div>
+                        <div class="indication">Homeopathic Candida support formula</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> Throughout Candida protocol</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">PathoGuard</div>
+                        <div class="indication">Botanical antifungal - Month 1</div>
+                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Smart Silver</div>
+                        <div class="indication">Broad-spectrum antimicrobial including antifungal activity</div>
+                        <div class="dosing"><strong>Dosing:</strong> Use orally at appropriate dose for age/size</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Intestinal Restore</div>
+                        <div class="indication">Gut healing - Month 2 and ongoing</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving 1-2x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">FNG (Fungal Homeopathic)</div>
+                        <div class="indication">Additional homeopathic fungal support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ CANDIDA PROTOCOL ESSENTIALS:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Diet:</strong> Low-sugar, low-carb essential - eliminate refined sugars, alcohol, high-glycemic foods</li>
+                            <li><strong>BioPro GI:</strong> 1-2 capsules 2x daily (probiotic competition with Candida)</li>
+                            <li><strong>Duration:</strong> 12-16 weeks minimum for systemic Candida</li>
+                            <li><strong>Herxheimer Management:</strong> Use HerX drops (10 drops 3x daily) if severe die-off reactions</li>
+                            <li><strong>ToxAffix:</strong> Consider adding binder to reduce Candida toxin load</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // VIRUSES
+            if (markers.viruses.length > 0) {
+                html += `
+                    <h4 style="color: #C62828; margin: 20px 0 15px 0;">🦠 Antiviral Protocol</h4>
+                    <p style="margin-bottom: 15px;"><strong>Detected Viruses:</strong> ${markers.viruses.join(', ')}</p>
+
+                    <div class="product-item">
+                        <div class="product-name">VIR:Combination</div>
+                        <div class="indication">Broad-spectrum homeopathic antiviral support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Virimmune</div>
+                        <div class="indication">Homeopathic viral immune support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">ContraVirus</div>
+                        <div class="indication">Nutritional antiviral formula</div>
+                        <div class="dosing"><strong>Dosing:</strong> 2 capsules daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Liposomal Vitamin C</div>
+                        <div class="indication">High-dose vitamin C for viral support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1-2 servings daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Smart Silver</div>
+                        <div class="indication">Antiviral colloidal silver</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 Tbsp daily</div>
+                    </div>
+                `;
+
+                // EBV/CMV specific
+                if (markers.viruses.some(v => v.includes('Epstein') || v.includes('Cytomegalovirus'))) {
+                    html += `
+                        <div class="note">
+                            <strong>🎯 HERPES VIRUS FAMILY (EBV/CMV) SERIES SUPPORT:</strong>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li><strong>EPST:SSR:</strong> Epstein-Barr Series Symptom Relief - 2 kits (60 days)</li>
+                                <li><strong>CYTO:SSR:</strong> Cytomegalovirus Series Symptom Relief - 2 kits (60 days)</li>
+                                <li><strong>HV-6:SSR:</strong> HHV-6 Series Symptom Relief if needed</li>
+                                <li><strong>Protocol:</strong> Kit 1 (1-10) and Kit 2 (10-1), 1 vial every 3rd day for 30 days each</li>
+                                <li><strong>Duration:</strong> Herpes viruses require 12-24 weeks minimum treatment</li>
+                            </ul>
+                        </div>
+                    `;
+                }
+            }
+
+            html += `
+                    <div class="warning">
+                        <strong>⚠️ HERXHEIMER REACTION MANAGEMENT (DesBio Approach):</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>HerX Drops:</strong> 10 drops 3x daily immediately when Herxheimer symptoms appear</li>
+                            <li><strong>Continue Detox I, II, III:</strong> Maintain drainage support throughout</li>
+                            <li><strong>Add OmniCleanse Capsules:</strong> 1 capsule 3x daily for additional detox support</li>
+                            <li><strong>Liposomal Vitamin C:</strong> Increase to 2-3 servings daily</li>
+                            <li><strong>Hydration:</strong> 80-100oz water daily minimum</li>
+                        </ul>
+                    </div>
+
+                    <div class="note">
+                        <strong>📅 TREATMENT PHASE DURATION:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Bacterial infections:</strong> 6-8 weeks minimum</li>
+                            <li><strong>H. pylori:</strong> 8-12 weeks, re-test to confirm</li>
+                            <li><strong>Parasites:</strong> 8-12 weeks minimum, often 16 weeks</li>
+                            <li><strong>Candida:</strong> 12-16 weeks minimum</li>
+                            <li><strong>Chronic viruses:</strong> 12-24 weeks</li>
+                            <li><strong>Series Symptom Relief:</strong> Each kit pair is 60 days, can add 1M/10M kits for deeper support (additional 20 weeks)</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function generateDesBioPhase3(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">3</span>Gut Restoration Phase (Weeks 13-20+)</h3>
+                    <p><strong>Primary Goal:</strong> Complete intestinal healing, restore microbiome balance, and establish long-term gut health using DesBio's 4 R's approach.</p>
+
+                    <div class="note">
+                        <strong>🔑 THE 4 R'S OF GUT RESTORATION (DesBio Approach):</strong>
+                        <ol style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>REMOVE</strong> - Completed in Treatment Phase</li>
+                            <li><strong>REPLACE</strong> - Digestive enzymes and HCl</li>
+                            <li><strong>RE-INOCULATE</strong> - Probiotics and prebiotics</li>
+                            <li><strong>REPAIR</strong> - Intestinal Restore and gut healing nutrients</li>
+                        </ol>
+                    </div>
+
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🌱 Core Restoration Protocol</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Intestinal Restore</div>
+                        <div class="indication">PRIMARY GUT HEALING - immunoglobulins, L-glutamine, arabinogalactan, aloe</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving 2-3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks for complete mucosal healing</div>
+                        <div class="dosing"><strong>Rationale:</strong> Bovine immunoglobulins provide passive immunity while glutamine repairs enterocytes</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Leaky Gut Formula</div>
+                        <div class="indication">Homeopathic intestinal permeability support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> Continue until zonulin normalizes</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">BioPro GI</div>
+                        <div class="indication">Probiotic support - continue from earlier phases</div>
+                        <div class="dosing"><strong>Dosing:</strong> 2 capsules 2x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">BioPro 30</div>
+                        <div class="indication">Higher potency probiotic (30 billion CFU) for intensive microbiome restoration</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule daily or 1 capsule 1-3x daily for more intensive support</div>
+                        <div class="dosing"><strong>Duration:</strong> 8-12 weeks</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">OmniFiber</div>
+                        <div class="indication">Prebiotic fiber support - feeds beneficial bacteria and supports SCFA production</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                        <div class="dosing"><strong>Rationale:</strong> Prebiotics increase Bifidobacterium and Lactobacillus populations</div>
+                    </div>
+            `;
+
+            if (markers.digestive.length > 0) {
+                html += `
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🍽️ Digestive Function Support</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Gastrozyne</div>
+                        <div class="indication">Comprehensive digestive enzyme formula</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 3x daily with meals</div>
+                        <div class="dosing"><strong>Rationale:</strong> Supports complete macronutrient digestion</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Digestaze</div>
+                        <div class="indication">Additional enzyme support if needed</div>
+                        <div class="dosing"><strong>Dosing:</strong> As directed based on digestive symptoms</div>
+                    </div>
+                `;
+
+                if (markers.digestive.some(d => d.includes('HCl') || d.includes('Pancreatic'))) {
+                    html += `
+                        <div class="product-item">
+                            <div class="product-name">REFL:HS</div>
+                            <div class="indication">Homeopathic HCl support for hypochlorhydria</div>
+                            <div class="dosing"><strong>Dosing:</strong> 1-10 drops 3x daily</div>
+                        </div>
+                    `;
+                }
+            }
+
+            if (markers.inflammatory.length > 0) {
+                html += `
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🔥 Anti-Inflammatory Support</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Liposomal Resveratrol Curcumin</div>
+                        <div class="indication">Potent anti-inflammatory for gut healing</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">TriCurcumin</div>
+                        <div class="indication">Additional curcumin support if inflammation persistent</div>
+                        <div class="dosing"><strong>Dosing:</strong> 2 capsules 2x daily (adults only)</div>
+                    </div>
+                `;
+            }
+
+            html += `
+                    <div class="note">
+                        <strong>🔄 CONTINUE LIGHT DETOX SUPPORT:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Detox II:</strong> 10 drops 1-2x daily (liver/kidney drainage)</li>
+                            <li><strong>Lymphoplus:</strong> 10 drops 2x daily (lymphatic support)</li>
+                        </ul>
+                    </div>
+
+                    <div class="note">
+                        <strong>📅 RESTORATION PHASE DURATION:</strong> Minimum 8-12 weeks. Severe leaky gut or chronic inflammation may require 16-24 weeks. Continue until inflammatory markers and zonulin normalize.
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function generateDesBioOngoing(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">4</span>Ongoing Maintenance & Prevention</h3>
+                    <p><strong>Primary Goal:</strong> Maintain gut health, prevent pathogen recurrence, and support long-term wellness.</p>
+
+                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🔬 Long-Term Maintenance Protocol</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">BioPro GI or BioPro 30</div>
+                        <div class="indication">Daily probiotic maintenance</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1-2 capsules daily with breakfast</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Intestinal Restore</div>
+                        <div class="indication">Periodic gut support (1 week per month or as needed)</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily during stress, travel, or dietary indiscretions</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">OmniFiber</div>
+                        <div class="indication">Daily prebiotic support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">OmniEssentials</div>
+                        <div class="indication">Comprehensive multivitamin/mineral support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 4 capsules daily</div>
+                    </div>
+
+                    <div class="note">
+                        <strong>🍎 DIETARY & LIFESTYLE RECOMMENDATIONS:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Diet:</strong> Whole foods, fermented foods, prebiotic fiber</li>
+                            <li><strong>Avoid:</strong> Excessive sugar, processed foods, artificial sweeteners</li>
+                            <li><strong>Stress Management:</strong> Critical for gut barrier integrity</li>
+                            <li><strong>Hydration:</strong> 64-80oz clean water daily</li>
+                            <li><strong>Antibiotic Awareness:</strong> If antibiotics necessary, use BioPro 30 (2 caps 2x daily) during and 4 weeks after</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ WARNING SIGNS OF RELAPSE:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>Return of GI symptoms (bloating, gas, altered bowel habits)</li>
+                            <li>Brain fog or fatigue after meals</li>
+                            <li>Skin issues (rashes, acne, eczema)</li>
+                            <li>Food cravings (especially sugar)</li>
+                            <li><strong>ACTION:</strong> Restart Detox I, II, III and re-test to identify cause</li>
+                        </ul>
+                    </div>
+
+                    <div class="note">
+                        <strong>📅 FOLLOW-UP TESTING:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Initial Re-Test:</strong> 16-20 weeks to confirm pathogen clearance</li>
+                            <li><strong>6-Month Check:</strong> Assess microbiome restoration</li>
+                            <li><strong>Annual Monitoring:</strong> Yearly Gut Zoomer for maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <h3>📚 DesBio Evidence Base & Clinical Rationale</h3>
+                    
+                    <div class="note">
+                        <strong>🔬 DESBIO'S UNIQUE APPROACH:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Series Symptom Relief:</strong> Homeopathic desensitization using sequential dilutions provides immune system "retraining" against specific organisms</li>
+                            <li><strong>Homotoxicology:</strong> Based on understanding of cellular phases - detox addresses toxin accumulation at cellular level</li>
+                            <li><strong>Comprehensive Detox Kit:</strong> Sequential drainage prevents overwhelming Herxheimer reactions</li>
+                            <li><strong>Smart Silver 10ppm:</strong> Colloidal silver at optimal concentration for broad-spectrum antimicrobial activity</li>
+                            <li><strong>Intestinal Restore:</strong> Bovine immunoglobulins provide passive immunity + gut barrier repair</li>
+                        </ul>
+                    </div>
+
+                    <div class="note">
+                        <strong>⏱️ EXPECTED TIMELINE:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Weeks 1-2:</strong> Detoxification - may have initial detox symptoms</li>
+                            <li><strong>Weeks 3-6:</strong> Initial antimicrobial phase - Herxheimer possible</li>
+                            <li><strong>Weeks 7-12:</strong> Continued treatment - symptoms improving</li>
+                            <li><strong>Weeks 13-16:</strong> Restoration phase - significant improvement</li>
+                            <li><strong>Weeks 17-20:</strong> Near-complete symptom resolution</li>
+                            <li><strong>6+ Months:</strong> Optimal gut health maintained with ongoing support</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function resetForm() {
+            if (confirm('Are you sure you want to reset the form? All selections and patient information will be cleared.')) {
+                document.getElementById('patientName').value = '';
+                document.getElementById('patientDOB').value = '';
+                document.getElementById('testDate').value = '';
+                document.getElementById('providerName').value = '';
+                
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                    checkbox.closest('.marker-item').classList.remove('detected');
+                });
+
+                document.getElementById('protocolOutput').classList.remove('show');
+                document.getElementById('buttonGroup').style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            populateMarkers();
+        });
+    </script>
+</body>
+</html>
