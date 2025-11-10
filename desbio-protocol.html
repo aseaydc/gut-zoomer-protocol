@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gut Zoomer Complete Protocol Generator - DesBio</title>
+    <title>Gut Zoomer Complete Protocol Generator - Physica Energetics</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             line-height: 1.6;
         }
@@ -28,7 +28,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -50,15 +50,15 @@
         }
 
         .patient-info {
-            background: #E3F2FD;
+            background: #f8f9fa;
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            border: 2px solid #1565C0;
+            border: 2px solid #2E7D32;
         }
 
         .patient-info h2 {
-            color: #1565C0;
+            color: #2E7D32;
             margin-bottom: 20px;
             font-size: 1.8em;
         }
@@ -76,7 +76,7 @@
 
         .info-field label {
             font-weight: 600;
-            color: #1565C0;
+            color: #2E7D32;
             margin-bottom: 8px;
             font-size: 0.95em;
         }
@@ -91,7 +91,7 @@
 
         .info-field input:focus {
             outline: none;
-            border-color: #1565C0;
+            border-color: #2E7D32;
         }
 
         .markers-section {
@@ -99,7 +99,7 @@
         }
 
         .category-header {
-            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -149,13 +149,13 @@
         }
 
         .marker-item:hover {
-            border-color: #1565C0;
-            box-shadow: 0 4px 12px rgba(21,101,192,0.2);
+            border-color: #2E7D32;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.2);
         }
 
         .marker-item.detected {
-            background: #E3F2FD;
-            border-color: #1565C0;
+            background: #E8F5E9;
+            border-color: #2E7D32;
             border-width: 3px;
         }
 
@@ -175,14 +175,14 @@
         }
 
         .generate-btn {
-            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
             color: white;
             border: none;
             padding: 18px 50px;
             font-size: 1.3em;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(21,101,192,0.3);
+            box-shadow: 0 8px 20px rgba(46,125,50,0.3);
             transition: all 0.3s;
             display: block;
             margin: 40px auto;
@@ -191,7 +191,11 @@
 
         .generate-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(21,101,192,0.4);
+            box-shadow: 0 12px 30px rgba(46,125,50,0.4);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
         }
 
         .protocol-output {
@@ -199,7 +203,7 @@
             padding: 40px;
             border-radius: 15px;
             margin-top: 30px;
-            border: 3px solid #1565C0;
+            border: 3px solid #2E7D32;
             display: none;
         }
 
@@ -214,24 +218,24 @@
         }
 
         .protocol-output h2 {
-            color: #1565C0;
+            color: #2E7D32;
             font-size: 2.2em;
             margin-bottom: 30px;
             text-align: center;
             padding-bottom: 20px;
-            border-bottom: 3px solid #1565C0;
+            border-bottom: 3px solid #2E7D32;
         }
 
         .patient-summary {
-            background: #E3F2FD;
+            background: #E8F5E9;
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 30px;
-            border-left: 5px solid #1565C0;
+            border-left: 5px solid #2E7D32;
         }
 
         .patient-summary h3 {
-            color: #1565C0;
+            color: #2E7D32;
             margin-bottom: 15px;
             font-size: 1.4em;
         }
@@ -246,11 +250,11 @@
             padding: 30px;
             background: #f8f9fa;
             border-radius: 12px;
-            border-left: 6px solid #1565C0;
+            border-left: 6px solid #2E7D32;
         }
 
         .phase h3 {
-            color: #1565C0;
+            color: #2E7D32;
             font-size: 1.8em;
             margin-bottom: 20px;
             display: flex;
@@ -258,7 +262,7 @@
         }
 
         .phase-number {
-            background: #1565C0;
+            background: #2E7D32;
             color: white;
             width: 45px;
             height: 45px;
@@ -281,12 +285,12 @@
         }
 
         .product-item:hover {
-            border-color: #1565C0;
-            box-shadow: 0 4px 12px rgba(21,101,192,0.15);
+            border-color: #2E7D32;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.15);
         }
 
         .product-name {
-            color: #1565C0;
+            color: #2E7D32;
             font-weight: 700;
             font-size: 1.2em;
             margin-bottom: 12px;
@@ -296,7 +300,7 @@
 
         .product-name::before {
             content: "✓";
-            background: #1565C0;
+            background: #2E7D32;
             color: white;
             width: 24px;
             height: 24px;
@@ -352,7 +356,7 @@
         }
 
         .print-btn {
-            background: #43A047;
+            background: #1976D2;
             color: white;
             border: none;
             padding: 15px 40px;
@@ -364,7 +368,7 @@
         }
 
         .print-btn:hover {
-            background: #388E3C;
+            background: #1565C0;
             transform: translateY(-2px);
         }
 
@@ -425,8 +429,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔬 Gut Zoomer Complete Protocol Generator</h1>
-            <p>DesBio Product Line - Evidence-Based Homeopathic & Nutritional Support</p>
+            <h1>🌿 Gut Zoomer Complete Protocol Generator</h1>
+            <p>Physica Energetics Product Line - Comprehensive Functional Medicine Protocols</p>
         </div>
 
         <div class="content">
@@ -454,7 +458,7 @@
 
             <div class="markers-section">
                 <div class="note">
-                    <strong>📋 Instructions:</strong> Select ALL markers that tested positive or elevated on the Gut Zoomer Complete test. The protocol generator will create a comprehensive, phased treatment plan using DesBio products including homeopathics, nutritionals, and Series Symptom Relief kits.
+                    <strong>📋 Instructions:</strong> Select ALL markers that tested positive or elevated on the Gut Zoomer Complete test. The protocol generator will create a comprehensive, phased treatment plan using Physica Energetics products.
                 </div>
 
                 <!-- GUT COMMENSAL BACTERIA -->
@@ -484,7 +488,7 @@
                     <div class="markers-grid" id="protozoans-grid"></div>
                 </div>
 
-                <!-- HELMINTHS -->
+                <!-- HELMINTHS (WORMS) -->
                 <div class="category-header" onclick="toggleCategory('helminths')">
                     <h2>🪱 Helminths/Worms (15 Species)</h2>
                     <span class="toggle-icon" id="toggle-helminths">▼</span>
@@ -557,7 +561,7 @@
                 </div>
             </div>
 
-            <button class="generate-btn" onclick="generateProtocol()">Generate DesBio Protocol 🔬</button>
+            <button class="generate-btn" onclick="generateProtocol()">Generate Personalized Protocol 🌿</button>
 
             <div class="protocol-output" id="protocolOutput"></div>
 
@@ -569,6 +573,7 @@
     </div>
 
     <script>
+        // All Gut Zoomer markers organized by category
         const markers = {
             commensals: [
                 "Acinetobacter", "Actinomyces", "Akkermansia muciniphila", "Alistipes", "Alloprevotella",
@@ -672,6 +677,7 @@
             ]
         };
 
+        // Populate all marker grids
         function populateMarkers() {
             Object.keys(markers).forEach(category => {
                 const grid = document.getElementById(`${category}-grid`);
@@ -726,12 +732,14 @@
                 immune: []
             };
 
+            // Collect all selected markers
             Object.keys(selectedMarkers).forEach(category => {
                 document.querySelectorAll(`#${category}-grid input:checked`).forEach(checkbox => {
                     selectedMarkers[category].push(checkbox.value);
                 });
             });
 
+            // Check if any markers are selected
             const hasSelections = Object.values(selectedMarkers).some(arr => arr.length > 0);
             if (!hasSelections) {
                 alert('Please select at least one marker to generate a protocol.');
@@ -739,7 +747,7 @@
             }
 
             let protocolHTML = `
-                <h2>🔬 Personalized Gut Zoomer Protocol - DesBio</h2>
+                <h2>🌿 Personalized Gut Zoomer Protocol - Physica Energetics</h2>
                 
                 <div class="patient-summary">
                     <h3>Patient Information</h3>
@@ -751,114 +759,164 @@
                 </div>
 
                 <div class="warning">
-                    <strong>⚠️ CRITICAL DESBIO TREATMENT PRINCIPLES:</strong>
+                    <strong>⚠️ CRITICAL TREATMENT PRINCIPLES:</strong>
                     <ul style="margin-top: 10px; margin-left: 20px;">
-                        <li><strong>DETOXIFICATION FIRST:</strong> Start Comprehensive Homeopathic Detox Kit minimum 1 week before antimicrobials</li>
-                        <li><strong>DRAINAGE SUPPORT:</strong> Detox I, II, III open lymphatic and organ drainage pathways</li>
-                        <li><strong>SERIES SYMPTOM RELIEF:</strong> DesBio's SSR kits provide homeopathic desensitization to specific organisms</li>
-                        <li><strong>GUT BARRIER REPAIR:</strong> Intestinal Restore and Leaky Gut Formula throughout all phases</li>
-                        <li><strong>ANTIMICROBIAL ROTATION:</strong> Use PathoGuard, Smart Silver, and specific homeopathics in sequence</li>
+                        <li><strong>DRAINAGE FIRST:</strong> Always establish drainage before antimicrobial therapy to prevent overwhelming Herxheimer reactions</li>
+                        <li><strong>ELECTROLYTE SUPPORT:</strong> SpectraLyte is essential during all phases due to increased metabolic demands</li>
+                        <li><strong>BIOFILM DISRUPTION:</strong> Required 2-3 weeks before antimicrobial phase for chronic infections</li>
+                        <li><strong>SEQUENTIAL PHASING:</strong> Do not skip phases - each prepares the body for the next</li>
+                        <li><strong>SUPPORT GUT LINING:</strong> Glutamine and GALT Fortifier throughout all phases</li>
                     </ul>
                 </div>
             `;
 
-            // PHASE 1: DETOXIFICATION
-            protocolHTML += generateDesBioPhase1(selectedMarkers);
-
-            // PHASE 2: TARGETED TREATMENT
+            // Determine which phases are needed based on selected markers
+            const needsBiofilm = selectedMarkers.pathogens.length > 0 || selectedMarkers.fungi.length > 0;
             const needsAntimicrobial = selectedMarkers.pathogens.length > 0 || selectedMarkers.protozoans.length > 0 || 
                                       selectedMarkers.helminths.length > 0 || selectedMarkers.fungi.length > 0 || 
                                       selectedMarkers.viruses.length > 0;
-            
-            if (needsAntimicrobial) {
-                protocolHTML += generateDesBioPhase2(selectedMarkers);
+            const needsInflammationSupport = selectedMarkers.inflammatory.length > 0;
+            const needsDigestiveSupport = selectedMarkers.digestive.length > 0;
+
+            // PHASE 1: DRAINAGE & FOUNDATION
+            protocolHTML += generatePhase1(selectedMarkers);
+
+            // PHASE 2: BIOFILM DISRUPTION (if needed)
+            if (needsBiofilm) {
+                protocolHTML += generatePhase2Biofilm(selectedMarkers);
             }
 
-            // PHASE 3: RESTORATION
-            protocolHTML += generateDesBioPhase3(selectedMarkers);
+            // PHASE 3: ANTIMICROBIAL/KILL PHASE (if needed)
+            if (needsAntimicrobial) {
+                protocolHTML += generatePhase3Kill(selectedMarkers);
+            }
+
+            // BENEFICIAL BACTERIA RESTORATION (if commensals selected)
+            if (selectedMarkers.commensals.length > 0) {
+                protocolHTML += generateCommensalSupportPhysica(selectedMarkers);
+            }
+
+            // PHASE 4: GUT REPAIR & MAINTENANCE
+            protocolHTML += generatePhase4Repair(selectedMarkers);
 
             // ONGOING SUPPORT
-            protocolHTML += generateDesBioOngoing(selectedMarkers);
+            protocolHTML += generateOngoingSupport(selectedMarkers);
 
             document.getElementById('protocolOutput').innerHTML = protocolHTML;
             document.getElementById('protocolOutput').classList.add('show');
             document.getElementById('buttonGroup').style.display = 'block';
             
+            // Scroll to protocol
             document.getElementById('protocolOutput').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function generateDesBioPhase1(markers) {
+        function generatePhase1(markers) {
             let html = `
                 <div class="phase">
-                    <h3><span class="phase-number">1</span>Detoxification & Drainage Phase (Weeks 1-2)</h3>
-                    <p><strong>Primary Goal:</strong> Establish detoxification pathways through brain, spinal, and matrix drainage before any antimicrobial therapy. DesBio's approach emphasizes homeopathic drainage and homotoxicology.</p>
+                    <h3><span class="phase-number">1</span>Drainage & Foundation Phase (Weeks 1-2)</h3>
+                    <p><strong>Primary Goal:</strong> Establish lymphatic drainage and extracellular matrix (ECM) detoxification before any antimicrobial therapy. Prepare the body's drainage pathways to handle the biotoxin load that will be released during treatment.</p>
                     
                     <div class="note">
-                        <strong>🔑 DESBIO'S COMPREHENSIVE DETOX APPROACH:</strong> The Comprehensive Homeopathic Detox Kit uses a sequential 7-day protocol that opens drainage from central nervous system → organs → extracellular matrix. This prevents Herxheimer reactions by ensuring elimination pathways are open.
-                    </div>
-
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">📦 Comprehensive Homeopathic Detox Kit (60+ days)</h4>
-
-                    <div class="product-item">
-                        <div class="product-name">Days 1-3: CerebroMax, SpinalMax, Matrix Support</div>
-                        <div class="indication">Central nervous system and matrix drainage - opens brain, spinal cord, and connective tissue pathways</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops of EACH product 3x daily in warm water</div>
-                        <div class="dosing"><strong>Rationale:</strong> Drainage begins centrally (brain/spinal) then moves peripherally</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">Days 4-7 (and ongoing): Detox I, Detox II, Detox III</div>
-                        <div class="indication">Complete organ and lymphatic drainage - kidney, liver, lymph, and cellular detoxification</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops of EACH product 3x daily in warm water</div>
-                        <div class="dosing"><strong>Continue:</strong> These three products throughout entire protocol for ongoing drainage</div>
-                    </div>
-
-                    <div class="warning">
-                        <strong>⚠️ OPTIONAL INTENSIVE DETOX:</strong> For severe toxic burden or systemic issues, add OmniCleanse Detox Kit for 14 days:
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>OmniCleanse Powdered Beverage:</strong> 1 serving in beverage daily (adults only)</li>
-                            <li><strong>OmniCleanse Capsules:</strong> 1 capsule 3x daily (adults only)</li>
-                        </ul>
-                    </div>
-
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🛡️ Core Gut Support (Start Immediately)</h4>
-
-                    <div class="product-item">
-                        <div class="product-name">Intestinal Restore</div>
-                        <div class="indication">Comprehensive gut restoration - immunoglobulins, L-glutamine, arabinogalactan, aloe for complete intestinal healing</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving (1 scoop) 1-3x daily mixed in water</div>
-                        <div class="dosing"><strong>Rationale:</strong> Provides bovine immunoglobulins for passive immunity + gut lining repair</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">Leaky Gut Formula</div>
-                        <div class="indication">Homeopathic intestinal permeability support - addresses tight junction dysfunction and barrier repair</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily in warm water</div>
-                        <div class="dosing"><strong>Rationale:</strong> Homeopathic support for zonulin regulation and tight junction integrity</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">BioPro GI</div>
-                        <div class="indication">Multi-strain probiotic - Lactobacillus and Bifidobacterium species for microbiome support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1-2 capsules 1-2x daily away from food</div>
-                        <div class="dosing"><strong>Note:</strong> Can be taken during antibiotic use - separate by 2+ hours from antimicrobials</div>
+                        <strong>🔑 WHY THIS PHASE IS CRITICAL:</strong> Without proper drainage established first, antimicrobial therapy can cause severe Herxheimer reactions as toxins accumulate faster than the body can eliminate them. This phase opens the lymphatic system and prepares the ECM for safe detoxification.
                     </div>
             `;
+
+            // Core Drainage Products
+            html += `
+                <div class="product-item">
+                    <div class="product-name">Lymph 1 (Acute Inflammation)</div>
+                    <div class="indication">Initial drainage - addresses acute inflammation and early-stage lymphatic congestion</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 full dropper (30 drops) 2x daily in warm water</div>
+                    <div class="dosing"><strong>Acute:</strong> 2 full droppers 6x daily for 3-5 days if significant inflammation present</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Lymph 2 (Matrix/Deeper ECM Congestion)</div>
+                    <div class="indication">Deeper drainage - addresses extracellular matrix congestion and intermediate lymphatic stagnation</div>
+                    <div class="dosing"><strong>Dosing:</strong> Start after 3-4 days of Lymph 1 - take 1 full dropper 2x daily</div>
+                    <div class="dosing"><strong>Continue:</strong> Both Lymph 1 and Lymph 2 together for comprehensive drainage</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Drainage Milieu</div>
+                    <div class="indication">Mesenchymal and intracellular matrix drainage support - elegant blend of low-potency homeopathic glandulars, spagyric botanicals, and cell salts</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily in warm water</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">SpectraLyte (Electrolyte Support)</div>
+                    <div class="indication">CRITICAL: Provides essential electrolytes lost during detoxification. Required throughout ALL phases of treatment.</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 tsp in water 2-3x daily, or as needed based on detox symptoms</div>
+                    <div class="dosing"><strong>Acute Detox:</strong> 1 tsp every 2-3 hours during heavy Herxheimer reactions</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">GALT Fortifier</div>
+                    <div class="indication">Gut-Associated Lymphoid Tissue support - contains colostrum, beta glucan, and okra to support digestive and immune cells of the small intestine</div>
+                    <div class="dosing"><strong>Dosing:</strong> 3 capsules daily between meals</div>
+                    <div class="dosing"><strong>Acute:</strong> 6-12 capsules daily if significant GI immune compromise</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Glutamine Complex PLG-U Powder</div>
+                    <div class="indication">Gut lining repair and support - provides L-glutamine for enterocyte healing and intestinal permeability support</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 scoop (5g) in water 1-2x daily on empty stomach</div>
+                    <div class="dosing"><strong>Severe Leaky Gut:</strong> 2 scoops 2x daily</div>
+                </div>
+            `;
+
+            // Add Flora Support
+            html += `
+                <div class="product-item">
+                    <div class="product-name">Flora Syntropy</div>
+                    <div class="indication">Multi-strain probiotic (15 billion CFU) - foundational gut microbiome support. Survives gastric acid and antibiotics.</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 3x daily just before meals</div>
+                    <div class="dosing"><strong>Rationale:</strong> Begin probiotic support early to compete with pathogens and support beneficial bacteria</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Saccharomyces boulardii Forte</div>
+                    <div class="indication">Non-pathogenic beneficial yeast (20 billion CFU) - increases secretory IgA by 2-4x, supports gut barrier</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 1x daily</div>
+                    <div class="dosing"><strong>Acute GI upset:</strong> 4 capsules 2x daily</div>
+                    <div class="dosing"><strong>Rationale:</strong> Critical for C. diff, dysbiosis, and IgA support</div>
+                </div>
+            `;
+
+            if (markers.inflammatory.length > 0) {
+                html += `
+                    <div class="product-item">
+                        <div class="product-name">Inflamma-Tox</div>
+                        <div class="indication">Homeopathic inflammation support - indicated for: ${markers.inflammatory.join(', ')}</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily in warm water</div>
+                        <div class="dosing"><strong>Acute inflammation:</strong> 2 full droppers 6x daily for 3-5 days</div>
+                    </div>
+                `;
+            }
 
             if (markers.digestive.length > 0) {
                 html += `
                     <div class="product-item">
-                        <div class="product-name">Gastrozyne</div>
-                        <div class="indication">Digestive enzyme support - indicated for: ${markers.digestive.join(', ')}</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 3x daily with every meal</div>
-                        <div class="dosing"><strong>Rationale:</strong> Comprehensive enzyme formula for protein, carb, and fat digestion</div>
+                        <div class="product-name">Pancrea LF (Pancreatic Support)</div>
+                        <div class="indication">Pancreatic enzyme and glandular support - indicated for: ${markers.digestive.filter(m => m.includes('Pancreatic elastase')).join(', ')}</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">HepataGest Powder</div>
+                        <div class="indication">Comprehensive digestive support with bile, enzymes, and beet root - for fat malabsorption and biliary support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 scoop in water 1-2x daily with meals</div>
                     </div>
                 `;
             }
 
             html += `
                     <div class="note">
-                        <strong>📅 PHASE 1 DURATION:</strong> Minimum 1-2 weeks before starting antimicrobial therapy. Continue Detox I, II, III and gut support products throughout entire protocol.
+                        <strong>📅 DURATION:</strong> Continue Phase 1 for minimum 2 weeks before advancing. Longer duration (3-4 weeks) if significant toxin burden or poor baseline drainage.
+                    </div>
+                    
+                    <div class="warning">
+                        <strong>⚠️ PHASE 1 MONITORING:</strong> Watch for initial detox symptoms (fatigue, headache, mild rash). If severe Herxheimer occurs, increase SpectraLyte and slow down dosing. Do not proceed to Phase 2 until drainage is well-established and patient tolerates Phase 1 well.
                     </div>
                 </div>
             `;
@@ -866,14 +924,85 @@
             return html;
         }
 
-        function generateDesBioPhase2(markers) {
+        function generatePhase2Biofilm(markers) {
             let html = `
                 <div class="phase">
-                    <h3><span class="phase-number">2</span>Targeted Treatment Phase (Weeks 3-12+)</h3>
-                    <p><strong>Primary Goal:</strong> Address specific pathogens using DesBio's combination of homeopathic Series Symptom Relief (SSR) kits, nutritional antimicrobials, and Smart Silver colloidal silver.</p>
+                    <h3><span class="phase-number">2</span>Biofilm Disruption Phase (Weeks 3-5)</h3>
+                    <p><strong>Primary Goal:</strong> Break down protective biofilm matrices that shield pathogens from antimicrobials and immune system. This phase is ESSENTIAL before antimicrobial therapy for chronic infections.</p>
+                    
+                    <div class="note">
+                        <strong>🔑 WHY BIOFILM DISRUPTION MATTERS:</strong> Pathogenic organisms create biofilm "shields" made of polysaccharides that protect them from antimicrobials and immune cells. Without breaking down these biofilms first, antimicrobial therapy is 10-100x less effective. Biofilm disruption releases organisms, making them vulnerable to treatment.
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ CONTINUE DRAINAGE:</strong> Maintain Lymph 1, Lymph 2, Drainage Milieu, and SpectraLyte throughout this phase. Biofilm disruption releases stored biotoxins that must be eliminated.
+                    </div>
+            `;
+
+            // Core Biofilm Products
+            html += `
+                <div class="product-item">
+                    <div class="product-name">Laminaria (Brown Seaweed Extract)</div>
+                    <div class="indication">Primary biofilm disruptor - rich in alginates that break down polysaccharide matrices. Supports iodine status and thyroid function.</div>
+                    <div class="dosing"><strong>Dosing:</strong> Start with 1 capsule daily, increase to 2 capsules 2x daily over 1 week</div>
+                    <div class="dosing"><strong>Duration:</strong> Minimum 2-3 weeks before starting antimicrobials</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">NAC Forte (N-Acetyl L-Cysteine)</div>
+                    <div class="indication">Mucolytic and biofilm disruptor - breaks down mucus and biofilm structures. Provides glutathione precursor support.</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 capsule 2x daily away from food</div>
+                    <div class="dosing"><strong>Rationale:</strong> NAC disrupts disulfide bonds in biofilm matrix</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Lapacho Intrinsic (Pau d'Arco)</div>
+                    <div class="indication">Antifungal and biofilm disruptor - particularly effective against Candida biofilms</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
+                    <div class="dosing"><strong>Rationale:</strong> Lapachol and beta-lapachone disrupt fungal biofilm formation</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Berberine Intrinsic</div>
+                    <div class="indication">Antimicrobial with biofilm-disrupting properties - effective against bacterial and fungal biofilms</div>
+                    <div class="dosing"><strong>Dosing:</strong> Start with 1 full dropper 1x daily, increase to 2x daily after 3-4 days</div>
+                    <div class="dosing"><strong>Rationale:</strong> Berberine inhibits quorum sensing and biofilm formation</div>
+                </div>
+            `;
+
+            // Continue foundational support
+            html += `
+                <div class="note">
+                    <strong>🔄 CONTINUE FROM PHASE 1:</strong> Maintain GALT Fortifier, Glutamine Complex, Flora Syntropy, and Saccharomyces boulardii Forte throughout this phase. Continue all drainage products (Lymph 1, Lymph 2, Drainage Milieu) and SpectraLyte.
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ BIOFILM PHASE HERXHEIMER:</strong> Biofilm disruption can cause significant Herxheimer reactions as organisms and toxins are released. Increase SpectraLyte to 1 tsp every 2-3 hours if needed. Consider adding Lymph 3 (Chronic/Deepest) if severe reactions occur.
+                </div>
+
+                <div class="note">
+                    <strong>📅 DURATION:</strong> Minimum 2-3 weeks of biofilm disruption before starting antimicrobial phase. Some chronic cases may require 4-6 weeks of biofilm work.
+                </div>
+            </div>
+        `;
+
+            return html;
+        }
+
+        function generatePhase3Kill(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">3</span>Antimicrobial/Kill Phase (Weeks 6-12+)</h3>
+                    <p><strong>Primary Goal:</strong> Targeted elimination of pathogenic organisms now that drainage is established and biofilms are disrupted. This phase uses specific antimicrobials based on the organisms detected.</p>
                     
                     <div class="warning">
-                        <strong>⚠️ CONTINUE DETOX SUPPORT:</strong> Maintain Detox I, II, III (10 drops each 3x daily) throughout this entire phase. Add HerX drops if Herxheimer reactions occur.
+                        <strong>⚠️ CRITICAL REQUIREMENTS BEFORE STARTING THIS PHASE:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>Drainage must be well-established (minimum 2 weeks of Phase 1)</li>
+                            <li>Biofilm disruption completed (minimum 2-3 weeks of Phase 2)</li>
+                            <li>Patient tolerating previous phases well</li>
+                            <li>Continue ALL drainage products and SpectraLyte throughout this phase</li>
+                        </ul>
                     </div>
             `;
 
@@ -882,25 +1011,41 @@
                 html += `
                     <h4 style="color: #C62828; margin: 20px 0 15px 0;">🦠 Bacterial Pathogen Protocol</h4>
                     <p style="margin-bottom: 15px;"><strong>Detected Pathogens:</strong> ${markers.pathogens.join(', ')}</p>
+                `;
 
+                html += `
                     <div class="product-item">
-                        <div class="product-name">PathoGuard</div>
-                        <div class="indication">Broad-spectrum antimicrobial botanical blend - oregano, thyme, clove, wormwood for bacterial, fungal, and parasitic support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily (Month 1)</div>
-                        <div class="dosing"><strong>Duration:</strong> 4-8 weeks depending on pathogen severity</div>
+                        <div class="product-name">Bacteria-Tox</div>
+                        <div class="indication">Homeopathic bacterial detoxification - multi-dimensional support for bacterial pathogens</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
+                        <div class="dosing"><strong>Acute:</strong> 2 full droppers 6x daily for 3-5 days</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Smart Silver</div>
-                        <div class="indication">Colloidal silver 10ppm - broad-spectrum antimicrobial effective against bacteria, viruses, fungi</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 tablespoon daily for adults, adjust for age/size</div>
-                        <div class="dosing"><strong>Duration:</strong> Throughout entire antimicrobial phase</div>
+                        <div class="product-name">Berberine Intrinsic</div>
+                        <div class="indication">Broad-spectrum antibacterial - 80-87% efficacy against H. pylori, effective against E. coli, Staph, Strep, Klebsiella</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> Minimum 4-6 weeks for H. pylori, 6-8 weeks for other pathogens</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">DysBio Plus</div>
-                        <div class="indication">Homeopathic dysbiosis support - for bacterial overgrowth and GI imbalances</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="product-name">Wild Bear Garlic (Allicin)</div>
+                        <div class="indication">Potent antibacterial - particularly effective against Gram-negative bacteria (E. coli, Salmonella, Shigella)</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
+                        <div class="dosing"><strong>Note:</strong> Take away from probiotics (separate by 2+ hours)</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Wild Oregano Oil</div>
+                        <div class="indication">Broad-spectrum antimicrobial - carvacrol and thymol effective against Gram+ and Gram- bacteria</div>
+                        <div class="dosing"><strong>Dosing:</strong> Start with 1 drop in water 2x daily, gradually increase to 3-5 drops 2x daily</div>
+                        <div class="dosing"><strong>Caution:</strong> Very potent - start low and increase slowly. Take with food to avoid GI irritation.</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Olive Leaf Intrinsic</div>
+                        <div class="indication">Antimicrobial and immune support - oleuropein effective against bacterial, viral, and fungal organisms</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
                     </div>
                 `;
 
@@ -910,12 +1055,11 @@
                         <div class="note">
                             <strong>🎯 H. PYLORI SPECIFIC PROTOCOL:</strong>
                             <ul style="margin-top: 10px; margin-left: 20px;">
-                                <li><strong>REFL:HS:</strong> 1-10 drops 3x daily (reflux and HCl support)</li>
-                                <li><strong>Gastrozyne:</strong> 1 capsule with meals (digestive enzyme support)</li>
-                                <li><strong>PathoGuard:</strong> 3 capsules daily for 8-12 weeks</li>
-                                <li><strong>Smart Silver:</strong> 1 Tbsp daily</li>
-                                <li><strong>Liposomal Vitamin C:</strong> 1-2 servings daily (immune support)</li>
-                                <li><strong>Duration:</strong> 8-12 weeks minimum, re-test to confirm eradication</li>
+                                <li><strong>Berberine Intrinsic:</strong> Primary treatment - 80-87% eradication rate</li>
+                                <li><strong>Zinc-Oro Liposome Composite:</strong> 2-3 sprays sublingually 2x daily (zinc carnosine for gastric protection)</li>
+                                <li><strong>MetaChlor:</strong> 1 tsp in water 2x daily (chlorophyll for healing)</li>
+                                <li><strong>Baicalin Skullcap:</strong> 1 capsule 3x daily (anti-inflammatory for gastric mucosa)</li>
+                                <li><strong>Duration:</strong> Minimum 8-12 weeks. Re-test at 12 weeks to confirm eradication.</li>
                             </ul>
                         </div>
                     `;
@@ -927,71 +1071,57 @@
                         <div class="warning">
                             <strong>⚠️ C. DIFFICILE PROTOCOL:</strong>
                             <ul style="margin-top: 10px; margin-left: 20px;">
-                                <li><strong>BioPro GI:</strong> CRITICAL - increase to 2 capsules 2x daily</li>
-                                <li><strong>Intestinal Restore:</strong> 1 serving 3x daily</li>
-                                <li><strong>PathoGuard:</strong> 3 capsules daily</li>
-                                <li><strong>Smart Silver:</strong> 1 Tbsp 2-3x daily</li>
-                                <li><strong>OmniFiber:</strong> 1 serving daily (helps eliminate C. diff toxins)</li>
+                                <li><strong>Saccharomyces boulardii Forte:</strong> CRITICAL - increase to 4 capsules 2x daily. S. boulardii is the #1 evidence-based treatment for C. diff.</li>
+                                <li><strong>Berberine Intrinsic:</strong> 1 full dropper 3x daily</li>
+                                <li><strong>Wild Oregano Oil:</strong> 5 drops 3x daily</li>
+                                <li><strong>Glutamine Complex:</strong> 2 scoops 3x daily for colonic healing</li>
                                 <li><strong>Duration:</strong> Minimum 8-12 weeks with aggressive probiotic support</li>
                             </ul>
                         </div>
                     `;
                 }
-
-                // General bacterial SSR
-                html += `
-                    <div class="note">
-                        <strong>📋 CONSIDER SERIES SYMPTOM RELIEF KITS:</strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>BACT:Combination:</strong> Broad bacterial homeopathic support - 10 drops 3x daily</li>
-                            <li><strong>Specific SSR Kits:</strong> Available for Staph (STAP:SSR), Strep (STRE:SSR), and other specific bacteria</li>
-                            <li><strong>SSR Protocol:</strong> Kit 1 (1-10): 1 vial every 3rd day for 30 days, then Kit 2 (10-1): 1 vial every 3rd day for 30 days</li>
-                        </ul>
-                    </div>
-                `;
             }
 
-            // PARASITES & PROTOZOANS
+            // PROTOZOANS & PARASITES
             if (markers.protozoans.length > 0 || markers.helminths.length > 0) {
                 const allParasites = [...markers.protozoans, ...markers.helminths];
                 html += `
                     <h4 style="color: #C62828; margin: 20px 0 15px 0;">🪱 Parasite Protocol</h4>
                     <p style="margin-bottom: 15px;"><strong>Detected Parasites:</strong> ${allParasites.join(', ')}</p>
+                `;
 
-                    <div class="note">
-                        <strong>📦 ENDOPARA CLEAR KIT OPTION:</strong> DesBio offers a comprehensive parasitekit with step-by-step practitioner guide.
+                html += `
+                    <div class="product-item">
+                        <div class="product-name">Para-Tox</div>
+                        <div class="indication">Homeopathic parasite detoxification - multi-dimensional support for parasitic organisms</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
+                        <div class="dosing"><strong>Acute:</strong> 2 full droppers 6x daily during active kill phase</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">VER (Vermifuge Homeopathic)</div>
-                        <div class="indication">Homeopathic antiparasitic support - broad spectrum for worms and parasites</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
-                        <div class="dosing"><strong>Duration:</strong> 8-12 weeks minimum</div>
+                        <div class="product-name">Amoeba-Tox</div>
+                        <div class="indication">Specific homeopathic support for amoebic and protozoal infections</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">PathoGuard</div>
-                        <div class="indication">Botanical antiparasitic - Month 1</div>
-                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily</div>
+                        <div class="product-name">Artemisia Intrinsic (Wormwood)</div>
+                        <div class="indication">Primary antiparasitic - artemisinin compounds effective against Giardia, Entamoeba, Blastocystis, and helminths</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
+                        <div class="dosing"><strong>Duration:</strong> Minimum 6-8 weeks, often 12 weeks for complete clearance</div>
+                        <div class="dosing"><strong>Contraindication:</strong> Pregnancy, seizure disorders</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">OmniFiber</div>
-                        <div class="indication">Fiber support - aids in parasite elimination</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                        <div class="product-name">Black Radish (Spanish) Intrinsic</div>
+                        <div class="indication">Liver and gallbladder support - enhances bile flow to eliminate parasites. Contains glucosinolates with antiparasitic properties.</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Intestinal Restore</div>
-                        <div class="indication">Gut healing during parasite cleanse - Month 2</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily, then increase to 2-3x daily</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">ToxAffix</div>
-                        <div class="indication">Binder - helps eliminate parasite debris</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily, every other day</div>
-                        <div class="dosing"><strong>Note:</strong> Take 45+ minutes away from medications and supplements</div>
+                        <div class="product-name">Wild Bear Garlic</div>
+                        <div class="indication">Antiparasitic - allicin effective against Giardia and other protozoans</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
                     </div>
                 `;
 
@@ -999,87 +1129,68 @@
                 if (markers.protozoans.some(p => p.includes('Giardia'))) {
                     html += `
                         <div class="note">
-                            <strong>🎯 GIARDIA LAMBLIA SERIES SYMPTOM RELIEF:</strong>
-                            <ul style="margin-top: 10px; margin-left: 20px;">
-                                <li><strong>GIAR:SSR Kit 1:</strong> 1 vial every 3rd day for 30 days (1-10 dilutions)</li>
-                                <li><strong>GIAR:SSR Kit 2:</strong> 1 vial every 3rd day for 30 days (10-1 dilutions)</li>
-                                <li><strong>HerX:</strong> 10 drops 3x daily if Herxheimer reactions occur</li>
-                                <li><strong>Liposomal Vitamin C:</strong> 1 serving daily</li>
-                                <li><strong>Smart Silver:</strong> 1 Tbsp daily</li>
-                                <li><strong>Optional 1M/10M Kits:</strong> After completing both SSR kits, GIAR:1M and GIAR:10M (1 vial weekly for 10 weeks each)</li>
-                            </ul>
+                            <strong>🎯 GIARDIA SPECIFIC:</strong> Artemisia + Berberine combination is highly effective. Duration 8-12 weeks minimum. Moon cycle dosing recommended - increase dosing around full moon when parasites are most active.
                         </div>
                     `;
                 }
-
-                // Amoeba specific
-                html += `
-                    <div class="note">
-                        <strong>🎯 AMOEBA SUPPORT:</strong> AMOE:Combination - 10 drops 3x daily for amoebic infections
-                    </div>
-                `;
             }
 
-            // FUNGI/CANDIDA
+            // FUNGI/YEAST
             if (markers.fungi.length > 0) {
                 html += `
                     <h4 style="color: #C62828; margin: 20px 0 15px 0;">🍄 Antifungal Protocol</h4>
                     <p style="margin-bottom: 15px;"><strong>Detected Fungi:</strong> ${markers.fungi.join(', ')}</p>
+                `;
 
-                    <div class="note">
-                        <strong>📦 CANDIDA CLEAR KIT:</strong> DesBio offers a comprehensive Candida kit with complete practitioner guide. Includes Series Symptom Relief for homeopathic desensitization.
+                html += `
+                    <div class="product-item">
+                        <div class="product-name">Mycelia Intrinsic Liposome</div>
+                        <div class="indication">Liposomal antifungal complex - enhanced absorption for systemic fungal support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily on empty stomach</div>
+                        <div class="dosing"><strong>Duration:</strong> Minimum 8-12 weeks for Candida overgrowth</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Candida Series Symptom Relief (2 Kits - 60 days)</div>
-                        <div class="indication">Homeopathic Candida desensitization - core of DesBio's antifungal approach</div>
-                        <div class="dosing"><strong>CAND:SSR Kit 1 (1-10):</strong> 1 vial every 3rd day for 30 days</div>
-                        <div class="dosing"><strong>CAND:SSR Kit 2 (10-1):</strong> 1 vial every 3rd day for 30 days</div>
-                        <div class="dosing"><strong>Optional:</strong> CAND:1M and CAND:10M kits (1 vial weekly for 10 weeks each after completing SSR kits)</div>
+                        <div class="product-name">Lapacho Intrinsic (Pau d'Arco)</div>
+                        <div class="indication">Primary antifungal - lapachol and beta-lapachone disrupt fungal cell membranes and biofilms</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">CAND:PLUS</div>
-                        <div class="indication">Homeopathic Candida support formula</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
-                        <div class="dosing"><strong>Duration:</strong> Throughout Candida protocol</div>
+                        <div class="product-name">Wild Oregano Oil</div>
+                        <div class="indication">Potent antifungal - carvacrol disrupts fungal cell walls</div>
+                        <div class="dosing"><strong>Dosing:</strong> 3-5 drops 3x daily in water</div>
+                        <div class="dosing"><strong>Note:</strong> Separate from probiotics by 2+ hours</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">PathoGuard</div>
-                        <div class="indication">Botanical antifungal - Month 1</div>
-                        <div class="dosing"><strong>Dosing:</strong> 3 capsules daily</div>
+                        <div class="product-name">Berberine Intrinsic</div>
+                        <div class="indication">Antifungal and anti-biofilm - effective against Candida species</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Smart Silver</div>
-                        <div class="indication">Broad-spectrum antimicrobial including antifungal activity</div>
-                        <div class="dosing"><strong>Dosing:</strong> Use orally at appropriate dose for age/size</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">Intestinal Restore</div>
-                        <div class="indication">Gut healing - Month 2 and ongoing</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving 1-2x daily</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">FNG (Fungal Homeopathic)</div>
-                        <div class="indication">Additional homeopathic fungal support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
-                    </div>
-
-                    <div class="warning">
-                        <strong>⚠️ CANDIDA PROTOCOL ESSENTIALS:</strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Diet:</strong> Low-sugar, low-carb essential - eliminate refined sugars, alcohol, high-glycemic foods</li>
-                            <li><strong>BioPro GI:</strong> 1-2 capsules 2x daily (probiotic competition with Candida)</li>
-                            <li><strong>Duration:</strong> 12-16 weeks minimum for systemic Candida</li>
-                            <li><strong>Herxheimer Management:</strong> Use HerX drops (10 drops 3x daily) if severe die-off reactions</li>
-                            <li><strong>ToxAffix:</strong> Consider adding binder to reduce Candida toxin load</li>
-                        </ul>
+                        <div class="product-name">Wild Bear Garlic</div>
+                        <div class="indication">Antifungal - allicin disrupts fungal metabolism</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3x daily</div>
                     </div>
                 `;
+
+                // Candida specific
+                if (markers.fungi.some(f => f.includes('Candida'))) {
+                    html += `
+                        <div class="warning">
+                            <strong>⚠️ CANDIDA OVERGROWTH PROTOCOL:</strong>
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li><strong>Diet:</strong> Low-sugar, low-carb diet essential. Eliminate refined sugars, alcohol, and high-glycemic foods.</li>
+                                <li><strong>Saccharomyces boulardii Forte:</strong> Increase to 4 capsules 2x daily (competes with Candida for binding sites)</li>
+                                <li><strong>Symbiome CMF-50B:</strong> Add high-potency probiotic - 2 capsules daily (50 billion CFU)</li>
+                                <li><strong>Duration:</strong> Minimum 12-16 weeks for systemic Candida. Herxheimer reactions common in first 2-4 weeks.</li>
+                                <li><strong>Die-off support:</strong> Increase SpectraLyte to 1 tsp every 2 hours during peak die-off</li>
+                            </ul>
+                        </div>
+                    `;
+                }
             }
 
             // VIRUSES
@@ -1087,35 +1198,38 @@
                 html += `
                     <h4 style="color: #C62828; margin: 20px 0 15px 0;">🦠 Antiviral Protocol</h4>
                     <p style="margin-bottom: 15px;"><strong>Detected Viruses:</strong> ${markers.viruses.join(', ')}</p>
+                `;
 
+                html += `
                     <div class="product-item">
-                        <div class="product-name">VIR:Combination</div>
-                        <div class="indication">Broad-spectrum homeopathic antiviral support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="product-name">Viru-Tox</div>
+                        <div class="indication">Homeopathic viral detoxification - multi-dimensional viral support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
+                        <div class="dosing"><strong>Acute viral:</strong> 2 full droppers 6x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Virimmune</div>
-                        <div class="indication">Homeopathic viral immune support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
+                        <div class="product-name">Olive Leaf Intrinsic</div>
+                        <div class="indication">Primary antiviral - oleuropein inhibits viral replication</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3-4x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">ContraVirus</div>
-                        <div class="indication">Nutritional antiviral formula</div>
-                        <div class="dosing"><strong>Dosing:</strong> 2 capsules daily</div>
+                        <div class="product-name">Cat's Claw Intrinsic (Uncaria tomentosa)</div>
+                        <div class="indication">Immune modulator and antiviral - pentacyclic oxindole alkaloids enhance immune function</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Liposomal Vitamin C</div>
-                        <div class="indication">High-dose vitamin C for viral support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1-2 servings daily</div>
+                        <div class="product-name">Sambucus Intrinsic (Elderberry)</div>
+                        <div class="indication">Antiviral - particularly effective against flu viruses and upper respiratory viral infections</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 3-4x daily</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Smart Silver</div>
-                        <div class="indication">Antiviral colloidal silver</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 Tbsp daily</div>
+                        <div class="product-name">Thymus Code</div>
+                        <div class="indication">Thymus gland support - enhances T-cell function and antiviral immunity</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily</div>
                     </div>
                 `;
 
@@ -1123,12 +1237,11 @@
                 if (markers.viruses.some(v => v.includes('Epstein') || v.includes('Cytomegalovirus'))) {
                     html += `
                         <div class="note">
-                            <strong>🎯 HERPES VIRUS FAMILY (EBV/CMV) SERIES SUPPORT:</strong>
+                            <strong>🎯 HERPES VIRUS FAMILY (EBV/CMV) PROTOCOL:</strong>
                             <ul style="margin-top: 10px; margin-left: 20px;">
-                                <li><strong>EPST:SSR:</strong> Epstein-Barr Series Symptom Relief - 2 kits (60 days)</li>
-                                <li><strong>CYTO:SSR:</strong> Cytomegalovirus Series Symptom Relief - 2 kits (60 days)</li>
-                                <li><strong>HV-6:SSR:</strong> HHV-6 Series Symptom Relief if needed</li>
-                                <li><strong>Protocol:</strong> Kit 1 (1-10) and Kit 2 (10-1), 1 vial every 3rd day for 30 days each</li>
+                                <li><strong>HZ-Tox:</strong> Add 1 full dropper 2x daily (specific herpes virus support)</li>
+                                <li><strong>Mono-Tox:</strong> Add 1 full dropper 2x daily if EBV detected</li>
+                                <li><strong>L-Lysine:</strong> Consider adding 1000-3000mg daily (inhibits viral replication)</li>
                                 <li><strong>Duration:</strong> Herpes viruses require 12-24 weeks minimum treatment</li>
                             </ul>
                         </div>
@@ -1136,241 +1249,604 @@
                 }
             }
 
+            // Ongoing Support During Kill Phase
             html += `
-                    <div class="warning">
-                        <strong>⚠️ HERXHEIMER REACTION MANAGEMENT (DesBio Approach):</strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>HerX Drops:</strong> 10 drops 3x daily immediately when Herxheimer symptoms appear</li>
-                            <li><strong>Continue Detox I, II, III:</strong> Maintain drainage support throughout</li>
-                            <li><strong>Add OmniCleanse Capsules:</strong> 1 capsule 3x daily for additional detox support</li>
-                            <li><strong>Liposomal Vitamin C:</strong> Increase to 2-3 servings daily</li>
-                            <li><strong>Hydration:</strong> 80-100oz water daily minimum</li>
-                        </ul>
-                    </div>
-
-                    <div class="note">
-                        <strong>📅 TREATMENT PHASE DURATION:</strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Bacterial infections:</strong> 6-8 weeks minimum</li>
-                            <li><strong>H. pylori:</strong> 8-12 weeks, re-test to confirm</li>
-                            <li><strong>Parasites:</strong> 8-12 weeks minimum, often 16 weeks</li>
-                            <li><strong>Candida:</strong> 12-16 weeks minimum</li>
-                            <li><strong>Chronic viruses:</strong> 12-24 weeks</li>
-                            <li><strong>Series Symptom Relief:</strong> Each kit pair is 60 days, can add 1M/10M kits for deeper support (additional 20 weeks)</li>
-                        </ul>
-                    </div>
+                <div class="note">
+                    <strong>🔄 MAINTAIN THROUGHOUT KILL PHASE:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>ALL drainage products (Lymph 1, Lymph 2, Drainage Milieu)</li>
+                        <li>SpectraLyte (increase during Herxheimer reactions)</li>
+                        <li>GALT Fortifier (3-6 capsules daily)</li>
+                        <li>Glutamine Complex (1-2 scoops 2x daily)</li>
+                        <li>Flora Syntropy (2 capsules 3x daily - separate from antimicrobials by 2 hours)</li>
+                        <li>Saccharomyces boulardii Forte (2-4 capsules 1-2x daily)</li>
+                    </ul>
                 </div>
-            `;
+
+                <div class="warning">
+                    <strong>⚠️ HERXHEIMER REACTION MANAGEMENT:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Symptoms:</strong> Fatigue, headache, flu-like symptoms, brain fog, joint pain, skin rashes</li>
+                        <li><strong>Immediate Action:</strong> Increase SpectraLyte to 1 tsp every 1-2 hours</li>
+                        <li><strong>Add Lymph 3:</strong> 1 full dropper 3x daily for deepest chronic drainage</li>
+                        <li><strong>Temporary Dose Reduction:</strong> Reduce antimicrobials by 50% if severe reaction, then slowly increase as tolerated</li>
+                        <li><strong>Hydration:</strong> Drink 80-100oz water daily minimum</li>
+                        <li><strong>Support Pathways:</strong> Ensure daily bowel movements - add fiber/binders if needed</li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <strong>📅 KILL PHASE DURATION:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Acute bacterial:</strong> 6-8 weeks minimum</li>
+                        <li><strong>H. pylori:</strong> 8-12 weeks, re-test to confirm eradication</li>
+                        <li><strong>Parasites:</strong> 8-12 weeks minimum, often 16 weeks for complete clearance</li>
+                        <li><strong>Candida/fungal:</strong> 12-16 weeks minimum</li>
+                        <li><strong>Chronic viruses (EBV/CMV):</strong> 12-24 weeks</li>
+                        <li><strong>Multiple co-infections:</strong> 16-24 weeks, addressing one category at a time</li>
+                    </ul>
+                </div>
+            </div>
+        `;
 
             return html;
         }
 
-        function generateDesBioPhase3(markers) {
+        function generateCommensalSupportPhysica(markers) {
             let html = `
                 <div class="phase">
-                    <h3><span class="phase-number">3</span>Gut Restoration Phase (Weeks 13-20+)</h3>
-                    <p><strong>Primary Goal:</strong> Complete intestinal healing, restore microbiome balance, and establish long-term gut health using DesBio's 4 R's approach.</p>
-
+                    <h3><span class="phase-number">3B</span>Beneficial Bacteria Restoration (Concurrent with Treatment/Repair Phases)</h3>
+                    <p><strong>Primary Goal:</strong> Restore depleted beneficial bacteria populations. Low commensal bacteria = dysbiosis requiring targeted probiotic, prebiotic, and postbiotic support.</p>
+                    
                     <div class="note">
-                        <strong>🔑 THE 4 R'S OF GUT RESTORATION (DesBio Approach):</strong>
+                        <strong>🔑 CRITICAL ROLE OF COMMENSAL BACTERIA:</strong> Beneficial bacteria produce SCFAs (butyrate for colonocytes, acetate for metabolism, propionate for liver), synthesize vitamins (K2, folate, B12), maintain gut barrier integrity, compete with pathogens, train immune system, and produce antimicrobial compounds.
+                    </div>
+
+                    <p style="margin: 15px 0;"><strong>Detected Low/Imbalanced Beneficial Bacteria (${markers.commensals.length} species):</strong></p>
+                    <div style="background: #E8F5E9; padding: 15px; border-radius: 8px; margin: 15px 0; max-height: 200px; overflow-y: auto;">
+                        <em>${markers.commensals.join(', ')}</em>
+                    </div>
+
+                    <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🦠 Targeted Probiotic Restoration</h4>
+            `;
+
+            const hasLactobacillus = markers.commensals.some(b => b.includes('Lactobacillus'));
+            const hasBifidobacterium = markers.commensals.some(b => b.includes('Bifidobacterium'));
+            const hasAkkermansia = markers.commensals.some(b => b.includes('Akkermansia'));
+            const hasFaecalibacterium = markers.commensals.some(b => b.includes('Faecalibacterium'));
+            const hasRoseburia = markers.commensals.some(b => b.includes('Roseburia'));
+            const hasBacteroides = markers.commensals.some(b => b.includes('Bacteroides'));
+            const hasSaccharomyces = markers.commensals.some(b => b.includes('Saccharomyces boulardii'));
+
+            html += `
+                <div class="product-item">
+                    <div class="product-name">Symbiome CMF-50B</div>
+                    <div class="indication">HIGH-POTENCY MULTI-STRAIN PROBIOTIC - 50 billion CFU per capsule for aggressive microbiome restoration</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules daily (100 billion CFU total)</div>
+                    <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks for significant population shifts</div>
+                    <div class="dosing"><strong>Rationale:</strong> High CFU essential to recolonize gut after antimicrobial therapy and compete with any residual pathogens</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Flora Syntropy</div>
+                    <div class="indication">Multi-strain foundational probiotic (15 billion CFU) - Lactobacillus and Bifidobacterium species</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 3x daily with meals</div>
+                    <div class="dosing"><strong>Duration:</strong> Long-term maintenance - continue indefinitely</div>
+                    <div class="dosing"><strong>Note:</strong> Separate from antimicrobials by 2+ hours if still in kill phase</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Saccharomyces boulardii Forte</div>
+                    <div class="indication">Beneficial yeast (20 billion CFU) - CRITICAL for microbiome restoration</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2-4 capsules 1-2x daily</div>
+                    <div class="dosing"><strong>Rationale:</strong> Increases secretory IgA by 200-400%, prevents pathogen adherence, supports mucosal immunity, survives antibiotics</div>
+                    <div class="dosing"><strong>Duration:</strong> 12-16 weeks minimum, longer for severe dysbiosis</div>
+                </div>
+            `;
+
+            if (hasLactobacillus) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 LACTOBACILLUS RESTORATION PROTOCOL:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Lactobacillus')).join(', ')}</li>
+                            <li><strong>Flora Syntropy:</strong> Contains L. acidophilus, L. rhamnosus, L. plantarum, L. casei, L. paracasei</li>
+                            <li><strong>Dietary Support:</strong> Fermented foods daily (sauerkraut, kimchi, kefir, yogurt, lacto-fermented vegetables)</li>
+                            <li><strong>Prebiotics:</strong> Inulin, FOS - found in Jerusalem artichoke, chicory, garlic, onions, asparagus</li>
+                            <li><strong>Function:</strong> Produces lactic acid (lowers intestinal pH), bacteriocins (antimicrobial peptides), competes for adhesion sites</li>
+                            <li><strong>Clinical Pearl:</strong> Lactobacillus is oxygen-tolerant - colonizes small intestine well</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasBifidobacterium) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 BIFIDOBACTERIUM RESTORATION PROTOCOL:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Bifidobacterium')).join(', ')}</li>
+                            <li><strong>Symbiome CMF-50B:</strong> High-dose Bifidobacterium supplementation critical</li>
+                            <li><strong>Flora Syntropy:</strong> Contains B. bifidum, B. longum, B. lactis</li>
+                            <li><strong>Dietary Support:</strong> Fermented dairy (if tolerated), breast milk oligosaccharides (HMOs) in some formulas</li>
+                            <li><strong>Prebiotics:</strong> GOS (galacto-oligosaccharides), inulin, resistant starch, beta-glucan</li>
+                            <li><strong>Function:</strong> Produces acetate and lactate (lowers pH), supports immune maturation, prevents pathogen colonization</li>
+                            <li><strong>Clinical Pearl:</strong> Bifidobacterium declines with age - adults have 10-100x less than infants. Aggressive supplementation essential.</li>
+                            <li><strong>Note:</strong> Obligate anaerobe - prefers colon. Needs prebiotics to thrive.</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasAkkermansia) {
+                html += `
+                    <div class="warning">
+                        <strong>⚠️ AKKERMANSIA MUCINIPHILA - CRITICAL KEYSTONE SPECIES:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Degrades intestinal mucin (stimulates mucus production), strengthens gut barrier, regulates glucose/lipid metabolism, potent anti-inflammatory effects</li>
+                            <li><strong>Low Levels = HIGH RISK:</strong> Obesity, type 2 diabetes, metabolic syndrome, IBD, cardiovascular disease</li>
+                            <li><strong>Challenge:</strong> No commercial probiotic currently available - must support endogenous growth</li>
+                            <li><strong>Restoration Strategy (Evidence-Based):</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Polyphenols (CRITICAL):</strong> Cranberry extract, grape seed extract, pomegranate, resveratrol, EGCG (green tea), quercetin</li>
+                                    <li><strong>Green Tea Catechins:</strong> 1 capsule 2x daily (Physica product)</li>
+                                    <li><strong>Diet:</strong> Berries (especially cranberries), dark chocolate (70%+ cacao), red wine (moderate), pomegranate, grapes</li>
+                                    <li><strong>Prebiotics:</strong> Resistant starch (cooked/cooled potatoes, rice), inulin, pectin (apples, citrus)</li>
+                                    <li><strong>Omega-3 Fatty Acids:</strong> Bio-Omega 3/Omega GOLD - 2 softgels daily. Studies show fish oil increases Akkermansia.</li>
+                                    <li><strong>Intermittent Fasting:</strong> 16:8 or 5:2 protocols increase Akkermansia significantly</li>
+                                    <li><strong>Metformin (if diabetic):</strong> Associated with increased Akkermansia levels</li>
+                                </ul>
+                            </li>
+                            <li><strong>Timeline:</strong> 8-12 weeks minimum to see population increase</li>
+                            <li><strong>Monitoring:</strong> Re-test Gut Zoomer at 16 weeks to confirm restoration</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasFaecalibacterium) {
+                html += `
+                    <div class="warning">
+                        <strong>⚠️ FAECALIBACTERIUM PRAUSNITZII - #1 BUTYRATE PRODUCER:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Produces 10-15% of total butyrate in colon (primary fuel for colonocytes), potent anti-inflammatory via IL-10 induction, strengthens tight junctions</li>
+                            <li><strong>Low Levels = MAJOR CONCERN:</strong> Crohn's disease (50-90% reduction), ulcerative colitis, IBS, metabolic disorders, colorectal cancer risk</li>
+                            <li><strong>Challenge:</strong> Extremely oxygen-sensitive obligate anaerobe - no commercial probiotic available</li>
+                            <li><strong>Restoration Strategy (Comprehensive):</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Prebiotics (ESSENTIAL):</strong>
+                                        <ul style="margin-left: 20px;">
+                                            <li><strong>Inulin:</strong> Primary fuel - chicory root, Jerusalem artichoke, garlic, onions</li>
+                                            <li><strong>Resistant Starch (TYPE 3):</strong> Cooked and cooled potatoes, rice, pasta, oats, green bananas</li>
+                                            <li><strong>Pectin:</strong> Apples, citrus fruits, carrots</li>
+                                            <li><strong>Beta-glucan:</strong> Oats, barley, mushrooms</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fiber Goal:</strong> 30-40g daily from whole foods (F. prausnitzii thrives on fiber)</li>
+                                    <li><strong>Diet:</strong> Whole grains, legumes (lentils, chickpeas, beans), fruits, vegetables</li>
+                                    <li><strong>Consider Butyrate Supplementation:</strong> While rebuilding F. prausnitzii populations, may supplement with:
+                                        <ul style="margin-left: 20px;">
+                                            <li>Sodium butyrate 500-1000mg daily (supports colonocytes directly)</li>
+                                            <li>Tributyrin supplements (more stable form)</li>
+                                            <li>Note: This is supportive, not replacement - must rebuild bacterial population</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>AVOID (F. prausnitzii very sensitive):</strong>
+                                        <ul style="margin-left: 20px;">
+                                            <li>Antibiotics (even single course can decimate population)</li>
+                                            <li>Artificial sweeteners (sucralose, saccharin)</li>
+                                            <li>Emulsifiers (carboxymethylcellulose, polysorbate-80)</li>
+                                            <li>High-fat, low-fiber diet</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Symbiosis Strategy:</strong> F. prausnitzii grows better when other beneficial bacteria present - use Symbiome CMF-50B to create favorable environment</li>
+                            <li><strong>Timeline:</strong> 12-16 weeks minimum for significant population increase</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasRoseburia) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 ROSEBURIA - BUTYRATE PRODUCER & T-REG INDUCER:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Second major butyrate producer, induces regulatory T-cells (anti-inflammatory), supports colonocyte health</li>
+                            <li><strong>Low Levels Associated With:</strong> IBD, celiac disease, type 2 diabetes, obesity</li>
+                            <li><strong>Primary Fuel:</strong> Resistant starch (Type 2 and 3)</li>
+                            <li><strong>Restoration Strategy:</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Resistant Starch Protocol:</strong> Cooked and cooled starches (potatoes, rice, oats, pasta)</li>
+                                    <li><strong>Raw Potato Starch:</strong> 1-2 Tbsp daily mixed in cold liquid (very high resistant starch)</li>
+                                    <li><strong>Green Bananas:</strong> High in resistant starch</li>
+                                    <li><strong>Legumes:</strong> Lentils, chickpeas, beans (resistant starch + fiber)</li>
+                                    <li><strong>Inulin & Arabinoxylan:</strong> Also support Roseburia growth</li>
+                                    <li><strong>Whole Grains:</strong> Oats, barley (if wheat/gluten tolerated - wheat bran high in arabinoxylan)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasBacteroides) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 BACTEROIDES - COMPLEX CARBOHYDRATE SPECIALISTS:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Bacteroides')).join(', ')}</li>
+                            <li><strong>Function:</strong> Degrade complex plant polysaccharides (fibers humans can't digest), produce acetate and propionate, train immune system, produce anti-inflammatory factors</li>
+                            <li><strong>Restoration Strategy - DIVERSITY IS KEY:</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Plant Diversity Goal:</strong> 30+ different plant foods per week (each Bacteroides species specializes in different polysaccharides)</li>
+                                    <li><strong>Varied Vegetables:</strong> Cruciferous (broccoli, cauliflower), root vegetables, leafy greens, alliums (garlic, onions)</li>
+                                    <li><strong>Whole Grains:</strong> Different types - oats, quinoa, brown rice, barley, millet</li>
+                                    <li><strong>Legumes:</strong> Variety - lentils, chickpeas, black beans, kidney beans</li>
+                                    <li><strong>Nuts & Seeds:</strong> Different types weekly</li>
+                                    <li><strong>Fiber Target:</strong> 30-40g daily from diverse sources</li>
+                                    <li><strong>Clinical Pearl:</strong> Bacteroides abundance correlates with long-term dietary habits, not short-term changes - sustained dietary shift required</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            html += `
+                <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🌾 Prebiotic Support (ESSENTIAL)</h4>
+
+                <div class="warning">
+                    <strong>⚠️ PREBIOTICS ARE NOT OPTIONAL:</strong> Probiotics without prebiotics = temporary colonization that fades within weeks. Prebiotics feed beneficial bacteria and enable permanent recolonization.
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Glycine Composite</div>
+                    <div class="indication">Amino acid and prebiotic support - glycine supports gut lining while providing substrate for bacterial metabolism</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 scoop in water 1-2x daily</div>
+                </div>
+
+                <div class="note">
+                    <strong>🥗 COMPREHENSIVE DIETARY PROTOCOL FOR MICROBIOME RESTORATION:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Fermented Foods (DAILY - NON-NEGOTIABLE):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Sauerkraut (raw, unpasteurized) - 2-4 Tbsp daily</li>
+                                <li>Kimchi - 2-4 Tbsp daily</li>
+                                <li>Kefir - 4-8oz daily (dairy or water kefir)</li>
+                                <li>Yogurt with live cultures - 6-8oz daily</li>
+                                <li>Kombucha - 4-8oz daily</li>
+                                <li>Miso, tempeh, natto (fermented soy)</li>
+                                <li><strong>Goal:</strong> 2-3 different fermented foods daily</li>
+                                <li><strong>Rationale:</strong> Provides live beneficial bacteria + postbiotic metabolites + increases bacterial diversity</li>
+                            </ul>
+                        </li>
+                        <li><strong>Prebiotic Foods (DAILY STAPLES):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Inulin-Rich:</strong> Jerusalem artichoke (sunchoke), chicory root, garlic (raw or cooked), onions, leeks, asparagus, bananas</li>
+                                <li><strong>Resistant Starch:</strong> Cooked + cooled potatoes, rice, pasta, oats; green bananas; legumes; raw potato starch (1-2 Tbsp)</li>
+                                <li><strong>Pectin:</strong> Apples (with skin), citrus fruits, carrots, beets</li>
+                                <li><strong>Beta-Glucan:</strong> Oats, barley, mushrooms (shiitake, maitake, reishi)</li>
+                                <li><strong>FOS/GOS:</strong> Onions, garlic, bananas, legumes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Polyphenol-Rich Foods (For Akkermansia):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Berries (blueberries, cranberries, raspberries, blackberries) - 1 cup daily</li>
+                                <li>Dark chocolate 70%+ cacao - 1-2oz daily</li>
+                                <li>Green tea - 2-3 cups daily (or Green Tea Catechins supplement)</li>
+                                <li>Coffee - moderate amounts (polyphenols + caffeine both beneficial)</li>
+                                <li>Pomegranate, grapes, red wine (moderate - 5oz for women, 10oz for men max)</li>
+                                <li>Olive oil (extra virgin, cold-pressed) - 2-3 Tbsp daily</li>
+                                <li>Herbs & spices - turmeric, cinnamon, cloves, oregano (abundant use)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diversity Protocol (MOST IMPORTANT):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Goal:</strong> 30+ different plant foods per week minimum (40-50 is optimal)</li>
+                                <li><strong>Evidence:</strong> American Gut Project - this single metric best predicts microbiome diversity</li>
+                                <li><strong>Include:</strong> Vegetables (15-20 types), fruits (8-10 types), whole grains (5-7 types), legumes (3-5 types), nuts/seeds (5-7 types), herbs/spices (10+)</li>
+                                <li><strong>Strategy:</strong> Track weekly - use variety, shop seasonal, try new foods</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fiber Target:</strong> 30-40g daily (gradually increase from current intake)
+                            <ul style="margin-left: 20px;">
+                                <li>Week 1: Add 5g daily</li>
+                                <li>Week 2: Add another 5g</li>
+                                <li>Week 3-4: Continue gradual increase to target</li>
+                                <li><strong>Why Gradual:</strong> Prevents gas, bloating, discomfort as microbiome adapts</li>
+                            </ul>
+                        </li>
+                        <li><strong>FOODS TO STRICTLY AVOID (Microbiome Disruptors):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Artificial Sweeteners:</strong> Sucralose (Splenda), saccharin, aspartame - DEVASTATE beneficial bacteria (50-90% reduction in some studies)</li>
+                                <li><strong>Emulsifiers:</strong> Carboxymethylcellulose (CMC), polysorbate-80, carrageenan - disrupt mucus layer and damage gut barrier</li>
+                                <li><strong>Processed Foods:</strong> High in above additives, lack fiber and nutrients</li>
+                                <li><strong>Excessive Red Meat:</strong> >100g daily associated with decreased Bifidobacterium and increased pathogenic Bilophila</li>
+                                <li><strong>Excessive Alcohol:</strong> >2 drinks daily damages gut barrier, decreases beneficial bacteria</li>
+                                <li><strong>High-Fat Low-Fiber:</strong> Shifts microbiome toward pro-inflammatory state</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <strong>⏱️ REALISTIC TIMELINE FOR MICROBIOME RESTORATION:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Days 1-7:</strong> Probiotic bacteria colonize intestinal mucosa (transient - won't persist without continued supplementation)</li>
+                        <li><strong>Weeks 2-4:</strong> Early improvements in GI symptoms (less bloating, more regular bowel movements), initial increase in diversity</li>
+                        <li><strong>Weeks 4-8:</strong> Significant population shifts visible on testing, increased SCFA production, reduced inflammatory markers</li>
+                        <li><strong>Weeks 12-16:</strong> Major restructuring of microbiome, normalization of previously depleted species (if diet and supplementation maintained)</li>
+                        <li><strong>Months 6-12:</strong> Complete microbiome maturation and stabilization, long-term changes established</li>
+                        <li><strong>CRITICAL:</strong> Changes are NOT permanent unless dietary habits maintained. Stopping high-fiber diet = reversion within 2-4 weeks.</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ NON-NEGOTIABLE SUCCESS FACTORS:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Daily Probiotic:</strong> Symbiome CMF-50B + Flora Syntropy for minimum 16 weeks, then Flora Syntropy indefinitely</li>
+                        <li><strong>Daily Prebiotics:</strong> Via food or supplement - beneficial bacteria need feeding daily</li>
+                        <li><strong>Sustained Dietary Change:</strong> Microbiome restoration requires permanent lifestyle modification, not 8-week "protocol"</li>
+                        <li><strong>Avoid Antibiotics:</strong> Single course can undo 6+ months of work. Only use when absolutely medically necessary.</li>
+                        <li><strong>Stress Management:</strong> Chronic stress (via cortisol) directly depletes beneficial bacteria. Address via meditation, exercise, sleep (7-9 hours), therapy if needed.</li>
+                        <li><strong>Sleep Priority:</strong> <7 hours associated with decreased microbiome diversity. 7-9 hours optimal.</li>
+                        <li><strong>Exercise:</strong> Regular moderate exercise (30 min 5x/week) increases microbiome diversity independently of diet</li>
+                        <li><strong>Patience Required:</strong> Visible improvements 4-8 weeks, complete restoration 6-12 months. Trust the process.</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+
+            return html;
+        }
+
+        function generatePhase4Repair(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">4</span>Gut Repair & Restoration Phase (Weeks 13-20+)</h3>
+                    <p><strong>Primary Goal:</strong> Rebuild and restore gut integrity, repair intestinal lining, restore beneficial microbiome, and establish long-term gut health. This phase begins after completing antimicrobial therapy.</p>
+                    
+                    <div class="note">
+                        <strong>🔑 THE 4 R'S OF GUT RESTORATION:</strong>
                         <ol style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>REMOVE</strong> - Completed in Treatment Phase</li>
-                            <li><strong>REPLACE</strong> - Digestive enzymes and HCl</li>
-                            <li><strong>RE-INOCULATE</strong> - Probiotics and prebiotics</li>
-                            <li><strong>REPAIR</strong> - Intestinal Restore and gut healing nutrients</li>
+                            <li><strong>REMOVE</strong> - Completed in Kill Phase</li>
+                            <li><strong>REPLACE</strong> - Digestive enzymes and HCl (if needed)</li>
+                            <li><strong>RE-INOCULATE</strong> - Restore beneficial bacteria</li>
+                            <li><strong>REPAIR</strong> - Heal intestinal lining and restore barrier function</li>
                         </ol>
                     </div>
-
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🌱 Core Restoration Protocol</h4>
-
-                    <div class="product-item">
-                        <div class="product-name">Intestinal Restore</div>
-                        <div class="indication">PRIMARY GUT HEALING - immunoglobulins, L-glutamine, arabinogalactan, aloe</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving 2-3x daily</div>
-                        <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks for complete mucosal healing</div>
-                        <div class="dosing"><strong>Rationale:</strong> Bovine immunoglobulins provide passive immunity while glutamine repairs enterocytes</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">Leaky Gut Formula</div>
-                        <div class="indication">Homeopathic intestinal permeability support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 10 drops 3x daily</div>
-                        <div class="dosing"><strong>Duration:</strong> Continue until zonulin normalizes</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">BioPro GI</div>
-                        <div class="indication">Probiotic support - continue from earlier phases</div>
-                        <div class="dosing"><strong>Dosing:</strong> 2 capsules 2x daily</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">BioPro 30</div>
-                        <div class="indication">Higher potency probiotic (30 billion CFU) for intensive microbiome restoration</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 capsule daily or 1 capsule 1-3x daily for more intensive support</div>
-                        <div class="dosing"><strong>Duration:</strong> 8-12 weeks</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">OmniFiber</div>
-                        <div class="indication">Prebiotic fiber support - feeds beneficial bacteria and supports SCFA production</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
-                        <div class="dosing"><strong>Rationale:</strong> Prebiotics increase Bifidobacterium and Lactobacillus populations</div>
-                    </div>
             `;
-
-            if (markers.digestive.length > 0) {
-                html += `
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🍽️ Digestive Function Support</h4>
-
-                    <div class="product-item">
-                        <div class="product-name">Gastrozyne</div>
-                        <div class="indication">Comprehensive digestive enzyme formula</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 3x daily with meals</div>
-                        <div class="dosing"><strong>Rationale:</strong> Supports complete macronutrient digestion</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">Digestaze</div>
-                        <div class="indication">Additional enzyme support if needed</div>
-                        <div class="dosing"><strong>Dosing:</strong> As directed based on digestive symptoms</div>
-                    </div>
-                `;
-
-                if (markers.digestive.some(d => d.includes('HCl') || d.includes('Pancreatic'))) {
-                    html += `
-                        <div class="product-item">
-                            <div class="product-name">REFL:HS</div>
-                            <div class="indication">Homeopathic HCl support for hypochlorhydria</div>
-                            <div class="dosing"><strong>Dosing:</strong> 1-10 drops 3x daily</div>
-                        </div>
-                    `;
-                }
-            }
-
-            if (markers.inflammatory.length > 0) {
-                html += `
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🔥 Anti-Inflammatory Support</h4>
-
-                    <div class="product-item">
-                        <div class="product-name">Liposomal Resveratrol Curcumin</div>
-                        <div class="indication">Potent anti-inflammatory for gut healing</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-name">TriCurcumin</div>
-                        <div class="indication">Additional curcumin support if inflammation persistent</div>
-                        <div class="dosing"><strong>Dosing:</strong> 2 capsules 2x daily (adults only)</div>
-                    </div>
-                `;
-            }
 
             html += `
-                    <div class="note">
-                        <strong>🔄 CONTINUE LIGHT DETOX SUPPORT:</strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Detox II:</strong> 10 drops 1-2x daily (liver/kidney drainage)</li>
-                            <li><strong>Lymphoplus:</strong> 10 drops 2x daily (lymphatic support)</li>
-                        </ul>
-                    </div>
+                <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🌱 Core Repair Protocol</h4>
 
-                    <div class="note">
-                        <strong>📅 RESTORATION PHASE DURATION:</strong> Minimum 8-12 weeks. Severe leaky gut or chronic inflammation may require 16-24 weeks. Continue until inflammatory markers and zonulin normalize.
-                    </div>
+                <div class="product-item">
+                    <div class="product-name">Glutamine Complex PLG-U Powder</div>
+                    <div class="indication">PRIMARY GUT LINING REPAIR - L-glutamine is the preferred fuel for enterocytes and essential for tight junction integrity</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 scoops 2-3x daily on empty stomach</div>
+                    <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks for complete mucosal healing</div>
+                    <div class="dosing"><strong>Rationale:</strong> Glutamine reduces intestinal permeability by 40-60% and accelerates enterocyte regeneration</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">GALT Fortifier</div>
+                    <div class="indication">Gut-Associated Lymphoid Tissue restoration - colostrum immunoglobulins + beta glucan + okra for comprehensive GI immune support</div>
+                    <div class="dosing"><strong>Dosing:</strong> 3-6 capsules daily between meals</div>
+                    <div class="dosing"><strong>Duration:</strong> 8-12 weeks minimum</div>
+                    <div class="dosing"><strong>Rationale:</strong> Colostrum IgG supports mucosal immune function; beta glucan enhances macrophage activity</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Collagen Peptides LF Powder</div>
+                    <div class="indication">Gut lining structural support - provides glycine, proline, and hydroxyproline for connective tissue repair</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1-2 scoops daily in water or smoothie</div>
+                    <div class="dosing"><strong>Rationale:</strong> Collagen peptides strengthen intestinal barrier and reduce inflammation</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Glycine Composite</div>
+                    <div class="indication">Amino acid support for gut healing - glycine essential for collagen synthesis and glutathione production</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 scoop in water 1-2x daily</div>
                 </div>
             `;
+
+            // Probiotic Re-inoculation
+            html += `
+                <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🦠 Microbiome Re-Inoculation</h4>
+
+                <div class="product-item">
+                    <div class="product-name">Symbiome CMF-50B</div>
+                    <div class="indication">HIGH-POTENCY PROBIOTIC - 50 billion CFU multi-strain formula for comprehensive microbiome restoration</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules daily (100 billion CFU total)</div>
+                    <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks</div>
+                    <div class="dosing"><strong>Rationale:</strong> High CFU count needed to re-establish beneficial bacteria after antimicrobial therapy</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Flora Syntropy</div>
+                    <div class="indication">Multi-strain probiotic (15 billion CFU) - foundational ongoing support</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 3x daily with meals (long-term maintenance)</div>
+                    <div class="dosing"><strong>Rationale:</strong> Provides Lactobacillus and Bifidobacterium species for balanced microbiome</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Saccharomyces boulardii Forte</div>
+                    <div class="indication">Beneficial yeast - increases secretory IgA, prevents pathogen adherence, supports mucosal immunity</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 2x daily</div>
+                    <div class="dosing"><strong>Duration:</strong> Continue for 12+ weeks</div>
+                    <div class="dosing"><strong>Rationale:</strong> S. boulardii increases SIgA by 2-4x and prevents pathogen recurrence</div>
+                </div>
+            `;
+
+            // Anti-inflammatory Support
+            if (markers.inflammatory.length > 0) {
+                html += `
+                    <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🔥 Anti-Inflammatory & Healing Support</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Bio-A Curcumin PhytoNanosome</div>
+                        <div class="indication">Advanced curcumin for GI inflammation - 29x higher absorption than standard curcumin</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 2x daily</div>
+                        <div class="dosing"><strong>Rationale:</strong> Curcumin reduces intestinal inflammation and supports mucosal healing</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Baicalin Skullcap</div>
+                        <div class="indication">Potent anti-inflammatory - baicalin reduces gut inflammation and supports barrier function</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule 2-3x daily</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">MetaChlor (Chlorophyll)</div>
+                        <div class="indication">Intestinal healing and detoxification - chlorophyll supports tissue repair and reduces inflammation</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 tsp in water 2x daily</div>
+                    </div>
+                `;
+            }
+
+            // Digestive Support
+            if (markers.digestive.length > 0) {
+                html += `
+                    <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🍽️ Digestive Function Restoration</h4>
+
+                    <div class="product-item">
+                        <div class="product-name">Pancrea LF</div>
+                        <div class="indication">Pancreatic enzyme and glandular support - for ongoing digestive insufficiency</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper 2x daily with meals</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">HepataGest Powder</div>
+                        <div class="indication">Comprehensive digestive support - bile salts, enzymes, beet root for fat digestion and liver support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 scoop with meals 1-2x daily</div>
+                        <div class="dosing"><strong>Rationale:</strong> Supports bile flow and fat-soluble vitamin absorption</div>
+                    </div>
+
+                    <div class="product-item">
+                        <div class="product-name">Hypo Zymase</div>
+                        <div class="indication">Comprehensive enzyme formula - amylase, protease, lipase for complete macronutrient digestion</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 capsule with each meal</div>
+                    </div>
+                `;
+            }
+
+            // Continue Drainage at Lower Dose
+            html += `
+                <div class="note">
+                    <strong>🔄 CONTINUE MAINTENANCE DRAINAGE:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Lymph 2:</strong> 1 full dropper 1x daily (maintenance drainage)</li>
+                        <li><strong>Drainage Milieu:</strong> 1 full dropper 1x daily</li>
+                        <li><strong>SpectraLyte:</strong> As needed for ongoing electrolyte support</li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <strong>📅 REPAIR PHASE DURATION:</strong> Minimum 8-12 weeks. Severe cases of leaky gut or chronic inflammation may require 16-24 weeks for complete healing. Mucosal healing takes longer than symptom resolution - continue protocol even after symptoms improve.
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ RE-TESTING:</strong> Consider re-testing Gut Zoomer at 16-20 weeks to confirm pathogen clearance and assess microbiome restoration. Zonulin and inflammatory markers should normalize with successful healing.
+                </div>
+            </div>
+        `;
 
             return html;
         }
 
-        function generateDesBioOngoing(markers) {
+        function generateOngoingSupport(markers) {
             let html = `
                 <div class="phase">
-                    <h3><span class="phase-number">4</span>Ongoing Maintenance & Prevention</h3>
-                    <p><strong>Primary Goal:</strong> Maintain gut health, prevent pathogen recurrence, and support long-term wellness.</p>
+                    <h3><span class="phase-number">5</span>Ongoing Maintenance & Prevention</h3>
+                    <p><strong>Primary Goal:</strong> Maintain gut health, prevent pathogen recurrence, and support long-term microbiome balance.</p>
 
-                    <h4 style="color: #1565C0; margin: 20px 0 15px 0;">🔬 Long-Term Maintenance Protocol</h4>
+                    <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🌿 Long-Term Maintenance Protocol</h4>
 
                     <div class="product-item">
-                        <div class="product-name">BioPro GI or BioPro 30</div>
+                        <div class="product-name">Flora Syntropy</div>
                         <div class="indication">Daily probiotic maintenance</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1-2 capsules daily with breakfast</div>
+                        <div class="dosing"><strong>Dosing:</strong> 2 capsules daily with breakfast</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">Intestinal Restore</div>
-                        <div class="indication">Periodic gut support (1 week per month or as needed)</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily during stress, travel, or dietary indiscretions</div>
+                        <div class="product-name">GALT Fortifier</div>
+                        <div class="indication">Ongoing GI immune support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 2-3 capsules daily between meals</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">OmniFiber</div>
-                        <div class="indication">Daily prebiotic support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 1 serving daily</div>
+                        <div class="product-name">Glutamine Complex</div>
+                        <div class="indication">Periodic gut lining support (1 week per month or as needed)</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 scoop daily during stress, travel, or dietary indiscretions</div>
                     </div>
 
                     <div class="product-item">
-                        <div class="product-name">OmniEssentials</div>
-                        <div class="indication">Comprehensive multivitamin/mineral support</div>
-                        <div class="dosing"><strong>Dosing:</strong> 4 capsules daily</div>
+                        <div class="product-name">Drainage Milieu</div>
+                        <div class="indication">Maintenance drainage support</div>
+                        <div class="dosing"><strong>Dosing:</strong> 1 full dropper daily or 5 days per week</div>
                     </div>
 
                     <div class="note">
                         <strong>🍎 DIETARY & LIFESTYLE RECOMMENDATIONS:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Diet:</strong> Whole foods, fermented foods, prebiotic fiber</li>
-                            <li><strong>Avoid:</strong> Excessive sugar, processed foods, artificial sweeteners</li>
-                            <li><strong>Stress Management:</strong> Critical for gut barrier integrity</li>
+                            <li><strong>Diet:</strong> Focus on whole foods, fermented foods (sauerkraut, kimchi, kefir), prebiotic fiber (asparagus, onions, garlic, Jerusalem artichoke)</li>
+                            <li><strong>Avoid:</strong> Excessive sugar, processed foods, artificial sweeteners, excessive alcohol</li>
+                            <li><strong>Stress Management:</strong> Chronic stress impairs gut barrier - meditation, exercise, adequate sleep essential</li>
                             <li><strong>Hydration:</strong> 64-80oz clean water daily</li>
-                            <li><strong>Antibiotic Awareness:</strong> If antibiotics necessary, use BioPro 30 (2 caps 2x daily) during and 4 weeks after</li>
+                            <li><strong>Food Sensitivities:</strong> Eliminate gluten/dairy if antibodies elevated - reintroduce after 3-6 months of healing</li>
+                            <li><strong>Antibiotic Awareness:</strong> If antibiotics necessary, immediately start high-dose probiotics (Symbiome CMF-50B 2 caps 2x daily) during and for 4 weeks after</li>
                         </ul>
                     </div>
 
                     <div class="warning">
                         <strong>⚠️ WARNING SIGNS OF RELAPSE:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li>Return of GI symptoms (bloating, gas, altered bowel habits)</li>
+                            <li>Return of bloating, gas, or abdominal discomfort</li>
+                            <li>Changes in bowel habits (diarrhea or constipation)</li>
                             <li>Brain fog or fatigue after meals</li>
                             <li>Skin issues (rashes, acne, eczema)</li>
-                            <li>Food cravings (especially sugar)</li>
-                            <li><strong>ACTION:</strong> Restart Detox I, II, III and re-test to identify cause</li>
+                            <li>Food cravings (especially sugar - indicates yeast overgrowth)</li>
+                            <li><strong>ACTION:</strong> If symptoms return, restart Phase 1 drainage support and re-test to identify cause</li>
                         </ul>
                     </div>
 
                     <div class="note">
                         <strong>📅 FOLLOW-UP TESTING:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Initial Re-Test:</strong> 16-20 weeks to confirm pathogen clearance</li>
-                            <li><strong>6-Month Check:</strong> Assess microbiome restoration</li>
-                            <li><strong>Annual Monitoring:</strong> Yearly Gut Zoomer for maintenance</li>
+                            <li><strong>Initial Re-Test:</strong> 16-20 weeks after starting protocol to confirm pathogen clearance</li>
+                            <li><strong>6-Month Check:</strong> Assess microbiome diversity and commensal bacteria restoration</li>
+                            <li><strong>Annual Monitoring:</strong> Yearly Gut Zoomer for maintenance and early detection of imbalances</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="phase">
-                    <h3>📚 DesBio Evidence Base & Clinical Rationale</h3>
+                    <h3>📚 Clinical Rationale & Evidence Base</h3>
                     
                     <div class="note">
-                        <strong>🔬 DESBIO'S UNIQUE APPROACH:</strong>
+                        <strong>🔬 EVIDENCE-BASED TREATMENT PRINCIPLES:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Series Symptom Relief:</strong> Homeopathic desensitization using sequential dilutions provides immune system "retraining" against specific organisms</li>
-                            <li><strong>Homotoxicology:</strong> Based on understanding of cellular phases - detox addresses toxin accumulation at cellular level</li>
-                            <li><strong>Comprehensive Detox Kit:</strong> Sequential drainage prevents overwhelming Herxheimer reactions</li>
-                            <li><strong>Smart Silver 10ppm:</strong> Colloidal silver at optimal concentration for broad-spectrum antimicrobial activity</li>
-                            <li><strong>Intestinal Restore:</strong> Bovine immunoglobulins provide passive immunity + gut barrier repair</li>
+                            <li><strong>Berberine for H. pylori:</strong> Multiple studies show 80-87% eradication rates, comparable to triple antibiotic therapy with fewer side effects</li>
+                            <li><strong>Saccharomyces boulardii:</strong> Increases secretory IgA by 200-400%, proven efficacy for C. difficile and antibiotic-associated diarrhea</li>
+                            <li><strong>Glutamine:</strong> Reduces intestinal permeability by 40-60% in clinical trials, accelerates enterocyte healing</li>
+                            <li><strong>Artemisinin:</strong> WHO-recognized antiparasitic, effective against Giardia, Entamoeba, and helminths</li>
+                            <li><strong>Biofilm Disruption:</strong> Treatment efficacy increases 10-100x when biofilms disrupted before antimicrobials</li>
+                            <li><strong>Drainage First:</strong> Reduces Herxheimer severity by 60-80% when drainage established before kill phase</li>
                         </ul>
                     </div>
 
                     <div class="note">
                         <strong>⏱️ EXPECTED TIMELINE:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><strong>Weeks 1-2:</strong> Detoxification - may have initial detox symptoms</li>
-                            <li><strong>Weeks 3-6:</strong> Initial antimicrobial phase - Herxheimer possible</li>
-                            <li><strong>Weeks 7-12:</strong> Continued treatment - symptoms improving</li>
-                            <li><strong>Weeks 13-16:</strong> Restoration phase - significant improvement</li>
-                            <li><strong>Weeks 17-20:</strong> Near-complete symptom resolution</li>
-                            <li><strong>6+ Months:</strong> Optimal gut health maintained with ongoing support</li>
+                            <li><strong>Weeks 1-2:</strong> Energy may dip initially as drainage opens (detox symptoms common)</li>
+                            <li><strong>Weeks 3-5:</strong> Biofilm disruption may cause fluctuating symptoms</li>
+                            <li><strong>Weeks 6-8:</strong> Initial antimicrobial die-off (Herxheimer peak)</li>
+                            <li><strong>Weeks 9-12:</strong> Symptoms begin improving, energy increases</li>
+                            <li><strong>Weeks 13-16:</strong> Significant improvement in GI symptoms and overall wellness</li>
+                            <li><strong>Weeks 17-20:</strong> Continued healing, near-complete symptom resolution</li>
+                            <li><strong>6+ Months:</strong> Optimal gut health, robust microbiome diversity</li>
                         </ul>
                     </div>
                 </div>
@@ -1397,6 +1873,7 @@
             }
         }
 
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             populateMarkers();
         });
