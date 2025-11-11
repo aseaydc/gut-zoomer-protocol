@@ -791,6 +791,11 @@
                 protocolHTML += generatePhase3Kill(selectedMarkers);
             }
 
+            // BENEFICIAL BACTERIA RESTORATION (if commensals selected)
+            if (selectedMarkers.commensals.length > 0) {
+                protocolHTML += generateCommensalSupportPhysica(selectedMarkers);
+            }
+
             // PHASE 4: GUT REPAIR & MAINTENANCE
             protocolHTML += generatePhase4Repair(selectedMarkers);
 
@@ -1279,6 +1284,316 @@
                         <li><strong>Candida/fungal:</strong> 12-16 weeks minimum</li>
                         <li><strong>Chronic viruses (EBV/CMV):</strong> 12-24 weeks</li>
                         <li><strong>Multiple co-infections:</strong> 16-24 weeks, addressing one category at a time</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+
+            return html;
+        }
+
+        function generateCommensalSupportPhysica(markers) {
+            let html = `
+                <div class="phase">
+                    <h3><span class="phase-number">3B</span>Beneficial Bacteria Restoration (Concurrent with Treatment/Repair Phases)</h3>
+                    <p><strong>Primary Goal:</strong> Restore depleted beneficial bacteria populations. Low commensal bacteria = dysbiosis requiring targeted probiotic, prebiotic, and postbiotic support.</p>
+                    
+                    <div class="note">
+                        <strong>🔑 CRITICAL ROLE OF COMMENSAL BACTERIA:</strong> Beneficial bacteria produce SCFAs (butyrate for colonocytes, acetate for metabolism, propionate for liver), synthesize vitamins (K2, folate, B12), maintain gut barrier integrity, compete with pathogens, train immune system, and produce antimicrobial compounds.
+                    </div>
+
+                    <p style="margin: 15px 0;"><strong>Detected Low/Imbalanced Beneficial Bacteria (${markers.commensals.length} species):</strong></p>
+                    <div style="background: #E8F5E9; padding: 15px; border-radius: 8px; margin: 15px 0; max-height: 200px; overflow-y: auto;">
+                        <em>${markers.commensals.join(', ')}</em>
+                    </div>
+
+                    <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🦠 Targeted Probiotic Restoration</h4>
+            `;
+
+            const hasLactobacillus = markers.commensals.some(b => b.includes('Lactobacillus'));
+            const hasBifidobacterium = markers.commensals.some(b => b.includes('Bifidobacterium'));
+            const hasAkkermansia = markers.commensals.some(b => b.includes('Akkermansia'));
+            const hasFaecalibacterium = markers.commensals.some(b => b.includes('Faecalibacterium'));
+            const hasRoseburia = markers.commensals.some(b => b.includes('Roseburia'));
+            const hasBacteroides = markers.commensals.some(b => b.includes('Bacteroides'));
+            const hasSaccharomyces = markers.commensals.some(b => b.includes('Saccharomyces boulardii'));
+
+            html += `
+                <div class="product-item">
+                    <div class="product-name">Symbiome CMF-50B</div>
+                    <div class="indication">HIGH-POTENCY MULTI-STRAIN PROBIOTIC - 50 billion CFU per capsule for aggressive microbiome restoration</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules daily (100 billion CFU total)</div>
+                    <div class="dosing"><strong>Duration:</strong> Minimum 12-16 weeks for significant population shifts</div>
+                    <div class="dosing"><strong>Rationale:</strong> High CFU essential to recolonize gut after antimicrobial therapy and compete with any residual pathogens</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Flora Syntropy</div>
+                    <div class="indication">Multi-strain foundational probiotic (15 billion CFU) - Lactobacillus and Bifidobacterium species</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2 capsules 3x daily with meals</div>
+                    <div class="dosing"><strong>Duration:</strong> Long-term maintenance - continue indefinitely</div>
+                    <div class="dosing"><strong>Note:</strong> Separate from antimicrobials by 2+ hours if still in kill phase</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Saccharomyces boulardii Forte</div>
+                    <div class="indication">Beneficial yeast (20 billion CFU) - CRITICAL for microbiome restoration</div>
+                    <div class="dosing"><strong>Dosing:</strong> 2-4 capsules 1-2x daily</div>
+                    <div class="dosing"><strong>Rationale:</strong> Increases secretory IgA by 200-400%, prevents pathogen adherence, supports mucosal immunity, survives antibiotics</div>
+                    <div class="dosing"><strong>Duration:</strong> 12-16 weeks minimum, longer for severe dysbiosis</div>
+                </div>
+            `;
+
+            if (hasLactobacillus) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 LACTOBACILLUS RESTORATION PROTOCOL:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Lactobacillus')).join(', ')}</li>
+                            <li><strong>Flora Syntropy:</strong> Contains L. acidophilus, L. rhamnosus, L. plantarum, L. casei, L. paracasei</li>
+                            <li><strong>Dietary Support:</strong> Fermented foods daily (sauerkraut, kimchi, kefir, yogurt, lacto-fermented vegetables)</li>
+                            <li><strong>Prebiotics:</strong> Inulin, FOS - found in Jerusalem artichoke, chicory, garlic, onions, asparagus</li>
+                            <li><strong>Function:</strong> Produces lactic acid (lowers intestinal pH), bacteriocins (antimicrobial peptides), competes for adhesion sites</li>
+                            <li><strong>Clinical Pearl:</strong> Lactobacillus is oxygen-tolerant - colonizes small intestine well</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasBifidobacterium) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 BIFIDOBACTERIUM RESTORATION PROTOCOL:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Bifidobacterium')).join(', ')}</li>
+                            <li><strong>Symbiome CMF-50B:</strong> High-dose Bifidobacterium supplementation critical</li>
+                            <li><strong>Flora Syntropy:</strong> Contains B. bifidum, B. longum, B. lactis</li>
+                            <li><strong>Dietary Support:</strong> Fermented dairy (if tolerated), breast milk oligosaccharides (HMOs) in some formulas</li>
+                            <li><strong>Prebiotics:</strong> GOS (galacto-oligosaccharides), inulin, resistant starch, beta-glucan</li>
+                            <li><strong>Function:</strong> Produces acetate and lactate (lowers pH), supports immune maturation, prevents pathogen colonization</li>
+                            <li><strong>Clinical Pearl:</strong> Bifidobacterium declines with age - adults have 10-100x less than infants. Aggressive supplementation essential.</li>
+                            <li><strong>Note:</strong> Obligate anaerobe - prefers colon. Needs prebiotics to thrive.</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasAkkermansia) {
+                html += `
+                    <div class="warning">
+                        <strong>⚠️ AKKERMANSIA MUCINIPHILA - CRITICAL KEYSTONE SPECIES:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Degrades intestinal mucin (stimulates mucus production), strengthens gut barrier, regulates glucose/lipid metabolism, potent anti-inflammatory effects</li>
+                            <li><strong>Low Levels = HIGH RISK:</strong> Obesity, type 2 diabetes, metabolic syndrome, IBD, cardiovascular disease</li>
+                            <li><strong>Challenge:</strong> No commercial probiotic currently available - must support endogenous growth</li>
+                            <li><strong>Restoration Strategy (Evidence-Based):</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Polyphenols (CRITICAL):</strong> Cranberry extract, grape seed extract, pomegranate, resveratrol, EGCG (green tea), quercetin</li>
+                                    <li><strong>Green Tea Catechins:</strong> 1 capsule 2x daily (Physica product)</li>
+                                    <li><strong>Diet:</strong> Berries (especially cranberries), dark chocolate (70%+ cacao), red wine (moderate), pomegranate, grapes</li>
+                                    <li><strong>Prebiotics:</strong> Resistant starch (cooked/cooled potatoes, rice), inulin, pectin (apples, citrus)</li>
+                                    <li><strong>Omega-3 Fatty Acids:</strong> Bio-Omega 3/Omega GOLD - 2 softgels daily. Studies show fish oil increases Akkermansia.</li>
+                                    <li><strong>Intermittent Fasting:</strong> 16:8 or 5:2 protocols increase Akkermansia significantly</li>
+                                    <li><strong>Metformin (if diabetic):</strong> Associated with increased Akkermansia levels</li>
+                                </ul>
+                            </li>
+                            <li><strong>Timeline:</strong> 8-12 weeks minimum to see population increase</li>
+                            <li><strong>Monitoring:</strong> Re-test Gut Zoomer at 16 weeks to confirm restoration</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasFaecalibacterium) {
+                html += `
+                    <div class="warning">
+                        <strong>⚠️ FAECALIBACTERIUM PRAUSNITZII - #1 BUTYRATE PRODUCER:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Produces 10-15% of total butyrate in colon (primary fuel for colonocytes), potent anti-inflammatory via IL-10 induction, strengthens tight junctions</li>
+                            <li><strong>Low Levels = MAJOR CONCERN:</strong> Crohn's disease (50-90% reduction), ulcerative colitis, IBS, metabolic disorders, colorectal cancer risk</li>
+                            <li><strong>Challenge:</strong> Extremely oxygen-sensitive obligate anaerobe - no commercial probiotic available</li>
+                            <li><strong>Restoration Strategy (Comprehensive):</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Prebiotics (ESSENTIAL):</strong>
+                                        <ul style="margin-left: 20px;">
+                                            <li><strong>Inulin:</strong> Primary fuel - chicory root, Jerusalem artichoke, garlic, onions</li>
+                                            <li><strong>Resistant Starch (TYPE 3):</strong> Cooked and cooled potatoes, rice, pasta, oats, green bananas</li>
+                                            <li><strong>Pectin:</strong> Apples, citrus fruits, carrots</li>
+                                            <li><strong>Beta-glucan:</strong> Oats, barley, mushrooms</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fiber Goal:</strong> 30-40g daily from whole foods (F. prausnitzii thrives on fiber)</li>
+                                    <li><strong>Diet:</strong> Whole grains, legumes (lentils, chickpeas, beans), fruits, vegetables</li>
+                                    <li><strong>Consider Butyrate Supplementation:</strong> While rebuilding F. prausnitzii populations, may supplement with:
+                                        <ul style="margin-left: 20px;">
+                                            <li>Sodium butyrate 500-1000mg daily (supports colonocytes directly)</li>
+                                            <li>Tributyrin supplements (more stable form)</li>
+                                            <li>Note: This is supportive, not replacement - must rebuild bacterial population</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>AVOID (F. prausnitzii very sensitive):</strong>
+                                        <ul style="margin-left: 20px;">
+                                            <li>Antibiotics (even single course can decimate population)</li>
+                                            <li>Artificial sweeteners (sucralose, saccharin)</li>
+                                            <li>Emulsifiers (carboxymethylcellulose, polysorbate-80)</li>
+                                            <li>High-fat, low-fiber diet</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Symbiosis Strategy:</strong> F. prausnitzii grows better when other beneficial bacteria present - use Symbiome CMF-50B to create favorable environment</li>
+                            <li><strong>Timeline:</strong> 12-16 weeks minimum for significant population increase</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasRoseburia) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 ROSEBURIA - BUTYRATE PRODUCER & T-REG INDUCER:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Function:</strong> Second major butyrate producer, induces regulatory T-cells (anti-inflammatory), supports colonocyte health</li>
+                            <li><strong>Low Levels Associated With:</strong> IBD, celiac disease, type 2 diabetes, obesity</li>
+                            <li><strong>Primary Fuel:</strong> Resistant starch (Type 2 and 3)</li>
+                            <li><strong>Restoration Strategy:</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Resistant Starch Protocol:</strong> Cooked and cooled starches (potatoes, rice, oats, pasta)</li>
+                                    <li><strong>Raw Potato Starch:</strong> 1-2 Tbsp daily mixed in cold liquid (very high resistant starch)</li>
+                                    <li><strong>Green Bananas:</strong> High in resistant starch</li>
+                                    <li><strong>Legumes:</strong> Lentils, chickpeas, beans (resistant starch + fiber)</li>
+                                    <li><strong>Inulin & Arabinoxylan:</strong> Also support Roseburia growth</li>
+                                    <li><strong>Whole Grains:</strong> Oats, barley (if wheat/gluten tolerated - wheat bran high in arabinoxylan)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasBacteroides) {
+                html += `
+                    <div class="note">
+                        <strong>🎯 BACTEROIDES - COMPLEX CARBOHYDRATE SPECIALISTS:</strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><strong>Species Detected Low:</strong> ${markers.commensals.filter(b => b.includes('Bacteroides')).join(', ')}</li>
+                            <li><strong>Function:</strong> Degrade complex plant polysaccharides (fibers humans can't digest), produce acetate and propionate, train immune system, produce anti-inflammatory factors</li>
+                            <li><strong>Restoration Strategy - DIVERSITY IS KEY:</strong>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Plant Diversity Goal:</strong> 30+ different plant foods per week (each Bacteroides species specializes in different polysaccharides)</li>
+                                    <li><strong>Varied Vegetables:</strong> Cruciferous (broccoli, cauliflower), root vegetables, leafy greens, alliums (garlic, onions)</li>
+                                    <li><strong>Whole Grains:</strong> Different types - oats, quinoa, brown rice, barley, millet</li>
+                                    <li><strong>Legumes:</strong> Variety - lentils, chickpeas, black beans, kidney beans</li>
+                                    <li><strong>Nuts & Seeds:</strong> Different types weekly</li>
+                                    <li><strong>Fiber Target:</strong> 30-40g daily from diverse sources</li>
+                                    <li><strong>Clinical Pearl:</strong> Bacteroides abundance correlates with long-term dietary habits, not short-term changes - sustained dietary shift required</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            html += `
+                <h4 style="color: #2E7D32; margin: 20px 0 15px 0;">🌾 Prebiotic Support (ESSENTIAL)</h4>
+
+                <div class="warning">
+                    <strong>⚠️ PREBIOTICS ARE NOT OPTIONAL:</strong> Probiotics without prebiotics = temporary colonization that fades within weeks. Prebiotics feed beneficial bacteria and enable permanent recolonization.
+                </div>
+
+                <div class="product-item">
+                    <div class="product-name">Glycine Composite</div>
+                    <div class="indication">Amino acid and prebiotic support - glycine supports gut lining while providing substrate for bacterial metabolism</div>
+                    <div class="dosing"><strong>Dosing:</strong> 1 scoop in water 1-2x daily</div>
+                </div>
+
+                <div class="note">
+                    <strong>🥗 COMPREHENSIVE DIETARY PROTOCOL FOR MICROBIOME RESTORATION:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Fermented Foods (DAILY - NON-NEGOTIABLE):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Sauerkraut (raw, unpasteurized) - 2-4 Tbsp daily</li>
+                                <li>Kimchi - 2-4 Tbsp daily</li>
+                                <li>Kefir - 4-8oz daily (dairy or water kefir)</li>
+                                <li>Yogurt with live cultures - 6-8oz daily</li>
+                                <li>Kombucha - 4-8oz daily</li>
+                                <li>Miso, tempeh, natto (fermented soy)</li>
+                                <li><strong>Goal:</strong> 2-3 different fermented foods daily</li>
+                                <li><strong>Rationale:</strong> Provides live beneficial bacteria + postbiotic metabolites + increases bacterial diversity</li>
+                            </ul>
+                        </li>
+                        <li><strong>Prebiotic Foods (DAILY STAPLES):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Inulin-Rich:</strong> Jerusalem artichoke (sunchoke), chicory root, garlic (raw or cooked), onions, leeks, asparagus, bananas</li>
+                                <li><strong>Resistant Starch:</strong> Cooked + cooled potatoes, rice, pasta, oats; green bananas; legumes; raw potato starch (1-2 Tbsp)</li>
+                                <li><strong>Pectin:</strong> Apples (with skin), citrus fruits, carrots, beets</li>
+                                <li><strong>Beta-Glucan:</strong> Oats, barley, mushrooms (shiitake, maitake, reishi)</li>
+                                <li><strong>FOS/GOS:</strong> Onions, garlic, bananas, legumes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Polyphenol-Rich Foods (For Akkermansia):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Berries (blueberries, cranberries, raspberries, blackberries) - 1 cup daily</li>
+                                <li>Dark chocolate 70%+ cacao - 1-2oz daily</li>
+                                <li>Green tea - 2-3 cups daily (or Green Tea Catechins supplement)</li>
+                                <li>Coffee - moderate amounts (polyphenols + caffeine both beneficial)</li>
+                                <li>Pomegranate, grapes, red wine (moderate - 5oz for women, 10oz for men max)</li>
+                                <li>Olive oil (extra virgin, cold-pressed) - 2-3 Tbsp daily</li>
+                                <li>Herbs & spices - turmeric, cinnamon, cloves, oregano (abundant use)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diversity Protocol (MOST IMPORTANT):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Goal:</strong> 30+ different plant foods per week minimum (40-50 is optimal)</li>
+                                <li><strong>Evidence:</strong> American Gut Project - this single metric best predicts microbiome diversity</li>
+                                <li><strong>Include:</strong> Vegetables (15-20 types), fruits (8-10 types), whole grains (5-7 types), legumes (3-5 types), nuts/seeds (5-7 types), herbs/spices (10+)</li>
+                                <li><strong>Strategy:</strong> Track weekly - use variety, shop seasonal, try new foods</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fiber Target:</strong> 30-40g daily (gradually increase from current intake)
+                            <ul style="margin-left: 20px;">
+                                <li>Week 1: Add 5g daily</li>
+                                <li>Week 2: Add another 5g</li>
+                                <li>Week 3-4: Continue gradual increase to target</li>
+                                <li><strong>Why Gradual:</strong> Prevents gas, bloating, discomfort as microbiome adapts</li>
+                            </ul>
+                        </li>
+                        <li><strong>FOODS TO STRICTLY AVOID (Microbiome Disruptors):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Artificial Sweeteners:</strong> Sucralose (Splenda), saccharin, aspartame - DEVASTATE beneficial bacteria (50-90% reduction in some studies)</li>
+                                <li><strong>Emulsifiers:</strong> Carboxymethylcellulose (CMC), polysorbate-80, carrageenan - disrupt mucus layer and damage gut barrier</li>
+                                <li><strong>Processed Foods:</strong> High in above additives, lack fiber and nutrients</li>
+                                <li><strong>Excessive Red Meat:</strong> >100g daily associated with decreased Bifidobacterium and increased pathogenic Bilophila</li>
+                                <li><strong>Excessive Alcohol:</strong> >2 drinks daily damages gut barrier, decreases beneficial bacteria</li>
+                                <li><strong>High-Fat Low-Fiber:</strong> Shifts microbiome toward pro-inflammatory state</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <strong>⏱️ REALISTIC TIMELINE FOR MICROBIOME RESTORATION:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Days 1-7:</strong> Probiotic bacteria colonize intestinal mucosa (transient - won't persist without continued supplementation)</li>
+                        <li><strong>Weeks 2-4:</strong> Early improvements in GI symptoms (less bloating, more regular bowel movements), initial increase in diversity</li>
+                        <li><strong>Weeks 4-8:</strong> Significant population shifts visible on testing, increased SCFA production, reduced inflammatory markers</li>
+                        <li><strong>Weeks 12-16:</strong> Major restructuring of microbiome, normalization of previously depleted species (if diet and supplementation maintained)</li>
+                        <li><strong>Months 6-12:</strong> Complete microbiome maturation and stabilization, long-term changes established</li>
+                        <li><strong>CRITICAL:</strong> Changes are NOT permanent unless dietary habits maintained. Stopping high-fiber diet = reversion within 2-4 weeks.</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ NON-NEGOTIABLE SUCCESS FACTORS:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Daily Probiotic:</strong> Symbiome CMF-50B + Flora Syntropy for minimum 16 weeks, then Flora Syntropy indefinitely</li>
+                        <li><strong>Daily Prebiotics:</strong> Via food or supplement - beneficial bacteria need feeding daily</li>
+                        <li><strong>Sustained Dietary Change:</strong> Microbiome restoration requires permanent lifestyle modification, not 8-week "protocol"</li>
+                        <li><strong>Avoid Antibiotics:</strong> Single course can undo 6+ months of work. Only use when absolutely medically necessary.</li>
+                        <li><strong>Stress Management:</strong> Chronic stress (via cortisol) directly depletes beneficial bacteria. Address via meditation, exercise, sleep (7-9 hours), therapy if needed.</li>
+                        <li><strong>Sleep Priority:</strong> <7 hours associated with decreased microbiome diversity. 7-9 hours optimal.</li>
+                        <li><strong>Exercise:</strong> Regular moderate exercise (30 min 5x/week) increases microbiome diversity independently of diet</li>
+                        <li><strong>Patience Required:</strong> Visible improvements 4-8 weeks, complete restoration 6-12 months. Trust the process.</li>
                     </ul>
                 </div>
             </div>
