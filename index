@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gut Zoomer Protocol Generators - Clinical Decision Support Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-section {
+            padding: 40px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .intro-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 40px;
+            background: #f8f9fa;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .tools-section {
+            padding: 50px 40px;
+        }
+
+        .tools-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .tool-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .tool-card li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .tool-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            text-align: center;
+            display: block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 40px;
+            border-radius: 5px;
+        }
+
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-section, .tools-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gut Zoomer Protocol Generators</h1>
+            <p>Comprehensive Clinical Decision Support Tools for Vibrant Wellness Gut Zoomer Testing</p>
+        </div>
+
+        <div class="intro-section">
+            <h2>Evidence-Based Protocol Generation</h2>
+            <p>These specialized tools transform Vibrant Wellness Gut Zoomer laboratory results into actionable, evidence-based treatment protocols. Each generator incorporates all 300+ markers from the comprehensive Gut Zoomer panel, including pathogenic bacteria, parasites, fungi, viruses, inflammatory markers, and digestive function indicators.</p>
+            <p>Built on functional medicine principles, these generators feature phase-sequenced treatment approaches with mandatory drainage protocols, biofilm disruption strategies, antimicrobial kill phases, and comprehensive restoration protocols. Each tool is optimized for a specific professional supplement line, ensuring accurate product recommendations and proper clinical sequencing.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Complete Marker Coverage</h3>
+                <p>All 300+ Gut Zoomer markers with evidence-based treatment mapping</p>
+            </div>
+            <div class="feature">
+                <h3>Phase-Sequenced Protocols</h3>
+                <p>Drainage → Biofilm → Antimicrobial → Restoration sequencing</p>
+            </div>
+            <div class="feature">
+                <h3>Age-Specific Dosing</h3>
+                <p>Pediatric and adult dosing with detailed titration schedules</p>
+            </div>
+            <div class="feature">
+                <h3>Professional Formatting</h3>
+                <p>Print-ready patient handouts with comprehensive rationales</p>
+            </div>
+        </div>
+
+        <div class="tools-section">
+            <h2>Choose Your Product Line</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Physica Energetics</h3>
+                    <p>Comprehensive protocol generator utilizing Physica Energetics' professional product line, featuring their proprietary blends and energetic formulations.</p>
+                    <ul>
+                        <li>Lymph 1-2-3 trilogy drainage protocols</li>
+                        <li>pH Quintessence biofilm disruption</li>
+                        <li>Biocidin-LSF antimicrobial support</li>
+                        <li>Comprehensive herbal and homeopathic formulations</li>
+                        <li>Drainage Milieu foundational support</li>
+                    </ul>
+                    <a href="physica-protocol.html" class="btn">Open Physica Generator</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>DesBio</h3>
+                    <p>Advanced protocol generator featuring DesBio's Series Symptom Relief (SSR) homeopathic protocols and comprehensive supplement line.</p>
+                    <ul>
+                        <li>Pathogen-specific SSR homeopathic series</li>
+                        <li>GI Detox drainage and binding support</li>
+                        <li>Comprehensive antimicrobial protocols</li>
+                        <li>Targeted digestive support formulations</li>
+                        <li>Professional-grade probiotic therapy</li>
+                    </ul>
+                    <a href="desbio-protocol.html" class="btn">Open DesBio Generator</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Beyond Balance</h3>
+                    <p>Specialized protocol generator utilizing Beyond Balance's targeted antimicrobial and immune support formulations for complex presentations.</p>
+                    <ul>
+                        <li>MC-BB-1 for H. pylori and Borrelia</li>
+                        <li>MC-BAB series for parasitic infections</li>
+                        <li>IMN-B broad-spectrum bacterial support</li>
+                        <li>MC-BFM biofilm disruption protocols</li>
+                        <li>TOX-EASE drainage and detoxification</li>
+                    </ul>
+                    <a href="beyond-balance-protocol.html" class="btn">Open Beyond Balance Generator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <h3>Clinical Use Notice</h3>
+            <p><strong>For Healthcare Practitioners Only:</strong> These protocol generators are designed as clinical decision support tools for licensed healthcare practitioners trained in functional medicine. They are not intended for direct patient use or self-treatment. All protocols should be reviewed and customized by qualified practitioners based on complete patient assessment, contraindications, drug interactions, and individual clinical judgment. These tools do not replace professional medical evaluation or constitute medical advice.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Gut Zoomer Protocol Generators</strong></p>
+            <p>Clinical Decision Support Tools for Functional Medicine Practitioners</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">© 2024 - Professional Use Only</p>
+        </div>
+    </div>
+</body>
+</html>
