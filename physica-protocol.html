@@ -34,6 +34,14 @@
             text-align: center;
         }
 
+        .header-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: block;
+            filter: brightness(0) invert(1);
+        }
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -43,6 +51,13 @@
         .header p {
             font-size: 1.2em;
             opacity: 0.95;
+        }
+
+        .protocol-logo {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 0 auto 20px;
         }
 
         .content {
@@ -413,6 +428,14 @@
                 border: none;
                 padding: 20px;
             }
+
+            .header-logo {
+                filter: none !important;
+            }
+
+            .protocol-logo {
+                filter: none !important;
+            }
         }
 
         .category-content {
@@ -429,7 +452,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌿 Gut Zoomer Complete Protocol Generator</h1>
+            <img src="root-health-logo.png" alt="Root Health Logo" class="header-logo">
+            <h1>🌿 Gut Zoomer Report of Findings powered by Physica Energetics</h1>
             <p>Physica Energetics Product Line - Comprehensive Functional Medicine Protocols</p>
         </div>
 
@@ -747,7 +771,8 @@
             }
 
             let protocolHTML = `
-                <h2>🌿 Personalized Gut Zoomer Protocol - Physica Energetics</h2>
+                <img src="root-health-logo.png" alt="Root Health" class="protocol-logo">
+                <h2>🌿 Gut Zoomer Report of Findings powered by Physica Energetics</h2>
                 
                 <div class="patient-summary">
                     <h3>Patient Information</h3>
