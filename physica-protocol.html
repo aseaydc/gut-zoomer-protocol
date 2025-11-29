@@ -486,6 +486,31 @@
                 <div class="checkbox-group" id="permeability"></div>
             </div>
 
+            <div class="section">
+                <h3>🧪 Bile Acids (10)</h3>
+                <div class="checkbox-group" id="bileAcids"></div>
+            </div>
+
+            <div class="section">
+                <h3>⚡ Short Chain Fatty Acids - SCFA (10)</h3>
+                <div class="checkbox-group" id="scfa"></div>
+            </div>
+
+            <div class="section">
+                <h3>🔬 Gut Metabolites (2)</h3>
+                <div class="checkbox-group" id="metabolites"></div>
+            </div>
+
+            <div class="section">
+                <h3>📊 Diversity Indices (8)</h3>
+                <div class="checkbox-group" id="diversity"></div>
+            </div>
+
+            <div class="section">
+                <h3>🦠 Gut Phyla (14)</h3>
+                <div class="checkbox-group" id="phyla"></div>
+            </div>
+
             <button class="generate-btn" onclick="generateProtocol()">Generate Complete Protocol</button>
 
             <div class="protocol-output" id="protocolOutput"></div>
@@ -848,6 +873,65 @@ const PERMEABILITY = [
     "Secretory IgA (HIGH)"
 ];
 
+const BILE_ACIDS = [
+    "Cholic acid (CA) (LOW)",
+    "Cholic acid (CA) (HIGH)",
+    "Chenodeoxycholic acid (CDCA) (LOW)",
+    "Chenodeoxycholic acid (CDCA) (HIGH)",
+    "Deoxycholic acid (DCA) (LOW)",
+    "Deoxycholic acid (DCA) (HIGH)",
+    "Lithocholic acid (LCA) (LOW)",
+    "Lithocholic acid (LCA) (HIGH)",
+    "LCA/DCA ratio (LOW)",
+    "LCA/DCA ratio (HIGH)"
+];
+
+const SHORT_CHAIN_FATTY_ACIDS = [
+    "Acetate (LOW)",
+    "Acetate (HIGH)",
+    "Butyrate (LOW)",
+    "Butyrate (HIGH)",
+    "Propionate (LOW)",
+    "Propionate (HIGH)",
+    "Valerate (LOW)",
+    "Valerate (HIGH)",
+    "Total Short chain fatty acids (LOW)",
+    "Total Short chain fatty acids (HIGH)"
+];
+
+const GUT_METABOLITES = [
+    "β-glucuronidase (LOW)",
+    "β-glucuronidase (HIGH)"
+];
+
+const DIVERSITY_INDICES = [
+    "Shannon's Diversity Index (LOW)",
+    "Shannon's Diversity Index (HIGH)",
+    "Simpson's Diversity Index (LOW)",
+    "Simpson's Diversity Index (HIGH)",
+    "Firmicutes/Bacteroidetes ratio (LOW)",
+    "Firmicutes/Bacteroidetes ratio (HIGH)",
+    "Prevotella/Bacteroidetes (P/B) ratio (LOW)",
+    "Prevotella/Bacteroidetes (P/B) ratio (HIGH)"
+];
+
+const GUT_PHYLA = [
+    "Proteobacteria (LOW)",
+    "Proteobacteria (HIGH)",
+    "Actinobacteria (LOW)",
+    "Actinobacteria (HIGH)",
+    "Fusobacteria (LOW)",
+    "Fusobacteria (HIGH)",
+    "Bacteroidetes (LOW)",
+    "Bacteroidetes (HIGH)",
+    "Firmicutes (LOW)",
+    "Firmicutes (HIGH)",
+    "Euryarchaeota (LOW)",
+    "Euryarchaeota (HIGH)",
+    "Verrucomicrobia (LOW)",
+    "Verrucomicrobia (HIGH)"
+];
+
 // ============================================
 // INITIALIZE CHECKBOXES
 // ============================================
@@ -862,6 +946,11 @@ function initializeCheckboxes() {
     createCheckboxes('inflammatory', INFLAMMATORY);
     createCheckboxes('digestive', DIGESTIVE);
     createCheckboxes('permeability', PERMEABILITY);
+    createCheckboxes('bileAcids', BILE_ACIDS);
+    createCheckboxes('scfa', SHORT_CHAIN_FATTY_ACIDS);
+    createCheckboxes('metabolites', GUT_METABOLITES);
+    createCheckboxes('diversity', DIVERSITY_INDICES);
+    createCheckboxes('phyla', GUT_PHYLA);
 }
 
 function createCheckboxes(containerId, items) {
@@ -897,11 +986,17 @@ function gatherSelectedMarkers() {
         viruses: [],
         inflammatory: [],
         digestive: [],
-        permeability: []
+        permeability: [],
+        bileAcids: [],
+        scfa: [],
+        metabolites: [],
+        diversity: [],
+        phyla: []
     };
     
     ['pathogenicBacteria', 'commensalBacteria', 'protozoans', 'helminths', 'fungi', 'viruses', 
-     'inflammatory', 'digestive', 'permeability'].forEach(category => {
+     'inflammatory', 'digestive', 'permeability', 'bileAcids', 'scfa', 'metabolites', 
+     'diversity', 'phyla'].forEach(category => {
         const checkboxes = document.querySelectorAll(`#${category} input:checked`);
         checkboxes.forEach(cb => selected[category].push(cb.value));
     });
@@ -1154,6 +1249,22 @@ function buildPhase3(selected) {
         indication: "Broken cell wall chlorella (500mg CGF) - binds heavy metals and supports cellular repair during gut restoration"
     });
     
+    // BUTYRATE SUPPORT (for low SCFA/butyrate)
+    if (selected.scfa.length >= 1 || selected.diversity.length >= 1) {
+        products.push({
+            name: "Flora Syntropy",
+            dosing: { text: "2 caps daily", perDay: 2 },
+            indication: "Prebiotic fiber to support SCFA-producing bacteria (Faecalibacterium, Roseburia, Ruminococcus)"
+        });
+    } else {
+        // PREBIOTIC (standard dose)
+        products.push({
+            name: "Flora Syntropy",
+            dosing: { text: "1 cap daily", perDay: 1 },
+            indication: "Prebiotic/synbiotic support for beneficial bacteria"
+        });
+    }
+    
     // PROBIOTICS
     products.push({
         name: "Symbiome CMF-50B",
@@ -1165,13 +1276,6 @@ function buildPhase3(selected) {
         name: "Saccharomyces boulardii Forte",
         dosing: { text: "2 caps 2x daily", perDay: 4 },
         indication: "Non-colonizing beneficial yeast - competitive exclusion"
-    });
-    
-    // PREBIOTIC
-    products.push({
-        name: "Flora Syntropy",
-        dosing: { text: "1 cap daily", perDay: 1 },
-        indication: "Prebiotic/synbiotic support for beneficial bacteria"
     });
     
     return products;
