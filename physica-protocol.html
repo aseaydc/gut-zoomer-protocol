@@ -372,39 +372,251 @@
             color: white;
         }
 
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* PRINT STYLES */
         @media print {
-        .protocol-output {
-            display: block !important;
-        }
-        .header {
-            background: white !important;
-            color: #2E7D32 !important;
-            page-break-after: avoid;
-        }
-        .logo-img {
-            height: 80px !important;
-            margin-bottom: 10px !important;
-        }
-        .phase-container {
-            page-break-inside: avoid;
-            background: white !important;
-            border: 2px solid #000 !important;
-        }
-        h3 {
-            color: #000 !important;
-        }
-        .patient-info, .marker-selection {
-            border: 1px solid #000 !important;
-        }
-    }
-            }
-            .header {
+            /* Hide everything except protocol output */
+            body {
                 background: white !important;
-                color: #2E7D32 !important;
-                page-break-after: avoid;
+                padding: 0 !important;
+                margin: 0 !important;
             }
+
+            .header,
+            .patient-info,
+            .section,
+            .generate-btn,
+            .action-buttons,
+            .input-section,
+            button {
+                display: none !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            .content {
+                padding: 10px !important;
+            }
+
+            .protocol-output {
+                display: block !important;
+                margin: 0 !important;
+            }
+
+            /* Make phase headers MUCH more visible */
+            .phase-header {
+                background: #1a365d !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                padding: 20px !important;
+                margin: 15px 0 !important;
+                border: 4px solid #000 !important;
+                border-radius: 0 !important;
+                page-break-after: avoid !important;
+            }
+
+            .phase-header h2 {
+                color: white !important;
+                font-size: 20px !important;
+                font-weight: 900 !important;
+                margin: 0 !important;
+            }
+
+            .phase-header p {
+                color: white !important;
+                opacity: 1 !important;
+                font-size: 12px !important;
+                margin: 5px 0 0 0 !important;
+            }
+
+            /* Compact pricing boxes */
+            .pricing-box {
+                font-size: 9px !important;
+                padding: 5px !important;
+                margin: 3px 0 !important;
+                page-break-inside: avoid !important;
+                border: 1px solid #000 !important;
+            }
+
+            .pricing-box h4 {
+                font-size: 10px !important;
+                margin-bottom: 3px !important;
+            }
+
+            .pricing-row {
+                margin: 1px 0 !important;
+                font-size: 8px !important;
+                padding: 2px 0 !important;
+            }
+
+            .pricing-summary,
+            .phase-summary {
+                font-size: 9px !important;
+                padding: 5px !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Product items compact */
+            .product-item {
+                margin-bottom: 8px !important;
+                padding: 6px !important;
+                page-break-inside: avoid !important;
+                border: 1px solid #ccc !important;
+            }
+
+            .product-header {
+                margin-bottom: 5px !important;
+            }
+
+            .product-name {
+                font-size: 11px !important;
+                font-weight: bold !important;
+            }
+
+            .product-price-badge {
+                font-size: 9px !important;
+                padding: 3px 8px !important;
+            }
+
+            .product-details {
+                margin-bottom: 5px !important;
+                gap: 5px !important;
+            }
+
+            .detail-item {
+                padding: 4px !important;
+            }
+
+            .detail-label {
+                font-size: 8px !important;
+            }
+
+            .detail-value {
+                font-size: 9px !important;
+            }
+
+            .product-indication {
+                font-size: 8px !important;
+                padding: 5px !important;
+                margin-bottom: 5px !important;
+            }
+
+            .pricing-breakdown {
+                padding: 5px !important;
+            }
+
+            /* Grand total compact */
+            .grand-total {
+                background: #1a365d !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 15px !important;
+                font-size: 10px !important;
+                page-break-inside: avoid !important;
+                border: 4px solid #000 !important;
+                border-radius: 0 !important;
+            }
+
+            .grand-total h2 {
+                color: white !important;
+                font-size: 14px !important;
+                font-weight: 900 !important;
+                margin-bottom: 8px !important;
+            }
+
+            .total-breakdown {
+                gap: 8px !important;
+                margin-top: 8px !important;
+            }
+
+            .total-item {
+                padding: 8px !important;
+                background: rgba(255,255,255,0.2) !important;
+                border-radius: 5px !important;
+            }
+
+            .total-label {
+                color: white !important;
+                font-size: 8px !important;
+                opacity: 0.9 !important;
+            }
+
+            .total-value {
+                color: white !important;
+                font-size: 12px !important;
+                font-weight: 700 !important;
+            }
+
+            /* Summary grids */
+            .summary-grid {
+                gap: 5px !important;
+            }
+
+            .summary-item {
+                padding: 5px !important;
+            }
+
+            .summary-label {
+                font-size: 8px !important;
+            }
+
+            .summary-value {
+                font-size: 11px !important;
+            }
+
+            /* Phase sections */
             .phase-container {
-                page-break-inside: avoid;
+                page-break-inside: avoid !important;
+                margin: 10px 0 !important;
+                border: 2px solid #000 !important;
+                background: white !important;
+            }
+
+            .phase-section {
+                page-break-inside: avoid !important;
+                margin: 10px 0 !important;
+            }
+
+            /* Avoid page breaks */
+            h2, h3, h4 {
+                page-break-after: avoid !important;
             }
         }
     </style>
@@ -567,7 +779,8 @@ const PHYSICA_PRODUCTS = {
     "MetaChlor": { price: 47.28, form: "capsules", size: "60 caps", capsules: 60 },
     "Symbiome CMF-50B": { price: 61.80, form: "capsules", size: "30 caps", capsules: 30 },
     "Saccharomyces boulardii Forte": { price: 38.12, form: "capsules", size: "60 caps", capsules: 60 },
-    "Flora Syntropy": { price: 61.80, form: "capsules", size: "90 caps", capsules: 90 }
+    "Flora Syntropy": { price: 61.80, form: "capsules", size: "90 caps", capsules: 90 },
+    "NAC Forte (N-Acetyl L-Cysteine)": { price: 45.00, form: "capsules", size: "120 caps", capsules: 120 }
 };
 
 // Calculate days supply
@@ -1027,28 +1240,18 @@ function buildPhase1(selected) {
                           selected.fungi.length + selected.viruses.length;
     const inflammationLevel = selected.inflammatory.length;
     
-    // DRAINAGE - REQUIRED
+    // DRAINAGE - ONE PRODUCT ONLY (severity-based)
     if (totalPathology >= 5 || inflammationLevel >= 4) {
         products.push({
             name: "Lymph 3 CHRONIC",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
             indication: "Severe ECM congestion - longstanding conditions with deep pathology"
         });
-        products.push({
-            name: "Drainage Milieu",
-            dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Mesenchymal drainage for biofilm disruption"
-        });
     } else if (totalPathology >= 3 || inflammationLevel >= 2) {
         products.push({
             name: "Lymph 2 MATRIX",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Moderate ECM congestion - chronic inflammation and biofilm"
-        });
-        products.push({
-            name: "Drainage Milieu",
-            dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Mesenchymal drainage for biofilm disruption"
+            indication: "Moderate ECM congestion - chronic inflammation"
         });
     } else {
         products.push({
@@ -1058,81 +1261,69 @@ function buildPhase1(selected) {
         });
     }
     
-    // ELECTROLYTES
+    // CORE SUPPORT (2 products)
     products.push({
         name: "SpectraLyte",
         dosing: { text: "1 tsp 2-3x daily in water", perDay: 2 },
         indication: "Electrolyte replacement during detoxification"
     });
     
-    // METHYLATION
     products.push({
         name: "Methyl-B12 Liposome Spray",
         dosing: { text: "2-3 sprays 2x daily sublingually", spraysPerDay: 5 },
         indication: "Methylation pathway support - critical for detox"
     });
     
-    // GUT IMMUNE
-    if (inflammationLevel >= 1) {
+    // INFLAMMATION + IMMUNE (Choose ONE combination based on severity)
+    if (inflammationLevel >= 4) {
+        // SEVERE: Homeopathic + Curcumin ONLY
+        products.push({
+            name: "IBD-Tox",
+            dosing: { text: "2 droppers 2x daily in warm water", perDay: 4 },
+            indication: "Homeopathic for IBD/colitis - severe inflammation"
+        });
+        products.push({
+            name: "Bio-A Curcumin PhytoNanosome",
+            dosing: { text: "2 caps 2x daily", perDay: 4 },
+            indication: "Curcumin - downregulates COX-2 and NF-kB inflammation"
+        });
+    } else if (inflammationLevel >= 2) {
+        // MODERATE: Immune + Curcumin
         products.push({
             name: "GALT Fortifier",
             dosing: { text: "3 caps daily between meals", perDay: 3 },
             indication: "Gut immune support with colostrum and beta-glucans"
         });
-    }
-    
-    // ANTI-INFLAMMATORY SUPPORT
-    if (inflammationLevel >= 3) {
-        // SEVERE INFLAMMATION
-        products.push({
-            name: "IBD-Tox",
-            dosing: { text: "2 droppers 2x daily in warm water", perDay: 4 },
-            indication: "Homeopathic for IBD/colitis/inflammatory gut conditions"
-        });
         products.push({
             name: "Bio-A Curcumin PhytoNanosome",
             dosing: { text: "2 caps 2x daily", perDay: 4 },
-            indication: "Highly bioavailable curcumin - downregulates COX-2 and NF-kB inflammation"
-        });
-        products.push({
-            name: "Inflamma LF",
-            dosing: { text: "2 caps 2x daily", perDay: 4 },
-            indication: "SPMs (Specialized Pro-resolving Mediators) for inflammation resolution"
+            indication: "Curcumin - anti-inflammatory support"
         });
     } else if (inflammationLevel >= 1) {
-        // MILD-MODERATE INFLAMMATION
+        // MILD: Just GALT Fortifier OR Inflamma-Tox
         products.push({
-            name: "Inflamma-Tox",
-            dosing: { text: "1 dropper 2x daily in warm water", perDay: 2 },
-            indication: "Homeopathic anti-inflammatory support"
-        });
-        products.push({
-            name: "Bio-A Curcumin PhytoNanosome",
-            dosing: { text: "2 caps 2x daily", perDay: 4 },
-            indication: "Highly bioavailable curcumin - downregulates inflammatory cytokines"
+            name: "GALT Fortifier",
+            dosing: { text: "3 caps daily between meals", perDay: 3 },
+            indication: "Gut immune and anti-inflammatory support"
         });
     }
     
-    // DIGESTIVE ENZYMES
-    if (selected.digestive.length >= 1) {
+    // DIGESTIVE SUPPORT (Choose ONE if needed)
+    if (selected.digestive.length >= 3) {
+        // Severe digestive issues - GB-40 covers both bile AND enzymes
         products.push({
             name: "GB-40 Yuan Source",
             dosing: { text: "2 caps 2x daily between meals", perDay: 4 },
-            indication: "Bile flow, gallbladder support, pancreatic enzymes"
+            indication: "Bile flow, gallbladder support, AND pancreatic enzymes"
         });
+    } else if (selected.digestive.length >= 1) {
+        // Mild-moderate - HepataGest has liver support built in
         products.push({
-            name: "Hypo Zymase",
-            dosing: { text: "1-2 caps WITH MEALS", perDay: 3 },
-            indication: "Comprehensive digestive enzyme support"
+            name: "HepataGest Powder",
+            dosing: { text: "1 scoop 2x daily in juice or water", perDay: 2 },
+            indication: "Liver/gallbladder/digestive support with complete nutrition"
         });
     }
-    
-    // LIVER SUPPORT
-    products.push({
-        name: "HepataGest Powder",
-        dosing: { text: "1 scoop 1-2x daily in juice or water", perDay: 1.5 },
-        indication: "Foundational liver/gallbladder support with complete nutrition"
-    });
     
     return products;
 }
@@ -1140,87 +1331,98 @@ function buildPhase1(selected) {
 function buildPhase2(selected, phase1Products) {
     const products = [];
     
-    // KEEP ONLY 1 DRAINAGE PRODUCT
-    const drainageProduct = phase1Products.find(p => 
-        p.name.includes("Lymph") || p.name === "Drainage Milieu"
-    );
-    if (drainageProduct) {
-        products.push(drainageProduct);
+    // Count pathogen types
+    const parasiteCount = selected.protozoans.length + selected.helminths.length;
+    const pathogenTypes = [
+        parasiteCount > 0,
+        selected.fungi.length > 0,
+        selected.pathogenicBacteria.length > 0,
+        selected.viruses.length > 0
+    ].filter(Boolean).length;
+    
+    // DRAINAGE - Only if severe (3+ pathogen types)
+    if (pathogenTypes >= 3) {
+        const drainageProduct = phase1Products.find(p => p.name.includes("Lymph"));
+        if (drainageProduct) {
+            products.push(drainageProduct);
+        }
     }
     
-    // PARASITES (Protozoans + Helminths)
-    const parasiteCount = selected.protozoans.length + selected.helminths.length;
+    // PARASITES - If present, TREAT IT (Tox + botanical)
     if (parasiteCount > 0) {
         products.push({
             name: "Para-Tox",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Homeopathic parasite/worm detoxification support"
+            indication: "Homeopathic parasite detoxification - ADJUNCT (die-off support)"
         });
         products.push({
             name: "Artemisia Intrinsic",
             dosing: { text: "1 dropper 3x daily", perDay: 3 },
-            indication: "PRIMARY botanical antiparasitic (wormwood) - broad spectrum"
-        });
-        products.push({
-            name: "Wild Bear Garlic",
-            dosing: { text: "1 cap 3x daily", perDay: 3 },
-            indication: "Secondary antiparasitic with allicin - biofilm disruption"
+            indication: "PRIMARY antiparasitic botanical (wormwood)"
         });
     }
     
-    // FUNGI
+    // FUNGI - If present, TREAT IT (Tox + botanical)
     if (selected.fungi.length > 0) {
         products.push({
             name: "Can-Tox",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Homeopathic candida/yeast detoxification support"
+            indication: "Homeopathic candida/yeast detoxification - ADJUNCT (die-off support)"
         });
         products.push({
             name: "Lapacho Intrinsic",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "PRIMARY botanical antifungal (pau d'arco) - candida/yeast"
-        });
-        products.push({
-            name: "Wild Oregano Oil",
-            dosing: { text: "2-3 drops 2x daily in water", perDay: 2 },
-            indication: "Broad-spectrum antimicrobial + biofilm disruption"
+            indication: "PRIMARY antifungal botanical (pau d'arco)"
         });
     }
     
-    // BACTERIA
+    // BACTERIA - If present, TREAT IT (Tox + botanical)
     if (selected.pathogenicBacteria.length > 0) {
         products.push({
             name: "Bacteria-Tox",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Homeopathic bacterial detoxification support"
+            indication: "Homeopathic bacterial detoxification - ADJUNCT (die-off support)"
         });
         products.push({
             name: "Berberine Intrinsic",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "PRIMARY botanical antibacterial - SIBO/dysbiosis"
-        });
-        products.push({
-            name: "Olive Leaf Intrinsic",
-            dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Broad-spectrum antibacterial with immune support"
+            indication: "PRIMARY antibacterial botanical (SIBO/dysbiosis)"
         });
     }
     
-    // VIRUSES
+    // VIRUSES - If present, TREAT IT (Tox + botanical)
     if (selected.viruses.length > 0) {
         products.push({
             name: "Viru-Tox",
             dosing: { text: "1 dropper 2x daily", perDay: 2 },
-            indication: "Homeopathic viral detoxification support"
+            indication: "Homeopathic viral detoxification - ADJUNCT (die-off support)"
         });
         products.push({
             name: "Baicalin Skullcap",
             dosing: { text: "2 caps 2x daily", perDay: 4 },
-            indication: "Antiviral botanical with immune modulation"
+            indication: "PRIMARY antiviral botanical with immune modulation"
         });
     }
     
-    return products.slice(0, 8);
+    // BROAD-SPECTRUM - Only if 2+ pathogen types (biofilm + coverage)
+    if (pathogenTypes >= 2) {
+        products.push({
+            name: "Wild Oregano Oil",
+            dosing: { text: "2-3 drops 2x daily in water", perDay: 2 },
+            indication: "Broad-spectrum antimicrobial (bacteria/fungi/parasites) + biofilm disruption"
+        });
+    }
+    
+    // NAC FORTE - Only for severe biofilm/SIBO cases
+    if (selected.pathogenicBacteria.length >= 5 || selected.inflammatory.length >= 4 || selected.digestive.length >= 3) {
+        products.push({
+            name: "NAC Forte (N-Acetyl L-Cysteine)",
+            dosing: { text: "1 cap 2x daily", perDay: 2 },
+            indication: "SUPERIOR biofilm disruption + glutathione support for detoxification"
+        });
+    }
+    
+    return products;
 }
 
 function buildPhase3(selected) {
@@ -1331,13 +1533,25 @@ function displayProtocol(protocol) {
                     <div class="total-value">$${totalCost.grand.toFixed(2)}</div>
                 </div>
             </div>
-            <button class="print-btn" onclick="window.print()">🖨️ Print Protocol</button>
+            <div class="action-buttons">
+                <button class="action-btn" onclick="window.print()">🖨️ Print Protocol</button>
+                <button class="action-btn" onclick="downloadPDF()">📄 Download PDF</button>
+            </div>
         </div>
     `;
     
     output.innerHTML = html;
     output.style.display = 'block';
     output.scrollIntoView({ behavior: 'smooth' });
+}
+
+function downloadPDF() {
+    // Use browser's print dialog with "Save as PDF" option
+    const patientName = document.getElementById('patientName').value || 'Patient';
+    const date = new Date().toISOString().split('T')[0];
+    document.title = `Gut_Zoomer_Protocol_${patientName.replace(/\s+/g, '_')}_${date}`;
+    window.print();
+    document.title = 'Gut Zoomer (Vibrant Wellness) Protocol Generator - Root Health';
 }
 
 function generatePhaseHTML(title, subtitle, products, phaseDuration) {
