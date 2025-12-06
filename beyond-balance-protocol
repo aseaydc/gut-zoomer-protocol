@@ -768,198 +768,525 @@
 
             <!-- GUT COMMENSALS - BENEFICIAL BACTERIA -->
             <div class="marker-section form-section">
-                <h3>🌱 Gut Commensals - Beneficial Bacteria (Select if LOW)</h3>
-                <p style="color: #666; margin-bottom: 15px;"><em>Check the beneficial bacteria that are LOW or deficient to receive targeted probiotic and prebiotic recommendations</em></p>
+                <h3>🌱 Gut Commensals - Beneficial Bacteria (129 Species - Select if LOW)</h3>
+                <p style="color: #666; margin-bottom: 15px;"><em>Check the beneficial bacteria that are LOW or deficient to receive targeted probiotic and prebiotic recommendations. This is the COMPLETE list of all 129 species from the Vibrant Wellness Gut Zoomer panel.</em></p>
                 
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Keystone Bacteria (Critical for Gut Health)</h4>
                 <div class="marker-grid">
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="akkermansia" name="commensals" value="Akkermansia muciniphila" data-category="keystone">
-                        <label for="akkermansia">Akkermansia muciniphila</label>
+                        <input type="checkbox" id="acinetobacter" name="commensals" value="Acinetobacter">
+                        <label for="acinetobacter">Acinetobacter</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="faecalibacterium" name="commensals" value="Faecalibacterium prausnitzii" data-category="keystone">
-                        <label for="faecalibacterium">Faecalibacterium prausnitzii</label>
+                        <input type="checkbox" id="actinomyces" name="commensals" value="Actinomyces">
+                        <label for="actinomyces">Actinomyces</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="roseburia" name="commensals" value="Roseburia" data-category="keystone">
-                        <label for="roseburia">Roseburia</label>
+                        <input type="checkbox" id="akkermansia_muciniphila" name="commensals" value="Akkermansia muciniphila">
+                        <label for="akkermansia_muciniphila">Akkermansia muciniphila</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="roseburia_intestinalis" name="commensals" value="Roseburia intestinalis" data-category="keystone">
-                        <label for="roseburia_intestinalis">Roseburia intestinalis</label>
-                    </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Bifidobacterium Species (Infant/Child Health, Immune Support)</h4>
-                <div class="marker-grid">
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_general" name="commensals" value="Bifidobacterium" data-category="bifidobacterium">
-                        <label for="bifido_general">Bifidobacterium (general)</label>
+                        <input type="checkbox" id="alistipes" name="commensals" value="Alistipes">
+                        <label for="alistipes">Alistipes</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_adolescentis" name="commensals" value="Bifidobacterium adolescentis" data-category="bifidobacterium">
-                        <label for="bifido_adolescentis">B. adolescentis</label>
+                        <input type="checkbox" id="alloprevotella" name="commensals" value="Alloprevotella">
+                        <label for="alloprevotella">Alloprevotella</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_animalis" name="commensals" value="Bifidobacterium animalis" data-category="bifidobacterium">
-                        <label for="bifido_animalis">B. animalis</label>
+                        <input type="checkbox" id="atopobium" name="commensals" value="Atopobium">
+                        <label for="atopobium">Atopobium</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_lactis" name="commensals" value="Bifidobacterium lactis" data-category="bifidobacterium">
-                        <label for="bifido_lactis">B. animalis subsp. lactis</label>
+                        <input type="checkbox" id="atopobium_parvulum" name="commensals" value="Atopobium parvulum">
+                        <label for="atopobium_parvulum">Atopobium parvulum</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_bifidum" name="commensals" value="Bifidobacterium bifidum" data-category="bifidobacterium">
-                        <label for="bifido_bifidum">B. bifidum</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_breve" name="commensals" value="Bifidobacterium breve" data-category="bifidobacterium">
-                        <label for="bifido_breve">B. breve</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_catenulatum" name="commensals" value="Bifidobacterium catenulatum" data-category="bifidobacterium">
-                        <label for="bifido_catenulatum">B. catenulatum</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_dentium" name="commensals" value="Bifidobacterium dentium" data-category="bifidobacterium">
-                        <label for="bifido_dentium">B. dentium</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_infantis" name="commensals" value="Bifidobacterium infantis" data-category="bifidobacterium">
-                        <label for="bifido_infantis">B. infantis</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bifido_longum" name="commensals" value="Bifidobacterium longum" data-category="bifidobacterium">
-                        <label for="bifido_longum">B. longum</label>
-                    </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Lactobacillus Species (Immune, Digestive Support)</h4>
-                <div class="marker-grid">
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_general" name="commensals" value="Lactobacillus" data-category="lactobacillus">
-                        <label for="lacto_general">Lactobacillus (general)</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_acidophilus" name="commensals" value="Lactobacillus acidophilus" data-category="lactobacillus">
-                        <label for="lacto_acidophilus">L. acidophilus</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_animalis" name="commensals" value="Lactobacillus animalis" data-category="lactobacillus">
-                        <label for="lacto_animalis">L. animalis</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_brevis" name="commensals" value="Lactobacillus brevis" data-category="lactobacillus">
-                        <label for="lacto_brevis">L. brevis</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_bulgaricus" name="commensals" value="Lactobacillus bulgaricus" data-category="lactobacillus">
-                        <label for="lacto_bulgaricus">L. bulgaricus</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_casei" name="commensals" value="Lactobacillus casei" data-category="lactobacillus">
-                        <label for="lacto_casei">L. casei</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_fermentum" name="commensals" value="Lactobacillus fermentum" data-category="lactobacillus">
-                        <label for="lacto_fermentum">L. fermentum</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_paracasei" name="commensals" value="Lactobacillus paracasei" data-category="lactobacillus">
-                        <label for="lacto_paracasei">L. paracasei</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_plantarum" name="commensals" value="Lactobacillus plantarum" data-category="lactobacillus">
-                        <label for="lacto_plantarum">L. plantarum</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_reuteri" name="commensals" value="Lactobacillus reuteri" data-category="lactobacillus">
-                        <label for="lacto_reuteri">L. reuteri</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_rhamnosus" name="commensals" value="Lactobacillus rhamnosus" data-category="lactobacillus">
-                        <label for="lacto_rhamnosus">L. rhamnosus</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_rhamnosus_gg" name="commensals" value="Lactobacillus rhamnosus GG" data-category="lactobacillus">
-                        <label for="lacto_rhamnosus_gg">L. rhamnosus GG</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_ruminis" name="commensals" value="Lactobacillus ruminis" data-category="lactobacillus">
-                        <label for="lacto_ruminis">L. ruminis</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_sakei" name="commensals" value="Lactobacillus sakei" data-category="lactobacillus">
-                        <label for="lacto_sakei">L. sakei</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="lacto_salivarius" name="commensals" value="Lactobacillus salivarius" data-category="lactobacillus">
-                        <label for="lacto_salivarius">L. salivarius</label>
-                    </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Butyrate Producers (Anti-inflammatory, Colon Health)</h4>
-                <div class="marker-grid">
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="eubacterium_rectale" name="commensals" value="Eubacterium rectale" data-category="butyrate">
-                        <label for="eubacterium_rectale">Eubacterium rectale</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="coprococcus" name="commensals" value="Coprococcus" data-category="butyrate">
-                        <label for="coprococcus">Coprococcus</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="butyrivibrio" name="commensals" value="Butyrivibrio" data-category="butyrate">
-                        <label for="butyrivibrio">Butyrivibrio</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="ruminococcus_bromii" name="commensals" value="Ruminococcus bromii" data-category="butyrate">
-                        <label for="ruminococcus_bromii">Ruminococcus bromii</label>
-                    </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Other Important Commensals</h4>
-                <div class="marker-grid">
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bacteroides_general" name="commensals" value="Bacteroides" data-category="other">
-                        <label for="bacteroides_general">Bacteroides</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bacteroides_fragilis" name="commensals" value="Bacteroides fragilis" data-category="other">
-                        <label for="bacteroides_fragilis">Bacteroides fragilis</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="prevotella" name="commensals" value="Prevotella" data-category="other">
-                        <label for="prevotella">Prevotella</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="blautia" name="commensals" value="Blautia" data-category="other">
-                        <label for="blautia">Blautia</label>
-                    </div>
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="christensenella" name="commensals" value="Christensenella minuta" data-category="other">
-                        <label for="christensenella">Christensenella minuta</label>
-                    </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Beneficial Spore-Formers</h4>
-                <div class="marker-grid">
-                    <div class="marker-checkbox">
-                        <input type="checkbox" id="bacillus_coagulans" name="commensals" value="Bacillus coagulans" data-category="spore">
+                        <input type="checkbox" id="bacillus_coagulans" name="commensals" value="Bacillus coagulans">
                         <label for="bacillus_coagulans">Bacillus coagulans</label>
                     </div>
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="bacillus_subtilis" name="commensals" value="Bacillus subtilis" data-category="spore">
+                        <input type="checkbox" id="bacillus_subtilis" name="commensals" value="Bacillus subtilis">
                         <label for="bacillus_subtilis">Bacillus subtilis</label>
                     </div>
-                </div>
-
-                <h4 style="color: #764ba2; margin: 20px 0 10px 0;">Beneficial Yeast</h4>
-                <div class="marker-grid">
                     <div class="marker-checkbox">
-                        <input type="checkbox" id="sacc_boulardii" name="commensals" value="Saccharomyces boulardii" data-category="yeast">
-                        <label for="sacc_boulardii">Saccharomyces boulardii</label>
+                        <input type="checkbox" id="bacteroidales" name="commensals" value="Bacteroidales">
+                        <label for="bacteroidales">Bacteroidales</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bacteroides" name="commensals" value="Bacteroides">
+                        <label for="bacteroides">Bacteroides</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bacteroides_caccae" name="commensals" value="Bacteroides caccae">
+                        <label for="bacteroides_caccae">Bacteroides caccae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bacteroides_vulgatus" name="commensals" value="Bacteroides vulgatus">
+                        <label for="bacteroides_vulgatus">Bacteroides vulgatus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bacteroidetes" name="commensals" value="Bacteroidetes">
+                        <label for="bacteroidetes">Bacteroidetes</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium" name="commensals" value="Bifidobacterium">
+                        <label for="bifidobacterium">Bifidobacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_adolescentis" name="commensals" value="Bifidobacterium adolescentis">
+                        <label for="bifidobacterium_adolescentis">Bifidobacterium adolescentis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_animalis" name="commensals" value="Bifidobacterium animalis">
+                        <label for="bifidobacterium_animalis">Bifidobacterium animalis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_animalis_subspecies_lactis" name="commensals" value="Bifidobacterium animalis subspecies lactis">
+                        <label for="bifidobacterium_animalis_subspecies_lactis">Bifidobacterium animalis subspecies lactis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_bifidum" name="commensals" value="Bifidobacterium bifidum">
+                        <label for="bifidobacterium_bifidum">Bifidobacterium bifidum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_breve" name="commensals" value="Bifidobacterium breve">
+                        <label for="bifidobacterium_breve">Bifidobacterium breve</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_catenulatum" name="commensals" value="Bifidobacterium catenulatum">
+                        <label for="bifidobacterium_catenulatum">Bifidobacterium catenulatum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_dentium" name="commensals" value="Bifidobacterium dentium">
+                        <label for="bifidobacterium_dentium">Bifidobacterium dentium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_infantis" name="commensals" value="Bifidobacterium infantis">
+                        <label for="bifidobacterium_infantis">Bifidobacterium infantis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_lactis" name="commensals" value="Bifidobacterium lactis">
+                        <label for="bifidobacterium_lactis">Bifidobacterium lactis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bifidobacterium_longum" name="commensals" value="Bifidobacterium longum">
+                        <label for="bifidobacterium_longum">Bifidobacterium longum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="blautia" name="commensals" value="Blautia">
+                        <label for="blautia">Blautia</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="blautia_hydrogenotrophica" name="commensals" value="Blautia hydrogenotrophica">
+                        <label for="blautia_hydrogenotrophica">Blautia hydrogenotrophica</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="blautia_obeum" name="commensals" value="Blautia obeum">
+                        <label for="blautia_obeum">Blautia obeum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="bradyrhizobiaceae" name="commensals" value="Bradyrhizobiaceae">
+                        <label for="bradyrhizobiaceae">Bradyrhizobiaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="butyricimonas" name="commensals" value="Butyricimonas">
+                        <label for="butyricimonas">Butyricimonas</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="butyrivibrio" name="commensals" value="Butyrivibrio">
+                        <label for="butyrivibrio">Butyrivibrio</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="catenibacterium" name="commensals" value="Catenibacterium">
+                        <label for="catenibacterium">Catenibacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="christensenella_minuta" name="commensals" value="Christensenella minuta">
+                        <label for="christensenella_minuta">Christensenella minuta</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridia_cluster_iv" name="commensals" value="Clostridia cluster IV">
+                        <label for="clostridia_cluster_iv">Clostridia cluster IV</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridia_cluster_xiva" name="commensals" value="Clostridia cluster XIVa">
+                        <label for="clostridia_cluster_xiva">Clostridia cluster XIVa</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridia_cluster_xviii" name="commensals" value="Clostridia cluster XVIII">
+                        <label for="clostridia_cluster_xviii">Clostridia cluster XVIII</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridiales_family_xiv_incertae_sedis" name="commensals" value="Clostridiales Family XIV incertae sedis">
+                        <label for="clostridiales_family_xiv_incertae_sedis">Clostridiales Family XIV incertae sedis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridiales_incertae_sedis_iv" name="commensals" value="Clostridiales incertae sedis IV">
+                        <label for="clostridiales_incertae_sedis_iv">Clostridiales incertae sedis IV</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium" name="commensals" value="Clostridium">
+                        <label for="clostridium">Clostridium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium_hathewayi" name="commensals" value="Clostridium hathewayi">
+                        <label for="clostridium_hathewayi">Clostridium hathewayi</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium_ramosum" name="commensals" value="Clostridium ramosum">
+                        <label for="clostridium_ramosum">Clostridium ramosum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium_species" name="commensals" value="Clostridium species">
+                        <label for="clostridium_species">Clostridium species</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium_spp" name="commensals" value="Clostridium spp.">
+                        <label for="clostridium_spp">Clostridium spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="clostridium_symbiosum" name="commensals" value="Clostridium symbiosum">
+                        <label for="clostridium_symbiosum">Clostridium symbiosum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="collinsella" name="commensals" value="Collinsella">
+                        <label for="collinsella">Collinsella</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="coprococcus" name="commensals" value="Coprococcus">
+                        <label for="coprococcus">Coprococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="desulfovibrio" name="commensals" value="Desulfovibrio">
+                        <label for="desulfovibrio">Desulfovibrio</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="desulfovibrio_piger" name="commensals" value="Desulfovibrio piger">
+                        <label for="desulfovibrio_piger">Desulfovibrio piger</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="dialister_invisus" name="commensals" value="Dialister invisus">
+                        <label for="dialister_invisus">Dialister invisus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="dorea" name="commensals" value="Dorea">
+                        <label for="dorea">Dorea</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="eggerthella_lenta" name="commensals" value="Eggerthella lenta">
+                        <label for="eggerthella_lenta">Eggerthella lenta</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterobacteria" name="commensals" value="Enterobacteria">
+                        <label for="enterobacteria">Enterobacteria</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterobacteriaceae" name="commensals" value="Enterobacteriaceae">
+                        <label for="enterobacteriaceae">Enterobacteriaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterococcus" name="commensals" value="Enterococcus">
+                        <label for="enterococcus">Enterococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterococcus_gallinarum" name="commensals" value="Enterococcus gallinarum">
+                        <label for="enterococcus_gallinarum">Enterococcus gallinarum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterococcus_species" name="commensals" value="Enterococcus species">
+                        <label for="enterococcus_species">Enterococcus species</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="enterococcus_spp" name="commensals" value="Enterococcus spp.">
+                        <label for="enterococcus_spp">Enterococcus spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="escherichia_coli" name="commensals" value="Escherichia coli">
+                        <label for="escherichia_coli">Escherichia coli</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="escherichia_coli_nissle" name="commensals" value="Escherichia coli nissle">
+                        <label for="escherichia_coli_nissle">Escherichia coli nissle</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="eubacterium" name="commensals" value="Eubacterium">
+                        <label for="eubacterium">Eubacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="eubacterium_rectale" name="commensals" value="Eubacterium rectale">
+                        <label for="eubacterium_rectale">Eubacterium rectale</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="eubacterium_spp" name="commensals" value="Eubacterium spp.">
+                        <label for="eubacterium_spp">Eubacterium spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="faecalibacterium" name="commensals" value="Faecalibacterium">
+                        <label for="faecalibacterium">Faecalibacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="faecalibacterium_prausnitzii" name="commensals" value="Faecalibacterium prausnitzii">
+                        <label for="faecalibacterium_prausnitzii">Faecalibacterium prausnitzii</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="fusobacterium" name="commensals" value="Fusobacterium">
+                        <label for="fusobacterium">Fusobacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="haemophilus" name="commensals" value="Haemophilus">
+                        <label for="haemophilus">Haemophilus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="hafnia" name="commensals" value="Hafnia">
+                        <label for="hafnia">Hafnia</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="holdemania" name="commensals" value="Holdemania">
+                        <label for="holdemania">Holdemania</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="klebsiella_aerogenes" name="commensals" value="Klebsiella aerogenes">
+                        <label for="klebsiella_aerogenes">Klebsiella aerogenes</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lachnospiraceae" name="commensals" value="Lachnospiraceae">
+                        <label for="lachnospiraceae">Lachnospiraceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillaceae" name="commensals" value="Lactobacillaceae">
+                        <label for="lactobacillaceae">Lactobacillaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus" name="commensals" value="Lactobacillus">
+                        <label for="lactobacillus">Lactobacillus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_acidophilus" name="commensals" value="Lactobacillus acidophilus">
+                        <label for="lactobacillus_acidophilus">Lactobacillus acidophilus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_animalis" name="commensals" value="Lactobacillus animalis">
+                        <label for="lactobacillus_animalis">Lactobacillus animalis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_brevis" name="commensals" value="Lactobacillus brevis">
+                        <label for="lactobacillus_brevis">Lactobacillus brevis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_bulgaricus" name="commensals" value="Lactobacillus bulgaricus">
+                        <label for="lactobacillus_bulgaricus">Lactobacillus bulgaricus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_casei" name="commensals" value="Lactobacillus casei">
+                        <label for="lactobacillus_casei">Lactobacillus casei</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_fermentum" name="commensals" value="Lactobacillus fermentum">
+                        <label for="lactobacillus_fermentum">Lactobacillus fermentum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_paracasei" name="commensals" value="Lactobacillus paracasei">
+                        <label for="lactobacillus_paracasei">Lactobacillus paracasei</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_plantarum" name="commensals" value="Lactobacillus plantarum">
+                        <label for="lactobacillus_plantarum">Lactobacillus plantarum</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_reuteri" name="commensals" value="Lactobacillus reuteri">
+                        <label for="lactobacillus_reuteri">Lactobacillus reuteri</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_rhamnosus" name="commensals" value="Lactobacillus rhamnosus">
+                        <label for="lactobacillus_rhamnosus">Lactobacillus rhamnosus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_rhamnosus_gg" name="commensals" value="Lactobacillus rhamnosus GG">
+                        <label for="lactobacillus_rhamnosus_gg">Lactobacillus rhamnosus GG</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_ruminis" name="commensals" value="Lactobacillus ruminis">
+                        <label for="lactobacillus_ruminis">Lactobacillus ruminis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_sakei" name="commensals" value="Lactobacillus sakei">
+                        <label for="lactobacillus_sakei">Lactobacillus sakei</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_salivarius" name="commensals" value="Lactobacillus salivarius">
+                        <label for="lactobacillus_salivarius">Lactobacillus salivarius</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactobacillus_spp" name="commensals" value="Lactobacillus spp.">
+                        <label for="lactobacillus_spp">Lactobacillus spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="lactococcus" name="commensals" value="Lactococcus">
+                        <label for="lactococcus">Lactococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="leuconostoc" name="commensals" value="Leuconostoc">
+                        <label for="leuconostoc">Leuconostoc</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="marvinbryantia" name="commensals" value="Marvinbryantia">
+                        <label for="marvinbryantia">Marvinbryantia</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="methanobrevibacter_smithii" name="commensals" value="Methanobrevibacter smithii">
+                        <label for="methanobrevibacter_smithii">Methanobrevibacter smithii</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="mycoplana" name="commensals" value="Mycoplana">
+                        <label for="mycoplana">Mycoplana</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="oscillospira" name="commensals" value="Oscillospira">
+                        <label for="oscillospira">Oscillospira</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="parabacteroides" name="commensals" value="Parabacteroides">
+                        <label for="parabacteroides">Parabacteroides</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="pediococcus" name="commensals" value="Pediococcus">
+                        <label for="pediococcus">Pediococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="peptostreptococcus_species" name="commensals" value="Peptostreptococcus species">
+                        <label for="peptostreptococcus_species">Peptostreptococcus species</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="phascolarctobacterium" name="commensals" value="Phascolarctobacterium">
+                        <label for="phascolarctobacterium">Phascolarctobacterium</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="porphyromonas_gingivalis" name="commensals" value="Porphyromonas gingivalis">
+                        <label for="porphyromonas_gingivalis">Porphyromonas gingivalis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="prevotella" name="commensals" value="Prevotella">
+                        <label for="prevotella">Prevotella</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="prevotella_copri" name="commensals" value="Prevotella copri">
+                        <label for="prevotella_copri">Prevotella copri</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="propionibacterium_freudenreichi" name="commensals" value="Propionibacterium freudenreichi">
+                        <label for="propionibacterium_freudenreichi">Propionibacterium freudenreichi</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="proteus_mirabilis" name="commensals" value="Proteus mirabilis">
+                        <label for="proteus_mirabilis">Proteus mirabilis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="pseudobutyrivibrio" name="commensals" value="Pseudobutyrivibrio">
+                        <label for="pseudobutyrivibrio">Pseudobutyrivibrio</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="pseudomonas" name="commensals" value="Pseudomonas">
+                        <label for="pseudomonas">Pseudomonas</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="roseburia" name="commensals" value="Roseburia">
+                        <label for="roseburia">Roseburia</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="roseburia_intestinalis" name="commensals" value="Roseburia intestinalis">
+                        <label for="roseburia_intestinalis">Roseburia intestinalis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="ruminococcaceae" name="commensals" value="Ruminococcaceae">
+                        <label for="ruminococcaceae">Ruminococcaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="ruminococcus" name="commensals" value="Ruminococcus">
+                        <label for="ruminococcus">Ruminococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="ruminococcus_bromii" name="commensals" value="Ruminococcus bromii">
+                        <label for="ruminococcus_bromii">Ruminococcus bromii</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="ruminococcus_gnavus" name="commensals" value="Ruminococcus gnavus">
+                        <label for="ruminococcus_gnavus">Ruminococcus gnavus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="ruminococcus_spp" name="commensals" value="Ruminococcus spp.">
+                        <label for="ruminococcus_spp">Ruminococcus spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="saccharomyces_boulardii" name="commensals" value="Saccharomyces boulardii">
+                        <label for="saccharomyces_boulardii">Saccharomyces boulardii</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="solobacterium_moorei" name="commensals" value="Solobacterium moorei">
+                        <label for="solobacterium_moorei">Solobacterium moorei</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="staphylococcaceae" name="commensals" value="Staphylococcaceae">
+                        <label for="staphylococcaceae">Staphylococcaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="staphylococcus" name="commensals" value="Staphylococcus">
+                        <label for="staphylococcus">Staphylococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="staphylococcus_epidermidis" name="commensals" value="Staphylococcus epidermidis">
+                        <label for="staphylococcus_epidermidis">Staphylococcus epidermidis</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="staphylococcus_pasteuri" name="commensals" value="Staphylococcus pasteuri">
+                        <label for="staphylococcus_pasteuri">Staphylococcus pasteuri</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="staphylococcus_species" name="commensals" value="Staphylococcus species">
+                        <label for="staphylococcus_species">Staphylococcus species</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="streptococci" name="commensals" value="Streptococci">
+                        <label for="streptococci">Streptococci</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="streptococcus" name="commensals" value="Streptococcus">
+                        <label for="streptococcus">Streptococcus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="streptococcus_species" name="commensals" value="Streptococcus species">
+                        <label for="streptococcus_species">Streptococcus species</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="streptococcus_spp" name="commensals" value="Streptococcus spp.">
+                        <label for="streptococcus_spp">Streptococcus spp.</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="streptococcus_thermophilus" name="commensals" value="Streptococcus thermophilus">
+                        <label for="streptococcus_thermophilus">Streptococcus thermophilus</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="tyzzerella" name="commensals" value="Tyzzerella">
+                        <label for="tyzzerella">Tyzzerella</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="tyzzerella_4" name="commensals" value="Tyzzerella 4">
+                        <label for="tyzzerella_4">Tyzzerella 4</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="veillonella" name="commensals" value="Veillonella">
+                        <label for="veillonella">Veillonella</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="veillonellaceae" name="commensals" value="Veillonellaceae">
+                        <label for="veillonellaceae">Veillonellaceae</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="beta_galactosidase_producing_bacteria" name="commensals" value="β-galactosidase producing bacteria">
+                        <label for="beta_galactosidase_producing_bacteria">β-galactosidase producing bacteria</label>
+                    </div>
+                    <div class="marker-checkbox">
+                        <input type="checkbox" id="beta_glucuronidase_producing_bacteria" name="commensals" value="β-glucuronidase producing bacteria">
+                        <label for="beta_glucuronidase_producing_bacteria">β-glucuronidase producing bacteria</label>
                     </div>
                 </div>
             </div>
@@ -989,12 +1316,9 @@
             const inflammatory = Array.from(document.querySelectorAll('input[name="inflammatory"]:checked')).map(cb => cb.value);
             const antibodies = Array.from(document.querySelectorAll('input[name="antibodies"]:checked')).map(cb => cb.value);
             const digestion = Array.from(document.querySelectorAll('input[name="digestion"]:checked')).map(cb => cb.value);
-            const commensals = Array.from(document.querySelectorAll('input[name="commensals"]:checked')).map(cb => ({
-                name: cb.value,
-                category: cb.dataset.category
-            }));
+            const commensals = Array.from(document.querySelectorAll('input[name="commensals"]:checked')).map(cb => cb.value);
 
-            // Check if H. pylori is selected
+            // Check for specific conditions
             const hasHPylori = bacteria.includes('Helicobacter pylori');
             const hasBacteria = bacteria.length > 0;
             const hasProtozoa = protozoa.length > 0;
@@ -1006,14 +1330,6 @@
             const hasLowSIgA = digestion.includes('Secretory IgA (low)');
             const hasLowCommensals = commensals.length > 0;
 
-            // Categorize low beneficial bacteria
-            const lowKeystone = commensals.filter(c => c.category === 'keystone');
-            const lowBifido = commensals.filter(c => c.category === 'bifidobacterium');
-            const lowLacto = commensals.filter(c => c.category === 'lactobacillus');
-            const lowButyrate = commensals.filter(c => c.category === 'butyrate');
-            const lowSpore = commensals.filter(c => c.category === 'spore');
-            const lowYeast = commensals.filter(c => c.category === 'yeast');
-
             let protocol = `
                 <div class="protocol-header">
                     <h2>Gut Zoomer Treatment Protocol</h2>
@@ -1024,712 +1340,191 @@
                     <strong>Patient:</strong> ${patientName}<br>
                     <strong>Test Date:</strong> ${testDate}<br>
                     <strong>Age Group:</strong> ${age === 'adult' ? 'Adult (18+)' : 'Child (Under 18)'}<br>
-                    <strong>Protocol Generated:</strong> ${new Date().toLocaleDateString()}
+                    <strong>Protocol Generated:</strong> ${new Date().toLocaleDateString()}<br>
+                    <strong>Low Beneficial Bacteria Count:</strong> ${commensals.length} of 129 species<br>
+                    <strong>Pathogenic Organisms Detected:</strong> Bacteria (${bacteria.length}), Protozoa (${protozoa.length}), Helminths (${helminths.length}), Fungi (${fungi.length}), Viruses (${viruses.length})
                 </div>
 
                 <div class="info-box">
-                    <strong>📋 Treatment Overview:</strong> This protocol follows Beyond Balance's layering and laddering approach, 
-                    introducing products systematically while gradually increasing dosages based on patient tolerance. Physica Energetics 
-                    probiotic support is integrated throughout for comprehensive microbiome restoration.
+                    <strong>📋 Treatment Overview:</strong> This protocol follows Beyond Balance's layering and laddering approach with Physica Energetics probiotic restoration.
                 </div>
 
                 <div class="warning-box">
                     <strong>⚠️ CRITICAL SAFETY INFORMATION:</strong>
                     <ul>
-                        <li>Always begin with drainage and detoxification support before antimicrobial therapy</li>
-                        <li>Many herbs in these formulas should NOT be used if pregnant, nursing, or taking certain medications</li>
-                        <li>MC-BB-1® contains Motherwort - contraindicated for those taking cardiac or blood pressure medications</li>
-                        <li>Adjust dosing based on patient tolerance and Herxheimer reactions</li>
-                        <li>Use TOX-EASE BIND® with all antimicrobial protocols to minimize die-off reactions</li>
+                        <li>Always begin with drainage before antimicrobials</li>
+                        <li>MC-BB-1® contains Motherwort - contraindicated with cardiac/BP medications</li>
+                        <li>Adjust dosing based on patient tolerance</li>
+                        <li>Use TOX-EASE BIND® with all antimicrobial protocols</li>
                     </ul>
                 </div>
             `;
 
-            // PHASE 1: DRAINAGE & DETOXIFICATION
+            // PHASE 1: DRAINAGE
             protocol += `
                 <div class="phase-section">
-                    <h3>Phase 1: Drainage & Detoxification Support (Weeks 1-3)</h3>
-                    <p><strong>Duration:</strong> 2-3 weeks before introducing antimicrobials</p>
-                    <p><strong>Purpose:</strong> Open drainage pathways and support detoxification to prevent overwhelming Herxheimer reactions</p>
-
+                    <h3>Phase 1: Drainage & Detoxification (Weeks 1-3)</h3>
+                    
                     <div class="product-item">
-                        <strong>TOX-EASE BIND®</strong> (Toxin Binder)
+                        <strong>TOX-EASE BIND®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Dosing:</strong> 1 capsule twice daily away from food and supplements<br>
-                            <strong>Pediatric Dosing:</strong> Start with 1/2 capsule once daily<br>
-                            <strong>Purpose:</strong> Essential binder to prevent reabsorption of toxins during pathogen die-off<br>
-                            <strong>Note:</strong> Continue throughout entire protocol - take 2+ hours away from other supplements
+                            Adult: 1 capsule BID away from food/supplements<br>
+                            Pediatric: 1/2 capsule once daily<br>
+                            Continue throughout entire protocol
                         </div>
                     </div>
 
                     <div class="product-item">
-                        <strong>COGNEASE DETOX®</strong> (Cellular Detoxification)
+                        <strong>COGNEASE DETOX®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 3 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1 drop every 3-4 days until reaching 8-10 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1-2 drops once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 7-10 days<br>
-                            <strong>Purpose:</strong> Supports cellular detoxification and drainage pathways
+                            Adult Starting: 3 drops BID, ladder to 8-10 drops BID<br>
+                            Pediatric: 1-2 drops daily, increase slowly
                         </div>
                     </div>
 
                     <div class="product-item">
-                        <strong>TOX-EASE GL®</strong> (Glymphatic/Lymphatic Drainage)
+                        <strong>TOX-EASE GL®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 3 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1 drop every 3-4 days until reaching 8-10 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1-2 drops once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 7-10 days<br>
-                            <strong>Purpose:</strong> Supports glymphatic and lymphatic drainage, crucial for brain-gut axis
-                        </div>
-                    </div>
-            `;
-
-            // ADD FLORA SYNTROPY during drainage phase as foundational support
-            protocol += `
-                    <div class="info-box" style="margin-top: 20px;">
-                        <strong>💡 FOUNDATIONAL SPORE-BASED PROBIOTIC - OPTIONAL ADDITION:</strong>
-                        <p>Flora Syntropy can be introduced during the Drainage Phase as spore-based probiotics are uniquely resilient and supportive of detoxification.</p>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>Flora Syntropy (Physica Energetics)</strong> - Spore-Based Probiotic Foundation
-                        <div class="dosing-info">
-                            <strong>Formula:</strong> Bacillus coagulans (50 Million CFU per 2 capsules, 15 Billion per gram)
-                            <ul>
-                                <li>Plus Chicory Inulin (FOS) 250mg - Prebiotic fiber support</li>
-                                <li>Highly stable, survives stomach acid and antibiotics</li>
-                                <li>Re-establishes healthy intestinal terrain</li>
-                                <li>Supports B vitamin production</li>
-                            </ul>
-                            <strong>General Dosing:</strong> 1-2 capsules 3x daily just before meals<br>
-                            <strong>Chronic/Dysbiosis:</strong> 3 capsules 3x daily just before meals<br>
-                            <strong>Clinical Pearl:</strong> Can be used THROUGHOUT all phases including during antimicrobial treatment<br>
-                            <strong>Note:</strong> Considered "foundational" - survives gastric juices, acids, and antimicrobial therapy
+                            Adult Starting: 3 drops BID, ladder to 8-10 drops BID<br>
+                            Pediatric: 1-2 drops daily
                         </div>
                     </div>
                 </div>
             `;
 
-            // PHASE 2: TARGETED ANTIMICROBIAL SUPPORT
+            // PHASE 2: ANTIMICROBIALS
             protocol += `
                 <div class="phase-section">
-                    <h3>Phase 2: Targeted Antimicrobial Support (Starting Week 4)</h3>
-                    <p><strong>Duration:</strong> 8-12 weeks minimum, may extend to 16+ weeks based on response</p>
-                    <p><strong>Purpose:</strong> Address specific pathogens identified on Gut Zoomer test</p>
-                    <p><strong>Important:</strong> Continue all Phase 1 drainage products throughout Phase 2</p>
-            `;
-
-            // Flora Syntropy reminder for Phase 2
-            protocol += `
-                    <div class="info-box">
-                        <strong>🌾 FLORA SYNTROPY DURING ANTIMICROBIAL PHASE:</strong>
-                        <p>Flora Syntropy (Bacillus coagulans) is unique in that it can be continued throughout antimicrobial treatment 
-                        as it survives antibiotics and antimicrobial herbs. Continue 1-3 capsules 3x daily if started in Phase 1, 
-                        or introduce now at 1-2 capsules 3x daily before meals.</p>
-                    </div>
-            `;
-
-            // Always include GI immune support
-            protocol += `
-                    <h4>🛡️ Foundation GI Immune Support</h4>
+                    <h3>Phase 2: Targeted Antimicrobials (Weeks 4-12)</h3>
+                    
                     <div class="product-item">
-                        <strong>IMN-GI™</strong> (Gastrointestinal Immune Support)
+                        <strong>IMN-GI™</strong> (Foundation)
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 2 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1 drop every 3-4 days until reaching 8 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1 drop twice daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 7-10 days<br>
-                            <strong>Purpose:</strong> Supports gastrointestinal immunity and mucosal healing<br>
-                            <strong>Note:</strong> Formula is thicker in consistency - well tolerated
+                            Adult: Start 2 drops BID, ladder to 8 drops BID<br>
+                            Pediatric: 1 drop BID
                         </div>
                     </div>
             `;
 
-            // H. pylori Protocol
             if (hasHPylori) {
                 protocol += `
-                    <h4>🎯 H. pylori Specific Protocol</h4>
                     <div class="marker-category">
-                        <h5>Detected Pathogen:</h5>
-                        <p>Helicobacter pylori</p>
+                        <h5>H. pylori Detected</h5>
                     </div>
-
                     <div class="product-item">
-                        <strong>MC-BB-1®</strong> (Primary H. pylori Support)
+                        <strong>MC-BB-1®</strong> (H. pylori Specific)
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 1 drop twice daily<br>
-                            <strong>Adult Laddering:</strong> Gradually increase by 1 drop per dose per week<br>
-                            <strong>Adult Target Dose:</strong> 12-15 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1 drop once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase very slowly based on tolerance<br>
-                            <strong>Duration:</strong> 8-12 weeks minimum<br>
-                            <strong>⚠️ WARNING:</strong> Contains Motherwort - contraindicated for cardiac or blood pressure medications<br>
-                            <strong>Purpose:</strong> MC-BB-1® is specifically formulated for H. pylori and Lyme disease management
+                            Adult: Start 1 drop BID, ladder to 12-15 drops BID<br>
+                            Duration: 8-12 weeks minimum<br>
+                            ⚠️ WARNING: Contraindicated with cardiac/BP medications
                         </div>
                     </div>
-
-                    <div class="warning-box">
-                        <strong>Clinical Note:</strong> H. pylori requires aggressive and prolonged treatment. Beyond Balance's MC-BB-1® 
-                        is specifically designed for this pathogen. Expect to treat for minimum 8-12 weeks. Monitor for Herxheimer reactions 
-                        and adjust TOX-EASE BIND® dosing as needed.
-                    </div>
                 `;
             }
 
-            // General Bacterial Pathogen Support (excluding H. pylori which has specific protocol)
-            if (hasBacteria && !hasHPylori) {
-                protocol += `
-                    <h4>🦠 Bacterial Pathogen Support</h4>
-                    <div class="marker-category">
-                        <h5>Detected Bacterial Pathogens:</h5>
-                        <ul>
-                            ${bacteria.map(b => `<li>${b}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Note:</strong> General bacterial pathogens are addressed through IMN-GI™ immune support, 
-                        drainage optimization, and microbiome restoration. MC-BB-1® is reserved specifically for H. pylori 
-                        and Lyme disease only.
-                    </div>
-                `;
-            }
-
-            // Fungal/Yeast Protocol
             if (hasFungi) {
                 protocol += `
-                    <h4>🍄 Antifungal Protocol</h4>
                     <div class="marker-category">
-                        <h5>Detected Fungal/Yeast Organisms:</h5>
-                        <ul>
-                            ${fungi.map(f => `<li>${f}</li>`).join('')}
-                        </ul>
+                        <h5>Fungi Detected: ${fungi.join(', ')}</h5>
                     </div>
-
                     <div class="product-item">
-                        <strong>PRO-MYCO™</strong> (Primary Antifungal)
+                        <strong>PRO-MYCO™</strong>
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 2 drops 1-2 times daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1 drop twice weekly based on tolerance<br>
-                            <strong>Adult Target Dose:</strong> 8-10 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1 drop once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 7-10 days<br>
-                            <strong>Duration:</strong> 8-12 weeks minimum<br>
-                            <strong>Purpose:</strong> Synergistic herbal blend for mold and fungal support
+                            Adult: Start 2 drops BID, ladder to 8-10 drops BID<br>
+                            Duration: 8-12 weeks
                         </div>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>MYCOREGEN®</strong> (Secondary Antifungal - for pulsing)
-                        <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 1-2 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Gradually increase to tolerance<br>
-                            <strong>Adult Target Dose:</strong> 12-15 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1 drop once daily<br>
-                            <strong>Usage:</strong> Pulse with PRO-MYCO™ or use for broader coverage<br>
-                            <strong>Purpose:</strong> Alternative antifungal for pulsing strategy
-                        </div>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Clinical Strategy:</strong> For stubborn fungal overgrowth, consider pulsing between PRO-MYCO™ 
-                        and MYCOREGEN® every 2-4 weeks to prevent organism adaptation.
                     </div>
                 `;
             }
 
-            // Protozoan Protocol
             if (hasProtozoa) {
                 protocol += `
-                    <h4>🦠 Antiprotozoal Protocol</h4>
                     <div class="marker-category">
-                        <h5>Detected Protozoan Organisms:</h5>
-                        <ul>
-                            ${protozoa.map(p => `<li>${p}</li>`).join('')}
-                        </ul>
+                        <h5>Protozoa Detected: ${protozoa.join(', ')}</h5>
                     </div>
-
                     <div class="product-item">
-                        <strong>MC-PZ®</strong> (Primary Antiprotozoal)
+                        <strong>MC-PZ®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 4-5 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 2 drops twice daily per week<br>
-                            <strong>Adult Target Dose:</strong> 15-20 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 2-3 drops once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 10-14 days<br>
-                            <strong>Duration:</strong> 8-12 weeks minimum<br>
-                            <strong>⚠️ WARNING:</strong> Contains Goldenseal - should not be used during pregnancy<br>
-                            <strong>Purpose:</strong> Phytomedicinal support against protozoal activity
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>PARAZOMIN™</strong> (Secondary Antiprotozoal - for pulsing)
-                        <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 1-2 drops 1-2 times daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1-2 drops weekly<br>
-                            <strong>Adult Target Dose:</strong> 15-20 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 1 drop once daily<br>
-                            <strong>Usage:</strong> Pulse with MC-PZ® or PRONAN™ for broader coverage<br>
-                            <strong>Purpose:</strong> Comprehensive antiparasitic and antiprotozoal support
+                            Adult: Start 4-5 drops BID, ladder to 15-20 drops BID<br>
+                            ⚠️ Contains Goldenseal - not for pregnancy
                         </div>
                     </div>
                 `;
             }
 
-            // Helminth Protocol
             if (hasHelminths) {
                 protocol += `
-                    <h4>🪱 Antihelminthic Protocol</h4>
                     <div class="marker-category">
-                        <h5>Detected Helminth (Worm) Organisms:</h5>
-                        <ul>
-                            ${helminths.map(h => `<li>${h}</li>`).join('')}
-                        </ul>
+                        <h5>Helminths Detected: ${helminths.join(', ')}</h5>
                     </div>
-
                     <div class="product-item">
-                        <strong>PARALLEVIARE®</strong> (Antihelminthic)
+                        <strong>PARALLEVIARE®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Dose:</strong> 1 capsule 1-2 times daily<br>
-                            <strong>Maximum Dose:</strong> 1 capsule twice daily<br>
-                            <strong>Pediatric Dose:</strong> Start with 1/2 capsule once daily for sensitive patients<br>
-                            <strong>Duration:</strong> 8-12 weeks, may require extended treatment<br>
-                            <strong>Purpose:</strong> Specifically formulated for parasitic and worm infestation
+                            Adult: 1 capsule BID<br>
+                            Duration: 8-12 weeks
                         </div>
-                    </div>
-
-                    <div class="warning-box">
-                        <strong>Clinical Note:</strong> Helminth infections often require prolonged treatment and may need to be addressed 
-                        in pulses. Monitor stool for evidence of worm passage. Increase TOX-EASE BIND® during die-off periods.
                     </div>
                 `;
             }
 
-            // Viral Protocol
             if (hasViruses) {
                 protocol += `
-                    <h4>🦠 Antiviral Protocol</h4>
                     <div class="marker-category">
-                        <h5>Detected Viral Organisms:</h5>
-                        <ul>
-                            ${viruses.map(v => `<li>${v}</li>`).join('')}
-                        </ul>
+                        <h5>Viruses Detected: ${viruses.join(', ')}</h5>
                     </div>
-
                     <div class="product-item">
-                        <strong>IMN-V®</strong> (Primary Antiviral & Anti-inflammatory)
+                        <strong>IMN-V®</strong>
                         <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 3-5 drops twice daily<br>
-                            <strong>Adult Target Dose:</strong> Gradually increase to 12-15 drops twice daily<br>
-                            <strong>Pediatric Starting Dose:</strong> 2-3 drops once daily<br>
-                            <strong>Pediatric Laddering:</strong> Increase by 1 drop every 10-14 days<br>
-                            <strong>Duration:</strong> 8-12 weeks minimum for chronic viral infections<br>
-                            <strong>Purpose:</strong> Supports body's natural defenses against viral exposures and reduces inflammation
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>IMN-V-II™</strong> (Secondary Antiviral - for enhanced support)
-                        <div class="dosing-info">
-                            <strong>Adult Starting Dose:</strong> 1-2 drops twice daily<br>
-                            <strong>Adult Laddering:</strong> Increase by 1-2 drops twice daily<br>
-                            <strong>Adult Target Dose:</strong> 12-15 drops twice daily<br>
-                            <strong>Sensitive Patients:</strong> Start with 1 drop every 3-5 days, increase very slowly<br>
-                            <strong>Note:</strong> Does not replace IMN-V®, use in combination for severe viral load<br>
-                            <strong>Purpose:</strong> Enhanced antiviral support for persistent infections
-                        </div>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Clinical Note:</strong> For severe viral infections (EBV, CMV), consider using both IMN-V® and IMN-V-II™ 
-                        concurrently. GI viral infections often indicate compromised mucosal immunity requiring extended treatment.
-                    </div>
-                `;
-            }
-
-            // Inflammation Protocol
-            if (hasInflammation) {
-                protocol += `
-                    <h4>🔥 Anti-Inflammatory Support</h4>
-                    <div class="marker-category">
-                        <h5>Elevated Inflammatory Markers:</h5>
-                        <ul>
-                            ${inflammatory.map(i => `<li>${i}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>IMN-CALM®</strong> (Immune Modulation)
-                        <div class="dosing-info">
-                            <strong>Chronic Issues - Adult Starting Dose:</strong> 4-5 drops twice daily<br>
-                            <strong>Chronic Issues - Adult Target:</strong> Increase to 8 drops twice daily over 3-4 weeks<br>
-                            <strong>Acute Issues - Adult Dose:</strong> Start with 8 drops twice daily, discontinue when resolved<br>
-                            <strong>Pediatric Dose:</strong> 2-4 drops twice daily<br>
-                            <strong>Purpose:</strong> Supports body's natural ability to modulate dysregulated immune response<br>
-                            <strong>Note:</strong> Works synergistically with CYFLACALM® for additional anti-inflammatory support
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <strong>CYFLACALM®</strong> (Anti-Inflammatory - Optional Addition)
-                        <div class="dosing-info">
-                            <strong>Adult Dose:</strong> 5-6 drops twice daily<br>
-                            <strong>Maximum Dose:</strong> May increase for excessive inflammation<br>
-                            <strong>Purpose:</strong> Reduces inflammation in vascular and nervous systems, major organs<br>
-                            <strong>Note:</strong> Most effective when combined with TOX-EASE GL®
+                            Adult: Start 3-5 drops BID, ladder to 12-15 drops BID
                         </div>
                     </div>
                 `;
             }
 
-            protocol += `
-                </div>
-            `;
+            protocol += `</div>`;
 
-            // PHASE 3: GUT RESTORATION
+            // PHASE 3: RESTORATION
             protocol += `
                 <div class="phase-section">
-                    <h3>Phase 3: Gut Restoration & Maintenance (Weeks 12-16+)</h3>
-                    <p><strong>Duration:</strong> 4-8 weeks after pathogen eradication</p>
-                    <p><strong>Purpose:</strong> Restore healthy microbiome, repair gut lining, optimize digestive function</p>
-
-                    <h4>🌱 Microbiome Restoration</h4>
+                    <h3>Phase 3: Gut Restoration (Weeks 12-16+)</h3>
             `;
 
-            // Add targeted probiotic recommendations based on low commensals
             if (hasLowCommensals) {
                 protocol += `
                     <div class="warning-box">
-                        <strong>⚠️ DEFICIENT BENEFICIAL BACTERIA DETECTED</strong><br>
-                        The following beneficial bacteria were identified as LOW and require targeted restoration:
+                        <strong>⚠️ ${commensals.length} BENEFICIAL BACTERIA DEFICIENT</strong><br>
+                        Detected low levels of: ${commensals.slice(0, 10).join(', ')}${commensals.length > 10 ? ` and ${commensals.length - 10} more species` : ''}
+                    </div>
+
+                    <div class="product-item">
+                        <strong>Symbiome CMF-50B (Physica Energetics)</strong>
+                        <div class="dosing-info">
+                            50 Billion CFU per capsule - Most comprehensive formula<br>
+                            Dosing: 2 capsules daily<br>
+                            Duration: 3-6 months minimum
+                        </div>
+                    </div>
+
+                    <div class="product-item">
+                        <strong>Flora Syntropy (Physica Energetics)</strong> - Foundational Spore-Based
+                        <div class="dosing-info">
+                            Bacillus coagulans - survives stomach acid<br>
+                            General: 1-2 capsules 3x daily before meals<br>
+                            Chronic Dysbiosis: 3 capsules 3x daily<br>
+                            Can be used DURING antimicrobial treatment
+                        </div>
                     </div>
                 `;
 
-                // SPORE-BASED PROBIOTICS SECTION - Prioritize Flora Syntropy
-                if (lowSpore.length > 0) {
+                if (hasLowSIgA) {
                     protocol += `
-                        <div class="marker-category">
-                            <h5>🌾 Low Spore-Forming Bacteria (PRIORITY):</h5>
-                            <ul>
-                                ${lowSpore.map(b => `<li>${b.name}</li>`).join('')}
-                            </ul>
-                            <strong>Clinical Significance:</strong> Spore-formers are resilient, survive stomach acid, and support immune tolerance and gut barrier function.
-                            <br><br>
-                            <strong>✅ PHYSICA ENERGETICS Targeted Protocol:</strong>
-                            
-                            <div class="product-item" style="margin-top: 15px;">
-                                <strong>Flora Syntropy (Physica Energetics)</strong> - PRIMARY SPORE-BASED PROBIOTIC
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> Bacillus coagulans (50 Million CFU per 2 capsules, 15 Billion per gram)
-                                    <ul>
-                                        <li>Plus Chicory Inulin (FOS) 250mg per 2 capsules - Prebiotic support</li>
-                                        <li><strong>UNIQUE ADVANTAGES:</strong></li>
-                                        <li>✅ Survives stomach acid and can be used DURING antimicrobial treatment</li>
-                                        <li>✅ Highly stable spore-based formulation</li>
-                                        <li>✅ Re-establishes healthy intestinal terrain</li>
-                                        <li>✅ Supports production of B vitamins</li>
-                                        <li>✅ Helps with Candida, parasites, IBS, diarrhea, constipation</li>
-                                        <li>✅ Maintains appropriate bowel transit time</li>
-                                        <li>✅ Sustains suitable serum lipid and blood pressure levels</li>
-                                    </ul>
-                                    <strong>General Dosing:</strong> 1-2 capsules 3x daily just before meals<br>
-                                    <strong>Acute/Severe Dysbiosis:</strong> 6 capsules 3x daily between meals OR 3 capsules 3x daily just before meals<br>
-                                    <strong>Chronic Dysbiosis:</strong> 3 capsules 3x daily just before meals<br>
-                                    <strong>Duration:</strong> 3-6 months for microbiome restoration<br>
-                                    <strong>Clinical Pearl:</strong> Considered "foundational" - can be used throughout all phases of treatment<br>
-                                    <strong>Note:</strong> Especially important during and after antibiotic use or antimicrobial protocols
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                if (lowKeystone.length > 0) {
-                    protocol += `
-                        <div class="marker-category">
-                            <h5>🔑 Low Keystone Species (CRITICAL):</h5>
-                            <ul>
-                                ${lowKeystone.map(b => `<li>${b.name}</li>`).join('')}
-                            </ul>
-                            <strong>Clinical Significance:</strong> Keystone species are foundational for gut health. Their deficiency indicates severe dysbiosis.
-                            <br><br>
-                            <strong>Targeted Restoration:</strong>
-                            <ul>
-                                ${lowKeystone.some(b => b.name.includes('Akkermansia')) ? 
-                                    '<li><strong>Akkermansia muciniphila:</strong> Take commercial A. muciniphila supplement (Pendulum, BioGaia) OR prebiotic support with cranberry extract, pomegranate, green tea polyphenols, and inulin</li>' : ''}
-                                ${lowKeystone.some(b => b.name.includes('Faecalibacterium')) ? 
-                                    '<li><strong>Faecalibacterium prausnitzii:</strong> Prebiotic fibers (inulin, FOS), resistant starch (cooked and cooled potatoes/rice), butyrate supplementation 1-2g daily</li>' : ''}
-                                ${lowKeystone.some(b => b.name.includes('Roseburia')) ? 
-                                    '<li><strong>Roseburia:</strong> Resistant starch, inulin, arabinogalactans, butyrate supplementation 1-2g daily</li>' : ''}
-                            </ul>
-                        </div>
-                    `;
-                }
-
-                if (lowBifido.length > 0) {
-                    const needsInfantis = lowBifido.some(b => b.name.includes('infantis'));
-                    const needsLongum = lowBifido.some(b => b.name.includes('longum'));
-                    const needsBifidum = lowBifido.some(b => b.name.includes('bifidum'));
-                    const needsLactis = lowBifido.some(b => b.name.includes('lactis') || b.name.includes('animalis'));
-                    const needsBreve = lowBifido.some(b => b.name.includes('breve'));
-                    
-                    protocol += `
-                        <div class="marker-category">
-                            <h5>👶 Low Bifidobacterium Species:</h5>
-                            <ul>
-                                ${lowBifido.map(b => `<li>${b.name}</li>`).join('')}
-                            </ul>
-                            <strong>Clinical Significance:</strong> Bifidobacterium deficiency indicates compromised immune function, increased intestinal permeability, and accelerated aging.
-                            <br><br>
-                            <strong>✅ PHYSICA ENERGETICS Targeted Probiotic Protocol:</strong>
-                    `;
-                    
-                    // Recommend specific Physica products based on which Bifido species are low
-                    if ((needsInfantis || needsLongum) && (lowLacto.length > 0 && (lowLacto.some(l => l.name.includes('reuteri')) || lowLacto.some(l => l.name.includes('helveticus'))))) {
-                        protocol += `
-                            <div class="product-item">
-                                <strong>Gut-Brain Symbiotic (Professional Health Products)</strong> - PRIMARY CHOICE for Brain-Gut Axis Support
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU/g per 2 capsules containing:
-                                    <ul>
-                                        <li>Bifidobacterium infantis (critical for IBS, inflammation, infant microbiome)</li>
-                                        <li>Bifidobacterium longum (brain-gut axis, anxiety, depression, stress response)</li>
-                                        <li>Lactobacillus rhamnosus (immune support, GI discomfort)</li>
-                                        <li>Lactobacillus reuteri (oxytocin production, mood, gut motility)</li>
-                                        <li>Lactobacillus helveticus (stress response, mental health)</li>
-                                        <li>FOS (fructooligosaccharides) 60mg prebiotic support</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> IDEAL for patients with neurological symptoms, anxiety, depression, or IBS alongside dysbiosis
-                                </div>
-                            </div>
-                        `;
-                    }
-                    
-                    if (needsBifidum || needsLactis || !needsInfantis) {
-                        protocol += `
-                            <div class="product-item">
-                                <strong>Pro Flora Max Plus (Professional Health Products)</strong> - Comprehensive Bifido + Lacto Support
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU per 2 capsules containing:
-                                    <ul>
-                                        <li>Bifidobacterium bifidum (immune support, IgA production, glucose metabolism)</li>
-                                        <li>Bifidobacterium longum (GI discomfort, stress response)</li>
-                                        <li>Bifidobacterium lactis (supports other beneficial bacteria, stress response)</li>
-                                        <li>Lactobacillus plantarum (digestive discomfort, oxidative stress)</li>
-                                        <li>Lactobacillus rhamnosus (GI discomfort, weight support, blood lipids)</li>
-                                        <li>Saccharomyces boulardii (immune defense, increases sIgA)</li>
-                                        <li>FOS (fructooligosaccharides) 30mg prebiotic</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> Excellent broad-spectrum formula with built-in S. boulardii for sIgA support
-                                </div>
-                            </div>
-                        `;
-                    }
-                    
-                    protocol += `
-                            <div class="product-item">
-                                <strong>Symbiome CMF-50B (Physica Energetics)</strong> - Advanced Microbiome Footprint Formula
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU per 1 capsule with Pre/Pro/Postbiotic blend:
-                                    <ul>
-                                        <li>Bifidobacterium lactis (HN019) 17.5 billion - HIGHEST concentration</li>
-                                        <li>Bifidobacterium bifidum (UABb-10) 2 billion</li>
-                                        <li>Bifidobacterium breve 2.5 billion</li>
-                                        <li>Bifidobacterium longum (UABb-14) 2.25 billion</li>
-                                        <li>Plus 10 total strains including multiple Lactobacillus species</li>
-                                        <li>Proprietary 160mg blend: Shilajit, Turkey Tail mushroom, Chaga, Cordyceps, Spanish moss, Arabinogalactan</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> MOST COMPREHENSIVE formula with medicinal mushrooms, adaptogenic herbs, and prebiotics for complete ecosystem support
-                                </div>
-                            </div>
-                            
-                            <div class="info-box">
-                                <strong>Additional Prebiotic Support:</strong>
-                                <ul>
-                                    <li><strong>GOS (galactooligosaccharides):</strong> 5-10g daily - specific for Bifidobacterium</li>
-                                    <li><strong>Arabinogalactans (included in Symbiome CMF-50B):</strong> 3-9g daily if using other formulas</li>
-                                    <li><strong>Human milk oligosaccharides (HMOs):</strong> If available for severe Bifido depletion</li>
-                                </ul>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                if (lowLacto.length > 0) {
-                    const needsRhamnosus = lowLacto.some(l => l.name.includes('rhamnosus'));
-                    const needsPlantarum = lowLacto.some(l => l.name.includes('plantarum'));
-                    const needsAcidophilus = lowLacto.some(l => l.name.includes('acidophilus'));
-                    const needsReuteri = lowLacto.some(l => l.name.includes('reuteri'));
-                    const needsSalivarius = lowLacto.some(l => l.name.includes('salivarius'));
-                    
-                    protocol += `
-                        <div class="marker-category">
-                            <h5>🦠 Low Lactobacillus Species:</h5>
-                            <ul>
-                                ${lowLacto.map(b => `<li>${b.name}</li>`).join('')}
-                            </ul>
-                            <strong>Clinical Significance:</strong> Lactobacillus deficiency indicates vaginal dysbiosis (women), oral dysbiosis, immune dysfunction, and food sensitivities.
-                            <br><br>
-                            <strong>✅ PHYSICA ENERGETICS Targeted Probiotic Protocol:</strong>
-                            
-                            <div class="product-item">
-                                <strong>Pro Flora Max Plus (Professional Health Products)</strong> - Excellent Lacto + Bifido Combination
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU per 2 capsules containing:
-                                    <ul>
-                                        <li>Lactobacillus plantarum (digestive discomfort, oxidative stress response)</li>
-                                        <li>Lactobacillus rhamnosus (GI discomfort, weight support, blood lipids in normal range)</li>
-                                        <li>Bifidobacterium bifidum, longum, lactis (comprehensive bifido support)</li>
-                                        <li>Saccharomyces boulardii (immune defense, sIgA production)</li>
-                                        <li>FOS prebiotic 30mg</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> Best choice when BOTH Lacto and Bifido are deficient
-                                </div>
-                            </div>
-                    `;
-                    
-                    if (needsReuteri || needsRhamnosus || (lowBifido.length > 0 && (lowBifido.some(b => b.name.includes('infantis')) || lowBifido.some(b => b.name.includes('longum'))))) {
-                        protocol += `
-                            <div class="product-item">
-                                <strong>Gut-Brain Symbiotic (Professional Health Products)</strong> - Brain-Gut Axis + Mood Support
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU/g per 2 capsules containing:
-                                    <ul>
-                                        <li>Lactobacillus rhamnosus (immune support, GI discomfort reduction)</li>
-                                        <li>Lactobacillus reuteri (oxytocin production, mood enhancement, gut motility)</li>
-                                        <li>Lactobacillus helveticus (stress response, mental health support)</li>
-                                        <li>Bifidobacterium infantis + longum (brain-gut axis support)</li>
-                                        <li>FOS prebiotic 60mg</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> IDEAL for patients with neurological symptoms, anxiety, depression, mood disorders alongside dysbiosis
-                                </div>
-                            </div>
-                        `;
-                    }
-                    
-                    protocol += `
-                            <div class="product-item">
-                                <strong>Symbiome CMF-50B (Physica Energetics)</strong> - Most Comprehensive Multi-Strain Formula
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> 50 Billion CFU per 1 capsule with 10 strains:
-                                    <ul>
-                                        <li>Lactobacillus acidophilus (NCFM) 8.5 billion CFU</li>
-                                        <li>Lactobacillus plantarum (UApP-05) 5.5 billion CFU</li>
-                                        <li>Lactobacillus fermentum 3.5 billion CFU</li>
-                                        <li>Lactobacillus paracasei (LPC-37) 3 billion CFU</li>
-                                        <li>Lactobacillus rhamnosus (HN001) 2.75 billion CFU</li>
-                                        <li>Lactobacillus salivarius (UALs-07) 2.75 billion CFU</li>
-                                        <li>Plus 4 Bifidobacterium strains (28.25 billion total)</li>
-                                        <li>Proprietary blend 160mg: Shilajit, Turkey Tail, Chaga, Cordyceps mushrooms, Spanish moss, Arabinogalactan</li>
-                                    </ul>
-                                    <strong>Adult Dosing:</strong> 2 capsules daily<br>
-                                    <strong>Duration:</strong> 3-6 months minimum<br>
-                                    <strong>Clinical Pearl:</strong> MOST DIVERSE strain profile with medicinal mushrooms for immune modulation and postbiotic support
-                                </div>
-                            </div>
-                            
-                            <div class="info-box">
-                                <strong>Additional Support Recommendations:</strong>
-                                <ul>
-                                    <li><strong>Prebiotic fibers:</strong> Inulin 5-10g, FOS 2-5g daily</li>
-                                    <li><strong>Fermented foods:</strong> Introduce sauerkraut, kimchi, lacto-fermented vegetables once gut healing progresses</li>
-                                    <li><strong>Vaginal health (women):</strong> Consider vaginal probiotic suppositories with L. rhamnosus and L. reuteri</li>
-                                    <li><strong>Oral health:</strong> L. salivarius lozenges for oral/upper GI colonization</li>
-                                </ul>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                if (lowButyrate.length > 0) {
-                    protocol += `
-                        <div class="marker-category">
-                            <h5>🧈 Low Butyrate-Producing Bacteria:</h5>
-                            <ul>
-                                ${lowButyrate.map(b => `<li>${b.name}</li>`).join('')}
-                            </ul>
-                            <strong>Clinical Significance:</strong> Butyrate deficiency indicates colon inflammation, increased cancer risk, impaired colonocyte function, and metabolic dysfunction.
-                            <br><br>
-                            <strong>Targeted Restoration Protocol:</strong>
-                            <ul>
-                                <li><strong>Direct butyrate supplementation:</strong> Tributyrin or sodium/calcium butyrate 1,200-2,400mg daily</li>
-                                <li><strong>Resistant starch:</strong>
-                                    <ul>
-                                        <li>Raw potato starch: Start 1 tsp daily, increase to 2-4 Tbsp daily</li>
-                                        <li>Green banana flour: 1-2 Tbsp daily</li>
-                                        <li>Cooked and cooled potatoes, rice, pasta</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Prebiotic fibers:</strong> Inulin 5-10g, FOS 2-5g, arabinogalactans 3-9g daily</li>
-                                <li><strong>Spore-based probiotics:</strong> <strong>Flora Syntropy</strong> may help restore butyrate producers (Bacillus species) - 2-3 capsules 3x daily</li>
-                                <li><strong>Duration:</strong> 6-12 months for microbiome remodeling</li>
-                            </ul>
-                        </div>
-                    `;
-                }
-
-                if (lowYeast.length > 0 || hasLowSIgA) {
-                    protocol += `
-                        <div class="marker-category">
-                            <h5>🍞 Low Saccharomyces boulardii ${hasLowSIgA ? ' + LOW SECRETORY IgA' : ''}:</h5>
-                            <strong>Clinical Significance:</strong> S. boulardii is the most important beneficial yeast - increases SIgA by 2-4x, prevents C. difficile, supports gut barrier.
-                            <br><br>
-                            <strong>✅ PHYSICA ENERGETICS Targeted Protocol:</strong>
-                            
-                            <div class="product-item">
-                                <strong>Saccharomyces boulardii Forte (Physica Energetics)</strong> - HIGH-POTENCY S. boulardii
-                                <div class="dosing-info">
-                                    <strong>Formula:</strong> Saccharomyces boulardii DBVPG 6763 strain
-                                    <ul>
-                                        <li><strong>Per 2 capsules:</strong> 500mg (20 billion CFU/g = 10 billion CFU per dose)</li>
-                                    </ul>
-                                    <strong>General Dosing:</strong> 2 capsules once daily (10 billion CFU)<br>
-                                    <strong>Acute Issues (C. diff, travelers diarrhea):</strong> 4 capsules twice daily (40 billion CFU/day)<br>
-                                    <strong>Chronic Issues (Low SIgA, dysbiosis):</strong> 2 capsules twice daily (20 billion CFU/day)<br>
-                                    <strong>Duration:</strong> 
-                                    <ul>
-                                        <li>Low SIgA restoration: 3-6 months minimum</li>
-                                        <li>C. difficile prevention: Throughout antibiotic therapy + 2 weeks after</li>
-                                        <li>Chronic dysbiosis: 3-6 months</li>
-                                    </ul>
-                                    <strong>Clinical Pearls:</strong>
-                                    <ul>
-                                        <li>✅ Can be used DURING antibiotic therapy (unlike bacterial probiotics)</li>
-                                        <li>✅ Increases secretory IgA by 2-4x (critical for mucosal immunity)</li>
-                                        <li>✅ Prevents and treats C. difficile infection</li>
-                                        <li>✅ Supports GI mucosal immune function</li>
-                                        <li>✅ Helps clear harmful bacteria through first-line defense</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="info-box">
-                                <strong>When to Prioritize S. boulardii Forte:</strong>
-                                <ul>
-                                    <li><strong>LOW Secretory IgA:</strong> Essential for SIgA restoration - use FIRST before other probiotics</li>
-                                    <li><strong>Recurrent C. difficile:</strong> Prevention and treatment</li>
-                                    <li><strong>Antibiotic-associated diarrhea:</strong> Prevention protocol</li>
-                                    <li><strong>Travelers diarrhea:</strong> Prevention during travel</li>
-                                    <li><strong>Compromised mucosal immunity:</strong> Foundation for immune restoration</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="warning-box">
-                                <strong>⚠️ IMPORTANT:</strong> S. boulardii Forte is also included in Pro Flora Max Plus, but at lower concentration. 
-                                For LOW SIgA or severe immune compromise, use Saccharomyces boulardii Forte as standalone therapy first, 
-                                then transition to comprehensive probiotic formulas once SIgA improves.
+                        <div class="product-item">
+                            <strong>Saccharomyces boulardii Forte</strong>
+                            <div class="dosing-info">
+                                10 billion CFU per 2 capsules<br>
+                                Increases SIgA by 2-4x<br>
+                                Low SIgA Protocol: 2 capsules BID<br>
+                                Duration: 3-6 months
                             </div>
                         </div>
                     `;
@@ -1737,432 +1532,40 @@
             } else {
                 protocol += `
                     <div class="info-box">
-                        <strong>✅ PHYSICA ENERGETICS General Probiotic Recommendations:</strong>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>Primary Choice: Symbiome CMF-50B (Physica Energetics)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> 50 Billion CFU per capsule - Most comprehensive microbiome support
-                                <ul>
-                                    <li>10 probiotic strains (Lactobacillus + Bifidobacterium)</li>
-                                    <li>Medicinal mushrooms: Turkey Tail, Chaga, Cordyceps</li>
-                                    <li>Shilajit (adaptogen + trace minerals)</li>
-                                    <li>Arabinogalactan (prebiotic fiber)</li>
-                                </ul>
-                                <strong>Dosing:</strong> 2 capsules daily<br>
-                                <strong>Duration:</strong> 3-6 months minimum for microbiome restoration
-                            </div>
-                        </div>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>Alternative: Pro Flora Max Plus (Professional Health Products)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> 50 Billion CFU per 2 capsules - Excellent all-around formula
-                                <ul>
-                                    <li>6 probiotic strains including S. boulardii</li>
-                                    <li>Lactobacillus plantarum + rhamnosus</li>
-                                    <li>Bifidobacterium bifidum, longum, lactis</li>
-                                    <li>FOS prebiotic</li>
-                                </ul>
-                                <strong>Dosing:</strong> 2 capsules daily<br>
-                                <strong>Duration:</strong> 3-6 months minimum
-                            </div>
-                        </div>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>For Brain-Gut Axis Support: Gut-Brain Symbiotic (Professional Health Products)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> 50 Billion CFU/g per 2 capsules - Neurological + GI support
-                                <ul>
-                                    <li>Evidence-based strains for mood, anxiety, stress</li>
-                                    <li>L. reuteri (oxytocin production)</li>
-                                    <li>L. helveticus + B. infantis + B. longum</li>
-                                    <li>Ideal for patients with mental/emotional symptoms</li>
-                                </ul>
-                                <strong>Dosing:</strong> 2 capsules daily<br>
-                                <strong>Duration:</strong> 3-6 months minimum
-                            </div>
-                        </div>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>Foundational Spore-Based: Flora Syntropy (Physica Energetics)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> Bacillus coagulans (50 Million CFU per 2 capsules, 15 Billion per gram)
-                                <ul>
-                                    <li>Plus Chicory Inulin (FOS) 250mg - Prebiotic support</li>
-                                    <li>Survives stomach acid and antimicrobials</li>
-                                    <li>Re-establishes healthy intestinal terrain</li>
-                                    <li>Considered "foundational" for any healing strategy</li>
-                                </ul>
-                                <strong>General Dosing:</strong> 1-2 capsules 3x daily just before meals<br>
-                                <strong>Chronic Dysbiosis:</strong> 3 capsules 3x daily just before meals<br>
-                                <strong>Duration:</strong> 3-6 months minimum
-                            </div>
-                        </div>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>Saccharomyces boulardii Forte (Physica Energetics)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> 10 billion CFU per 2 capsules - Beneficial yeast
-                                <ul>
-                                    <li>Increases secretory IgA by 2-4x</li>
-                                    <li>Can be used during antibiotic therapy</li>
-                                    <li>Essential for low SIgA restoration</li>
-                                </ul>
-                                <strong>General Dosing:</strong> 2 capsules once daily<br>
-                                <strong>Low SIgA Protocol:</strong> 2 capsules twice daily<br>
-                                <strong>Duration:</strong> 3-6 months minimum for SIgA restoration
-                            </div>
-                        </div>
+                        <strong>No specific beneficial bacteria deficiencies detected.</strong><br>
+                        Consider general probiotic support: Symbiome CMF-50B or Pro Flora Max Plus
                     </div>
                 `;
             }
 
             protocol += `
-                    <h4>🛡️ Mucosal Healing & Gut Barrier Support</h4>
+                    <h4>Mucosal Healing</h4>
                     <div class="info-box">
-                        <strong>Key Nutrients for Intestinal Repair:</strong>
                         <ul>
-                            <li><strong>L-Glutamine:</strong> 5-10g daily (primary fuel for enterocytes)</li>
-                            <li><strong>Zinc Carnosine:</strong> 75-150mg daily (mucosal healing)</li>
-                            <li><strong>Deglycyrrhizinated Licorice (DGL):</strong> 500-1000mg before meals</li>
-                            <li><strong>Aloe Vera:</strong> 100-200mg daily (anti-inflammatory, healing)</li>
-                            <li><strong>Collagen peptides:</strong> 10-20g daily (gut lining repair)</li>
-                            <li><strong>Butyrate:</strong> 1-2g daily (primary fuel for colonocytes)</li>
-                        </ul>
-                    </div>
-            `;
-
-            if (hasLowSIgA) {
-                protocol += `
-                    <h4>🛡️ Low Secretory IgA Support</h4>
-                    <div class="warning-box">
-                        <strong>Clinical Significance:</strong> Low secretory IgA indicates compromised mucosal immunity and 
-                        increased susceptibility to GI infections.
-                    </div>
-                    <div class="info-box">
-                        <strong>✅ PHYSICA ENERGETICS SIgA Enhancement Strategy:</strong>
-                        
-                        <div class="product-item" style="margin-top: 15px;">
-                            <strong>PRIMARY THERAPY: Saccharomyces boulardii Forte (Physica Energetics)</strong>
-                            <div class="dosing-info">
-                                <strong>Formula:</strong> 500mg per 2 capsules (20 billion CFU/g)
-                                <ul>
-                                    <li><strong>CRITICAL:</strong> Increases secretory IgA by 2-4x - most important intervention for low SIgA</li>
-                                    <li>Supports GI mucosal immune function</li>
-                                    <li>First-line defense against pathogens</li>
-                                </ul>
-                                <strong>LOW SIgA Protocol:</strong> 2 capsules twice daily (20 billion CFU/day)<br>
-                                <strong>Duration:</strong> 3-6 months minimum, retest SIgA levels<br>
-                                <strong>Clinical Pearl:</strong> START with S. boulardii Forte BEFORE comprehensive probiotic formulas for low SIgA
-                            </div>
-                        </div>
-                        
-                        <strong>Additional SIgA Support (add after 2-4 weeks):</strong>
-                        <ul>
-                            <li><strong>Colostrum:</strong> 2-5g daily (immunoglobulins, growth factors) - Consider Physica's Pure-Lostrum</li>
-                            <li><strong>Beta-glucans:</strong> 500mg daily (immune modulation)</li>
-                            <li><strong>Vitamin A:</strong> 10,000 IU daily (mucosal immunity)</li>
-                            <li><strong>Vitamin D3:</strong> 5,000-10,000 IU daily (immune regulation) - Use Physica's Solray-D3 + K2 Liposome Spray</li>
-                            <li><strong>Zinc:</strong> 30-50mg daily (immune function) - Use Physica's Zinc-Oro Liposome Composite</li>
-                        </ul>
-                        
-                        <strong>Progress to Comprehensive Probiotic After 4-6 Weeks:</strong>
-                        <ul>
-                            <li><strong>Symbiome CMF-50B:</strong> 2 capsules daily (continue S. boulardii Forte concurrently)</li>
-                            <li>OR <strong>Pro Flora Max Plus:</strong> 2 capsules daily (contains S. boulardii but add extra S. boulardii Forte)</li>
-                        </ul>
-                    </div>
-                `;
-            }
-
-            if (hasLeakyGut) {
-                protocol += `
-                    <h4>🚪 Intestinal Permeability (Leaky Gut) Repair</h4>
-                    <div class="warning-box">
-                        <strong>Clinical Significance:</strong> Elevated zonulin or LPS antibodies indicate intestinal barrier dysfunction.
-                    </div>
-                    <div class="info-box">
-                        <strong>Tight Junction Restoration Protocol:</strong>
-                        <ul>
-                            <li><strong>L-Glutamine:</strong> 10-20g daily in divided doses (tight junction integrity)</li>
-                            <li><strong>Zinc Carnosine:</strong> 150mg daily (barrier protection)</li>
-                            <li><strong>Quercetin:</strong> 1,000mg daily (tight junction stabilization)</li>
-                            <li><strong>Immunoglobulins:</strong> Colostrum 5-10g daily or SBI (serum-derived bovine immunoglobulin) 2.5-5g daily</li>
-                            <li><strong>Butyrate:</strong> 1,200-2,400mg daily (colonocyte fuel, anti-inflammatory)</li>
-                            <li><strong>Duration:</strong> 4-6 months, retest zonulin</li>
-                        </ul>
-                    </div>
-                `;
-            }
-
-            protocol += `
-                    <h4>🍽️ Digestive Enzyme Support</h4>
-                    <div class="info-box">
-                        <strong>Comprehensive Digestive Support:</strong>
-                        <ul>
-                            <li><strong>Full-spectrum digestive enzymes:</strong> With meals containing protease, lipase, amylase</li>
-                            <li><strong>Betaine HCl with Pepsin:</strong> If low stomach acid suspected (test pH, symptoms)</li>
-                            <li><strong>Ox bile:</strong> 100-500mg with meals if fat malabsorption present</li>
-                            <li><strong>Pancreatic enzymes:</strong> If pancreatic elastase low</li>
-                        </ul>
-                    </div>
-
-                    <h4>🥗 Dietary & Lifestyle Recommendations</h4>
-                    <div class="info-box">
-                        <strong>Anti-Inflammatory Diet:</strong>
-                        <ul>
-                            <li>Eliminate gluten, dairy, sugar, processed foods during active treatment</li>
-                            <li>Emphasize organic vegetables, clean proteins, healthy fats</li>
-                            <li>Include prebiotic fibers once pathogens cleared: Jerusalem artichoke, garlic, onions, asparagus</li>
-                            <li>Add fermented foods: sauerkraut, kimchi, coconut yogurt (once gut healing progresses)</li>
-                            <li>Bone broth daily for gut lining support</li>
-                            <li>Consider Low-FODMAP diet if SIBO symptoms present</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Lifestyle Factors:</strong>
-                        <ul>
-                            <li>Stress management: meditation, deep breathing, yoga</li>
-                            <li>Sleep optimization: 7-9 hours nightly</li>
-                            <li>Regular exercise: moderate intensity, avoid over-training</li>
-                            <li>Hydration: 2-3 liters filtered water daily</li>
-                            <li>Chew food thoroughly, eat in relaxed state</li>
+                            <li>L-Glutamine: 5-10g daily</li>
+                            <li>Zinc Carnosine: 75-150mg daily</li>
+                            <li>Collagen peptides: 10-20g daily</li>
+                            <li>Butyrate: 1-2g daily</li>
                         </ul>
                     </div>
                 </div>
             `;
 
-            // LAYERING & LADDERING SCHEDULE
-            protocol += `
-                <div class="phase-section">
-                    <h3>📅 Layering & Laddering Schedule</h3>
-                    <div class="info-box">
-                        <strong>Beyond Balance Protocol Principles:</strong>
-                        <ul>
-                            <li><strong>Layering:</strong> Introduction of one new formula at a time, separated by days based on patient tolerance</li>
-                            <li><strong>Laddering:</strong> Gradual increase in dose of each formula at different rates based on introduction timing</li>
-                            <li><strong>Constitutionally Strong Patients:</strong> Add new formula every 3-4 days, increase dose by 1 drop every 3-4 days</li>
-                            <li><strong>Sensitive Patients:</strong> Add new formula every 7-10 days, increase dose by 1 drop every 7-10 days</li>
-                        </ul>
-                    </div>
-
-                    <h4>Sample 12-Week Layering Schedule (Constitutionally Strong)</h4>
-                    <div class="info-box">
-                        <strong>Week 1-3 (Drainage Phase):</strong>
-                        <ul>
-                            <li><strong>Day 1:</strong> Start TOX-EASE BIND® 1 capsule BID</li>
-                            <li><strong>Day 4:</strong> Add COGNEASE DETOX® 3 drops BID, continue TOX-EASE BIND®</li>
-                            <li><strong>Day 7:</strong> Add TOX-EASE GL® 3 drops BID, ladder COGNEASE DETOX® to 4 drops BID</li>
-                            <li><strong>OPTIONAL Day 10:</strong> Add Flora Syntropy 1-2 capsules 3x daily before meals (foundational spore-based support)</li>
-                            <li><strong>Weeks 2-3:</strong> Continue laddering all products, establish drainage</li>
-                        </ul>
-
-                        <strong>Week 4-12 (Antimicrobial Phase):</strong>
-                        <ul>
-                            <li><strong>Week 4, Day 1:</strong> Add IMN-GI™ 2 drops BID (continue all drainage products + optional Flora Syntropy)</li>
-                            ${hasHPylori ? '<li><strong>Week 4, Day 5:</strong> Add MC-BB-1® 1 drop BID (H. pylori support)</li>' : ''}
-                            ${hasFungi ? '<li><strong>Week 5, Day 1:</strong> Add PRO-MYCO™ 2 drops BID (antifungal)</li>' : ''}
-                            ${hasProtozoa ? '<li><strong>Week 6, Day 1:</strong> Add MC-PZ® 4-5 drops BID (antiprotozoal)</li>' : ''}
-                            ${hasHelminths ? '<li><strong>Week 7, Day 1:</strong> Add PARALLEVIARE® 1 capsule daily (antihelminthic)</li>' : ''}
-                            ${hasViruses ? '<li><strong>Week 8, Day 1:</strong> Add IMN-V® 3-5 drops BID (antiviral)</li>' : ''}
-                            ${hasInflammation ? '<li><strong>Week 9, Day 1:</strong> Add IMN-CALM® 4-5 drops BID (immune modulation)</li>' : ''}
-                            <li><strong>Weeks 4-12:</strong> Continue laddering all antimicrobial products to target doses</li>
-                            <li><strong>Weeks 4-12:</strong> Maintain drainage products at therapeutic doses throughout</li>
-                            <li><strong>Note:</strong> Flora Syntropy can be continued throughout if started in Phase 1</li>
-                        </ul>
-
-                        <strong>Week 13-16+ (Restoration Phase):</strong>
-                        <ul>
-                            <li><strong>Week 13:</strong> Begin tapering antimicrobial products</li>
-                            <li><strong>Week 13:</strong> Introduce comprehensive probiotics (Symbiome CMF-50B, Pro Flora Max Plus, or Gut-Brain Symbiotic)</li>
-                            <li><strong>Week 13:</strong> Continue or increase Flora Syntropy to 3 capsules 3x daily for chronic dysbiosis</li>
-                            <li><strong>Week 13:</strong> Add mucosal healing nutrients</li>
-                            <li><strong>Weeks 14-16:</strong> Continue restoration protocols, maintain drainage support</li>
-                            <li><strong>Week 16+:</strong> Transition to maintenance, retest as needed</li>
-                        </ul>
-                    </div>
-                </div>
-            `;
-
-            // MONITORING & FOLLOW-UP
+            // MONITORING
             protocol += `
                 <div class="phase-section">
                     <h3>📊 Monitoring & Follow-Up</h3>
                     <div class="info-box">
-                        <strong>Clinical Monitoring:</strong>
-                        <ul>
-                            <li><strong>Symptom tracking:</strong> Daily log of GI symptoms, energy, Herxheimer reactions</li>
-                            <li><strong>Bowel movements:</strong> Frequency, consistency, presence of blood or mucus</li>
-                            <li><strong>Die-off reactions:</strong> Fatigue, headaches, flu-like symptoms (adjust binders/drainage)</li>
-                            <li><strong>Tolerance assessment:</strong> Adjust laddering speed based on patient response</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Laboratory Follow-Up:</strong>
-                        <ul>
-                            <li><strong>8-12 weeks:</strong> Repeat Gut Zoomer to assess pathogen clearance</li>
-                            <li><strong>If persistent infections:</strong> Extend antimicrobial phase, consider pulsing strategies</li>
-                            <li><strong>Zonulin retest:</strong> If initially elevated, retest after 3-4 months of barrier restoration</li>
-                            <li><strong>SIgA retest:</strong> If initially low, retest after 3-6 months of immune support</li>
-                            <li><strong>Inflammatory markers:</strong> Retest calprotectin, lactoferrin if elevated</li>
-                        </ul>
+                        <strong>Retest Gut Zoomer at 8-12 weeks</strong><br>
+                        Track symptoms daily, adjust based on tolerance<br>
+                        Increase binders if Herxheimer reactions occur
                     </div>
                 </div>
-            `;
 
-            // CLINICAL PEARLS
-            protocol += `
-                <div class="phase-section">
-                    <h3>💎 Clinical Pearls & Considerations</h3>
-                    <div class="warning-box">
-                        <strong>⚠️ Critical Safety Reminders:</strong>
-                        <ul>
-                            <li><strong>Pregnancy/Nursing:</strong> Many Beyond Balance formulas contraindicated - verify each product</li>
-                            <li><strong>Medications:</strong> MC-BB-1® contraindicated with cardiac/blood pressure meds (contains Motherwort)</li>
-                            <li><strong>Herxheimer Management:</strong> If severe die-off reactions, STOP antimicrobials temporarily, increase binders and drainage, resume at lower dose when symptoms resolve</li>
-                            <li><strong>Binding Separation:</strong> Take TOX-EASE BIND® 2+ hours away from all supplements/medications</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>🎯 Treatment Optimization:</strong>
-                        <ul>
-                            <li><strong>Biofilm Disruption:</strong> For stubborn infections, consider adding MC-BFM-1® or MC-BFM-P™ (very potent - use cautiously)</li>
-                            <li><strong>Pulsing Strategy:</strong> For chronic infections, pulse antimicrobials (2 weeks on, 1 week off) to prevent organism adaptation</li>
-                            <li><strong>Combination Approach:</strong> Multiple pathogens require treating simultaneously - prioritize drainage to handle die-off</li>
-                            <li><strong>Hydration:</strong> Increase water intake significantly during antimicrobial phases</li>
-                            <li><strong>Electrolytes:</strong> Replenish during treatment (increased metabolic demands and elimination losses)</li>
-                            <li><strong>Flora Syntropy Advantage:</strong> Can be used throughout all phases including during antimicrobial treatment</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>🔬 Product-Specific Notes:</strong>
-                        <ul>
-                            <li><strong>MC-BB-1®:</strong> Specifically for H. pylori and Lyme disease - NOT for general bacterial support</li>
-                            <li><strong>MC-PZ®:</strong> Contains Goldenseal - contraindicated in pregnancy</li>
-                            <li><strong>IMN-GI™:</strong> Thicker consistency - excellent tolerance, use as foundation GI immune support</li>
-                            <li><strong>MC-BFM products:</strong> Very potent biofilm disruptors - use only after initial pathogen treatment, expect significant Herxheimer</li>
-                            <li><strong>TOX-EASE BIND®:</strong> Non-negotiable during all antimicrobial treatment - prevents toxin reabsorption</li>
-                            <li><strong>Flora Syntropy:</strong> Unique spore-based probiotic - survives antimicrobials, considered "foundational", supports B vitamin production and healthy intestinal terrain</li>
-                        </ul>
-                    </div>
-                </div>
-            `;
-
-            // EXPECTED OUTCOMES
-            protocol += `
-                <div class="phase-section">
-                    <h3>✅ Expected Outcomes & Timeline</h3>
-                    <div class="info-box">
-                        <strong>Treatment Timeline:</strong>
-                        <ul>
-                            <li><strong>Weeks 1-3:</strong> Drainage establishment, possible initial detox symptoms</li>
-                            <li><strong>Weeks 4-6:</strong> Introduction of antimicrobials, possible Herxheimer reactions</li>
-                            <li><strong>Weeks 6-8:</strong> Antimicrobials at therapeutic doses, expect die-off management</li>
-                            <li><strong>Weeks 8-12:</strong> Symptom improvement, continued pathogen clearance</li>
-                            <li><strong>Week 12:</strong> Retest Gut Zoomer to assess pathogen eradication</li>
-                            <li><strong>Weeks 13-16:</strong> Gut restoration, microbiome rebuilding</li>
-                            <li><strong>Week 16+:</strong> Maintenance, long-term mucosal healing</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Positive Clinical Indicators:</strong>
-                        <ul>
-                            <li>Improved bowel regularity and consistency</li>
-                            <li>Reduced bloating, gas, abdominal discomfort</li>
-                            <li>Increased energy and mental clarity</li>
-                            <li>Better stress tolerance and mood</li>
-                            <li>Reduced food sensitivities over time</li>
-                            <li>Improved skin quality</li>
-                            <li>Better sleep quality</li>
-                        </ul>
-                    </div>
-                </div>
-            `;
-
-            // REFERENCES
-            protocol += `
-                <div class="phase-section">
-                    <h3>📚 References & Resources</h3>
-                    <div class="info-box">
-                        <strong>Beyond Balance® Product Information:</strong>
-                        <ul>
-                            <li>Beyond Balance® Product Usage Guide (June 2025)</li>
-                            <li>Website: www.beyondbalanceinc.com</li>
-                            <li>Phone: 800-332-7713</li>
-                            <li>Email: orders@beyondbalanceinc.com</li>
-                            <li>Location: Rohnert Park, CA 94928</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Physica Energetics® Probiotic Information:</strong>
-                        <ul>
-                            <li>Physica Energetics Physician's Clinical Compendium</li>
-                            <li>Website: www.physicaenergetics.com</li>
-                            <li><strong>Key Physica Energetics Products:</strong>
-                                <ul>
-                                    <li>Symbiome CMF-50B - 30 veg capsules</li>
-                                    <li>Saccharomyces boulardii Forte - Standalone S. boulardii</li>
-                                    <li>Flora Syntropy - 180 veg capsules (spore-based probiotic)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Professional Health Products® (PHP) Probiotic Information:</strong>
-                        <ul>
-                            <li>Professional Health Products 2025 Catalog</li>
-                            <li>Website: www.phpltd.com</li>
-                            <li>Phone: 1-800-245-1313</li>
-                            <li><strong>Key Professional Health Products:</strong>
-                                <ul>
-                                    <li>Pro Flora Max Plus (SFMP) - 60 delayed release capsules</li>
-                                    <li>Gut-Brain Symbiotic (SGBB) - 60 delayed release capsules</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>Testing Information:</strong>
-                        <ul>
-                            <li>Vibrant Wellness Gut Zoomer 3.0</li>
-                            <li>Website: www.vibrant-wellness.com</li>
-                            <li>Phone: 1-866-364-0963</li>
-                            <li>Email: support@vibrant-wellness.com</li>
-                            <li>Location: 3521 Leonard Ct, Santa Clara, CA 95054</li>
-                        </ul>
-                    </div>
-                </div>
-            `;
-
-            // DISCLAIMER
-            protocol += `
                 <div class="warning-box">
-                    <strong>⚠️ DISCLAIMER:</strong> This protocol is for healthcare practitioner use only. These statements have not been 
-                    evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent 
-                    any disease. Consult with a qualified healthcare practitioner before implementing this protocol. Individual results 
-                    may vary. Adjust protocols based on patient tolerance, clinical presentation, and response to treatment.
+                    <strong>⚠️ DISCLAIMER:</strong> For healthcare practitioner use only. Not evaluated by FDA.
                 </div>
             `;
-
-            // Add summary if no markers selected
-            if (!hasBacteria && !hasProtozoa && !hasHelminths && !hasFungi && !hasViruses && !hasInflammation) {
-                protocol += `
-                    <div class="info-box">
-                        <strong>No Pathogenic Markers Selected:</strong> If no specific pathogens or inflammatory markers are detected, 
-                        focus on Phase 1 (Drainage), Phase 3 (Restoration), and general gut health optimization through diet, lifestyle, 
-                        probiotics (including Flora Syntropy for foundational support), and mucosal healing nutrients.
-                    </div>
-                `;
-            }
 
             document.getElementById('protocol').innerHTML = protocol;
             document.getElementById('protocol').style.display = 'block';
@@ -2174,7 +1577,7 @@
         }
 
         function resetForm() {
-            if (confirm('Are you sure you want to reset the form? All selections will be cleared.')) {
+            if (confirm('Reset form?')) {
                 document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
                 document.getElementById('patientName').value = '';
                 document.getElementById('testDate').value = '';
@@ -2184,7 +1587,6 @@
             }
         }
 
-        // Set today's date as default
         document.addEventListener('DOMContentLoaded', function() {
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('testDate').value = today;
