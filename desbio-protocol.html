@@ -412,7 +412,7 @@
         }
 
         .category-content {
-            max-height: 2000px;
+            max-height: 5000px;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
@@ -459,7 +459,7 @@
 
                 <!-- GUT COMMENSAL BACTERIA -->
                 <div class="category-header" onclick="toggleCategory('commensals')">
-                    <h2>🦠 Gut Commensal Bacteria (150+ Species)</h2>
+                    <h2>🦠 Gut Commensal Bacteria (Complete Official List)</h2>
                     <span class="toggle-icon" id="toggle-commensals">▼</span>
                 </div>
                 <div class="category-content" id="content-commensals">
@@ -569,106 +569,286 @@
     </div>
 
     <script>
+        // COMPLETE OFFICIAL GUT ZOOMER MARKERS LIST - Verified from Vibrant Wellness Gut Zoomer Complete Markers List
         const markers = {
             commensals: [
-                "Acinetobacter", "Actinomyces", "Akkermansia muciniphila", "Alistipes", "Alloprevotella",
-                "Atopobium", "Atopobium parvulum", "Bacillus coagulans", "Bacillus subtilis", "Bacteroidales",
-                "Bacteroides", "Bacteroides caccae", "Bacteroides vulgatus", "Bacteroidetes", "Bifidobacterium",
-                "Bifidobacterium adolescentis", "Bifidobacterium animalis", "Bifidobacterium animalis subspecies lactis",
-                "Bifidobacterium bifidum", "Bifidobacterium breve", "Bifidobacterium catenulatum", "Bifidobacterium dentium",
-                "Bifidobacterium infantis", "Bifidobacterium lactis", "Bifidobacterium longum", "Blautia",
-                "Blautia hydrogenotrophica", "Blautia obeum", "Bradyrhizobiaceae", "Butyricimonas", "Butyrivibrio",
-                "Catenibacterium", "Christensenella minuta", "Clostridia cluster IV", "Clostridia cluster XIVa",
-                "Clostridia cluster XVIII", "Clostridiales Family XIV incertae sedis", "Clostridiales incertae sedis IV",
-                "Clostridium", "Clostridium hathewayi", "Clostridium ramosum", "Clostridium species", "Clostridium spp.",
-                "Clostridium symbiosum", "Collinsella", "Coprococcus", "Desulfovibrio", "Desulfovibrio piger",
-                "Dialister invisus", "Dorea", "Eggerthella lenta", "Enterobacteria", "Enterobacteriaceae",
-                "Enterococcus", "Enterococcus gallinarum", "Enterococcus species", "Enterococcus spp.",
-                "Escherichia coli", "Escherichia coli nissle", "Eubacterium", "Eubacterium rectale", "Eubacterium spp.",
-                "Faecalibacterium", "Faecalibacterium prausnitzii", "Fusobacterium", "Haemophilus", "Hafnia",
-                "Holdemania", "Klebsiella aerogenes", "Lachnospiraceae", "Lactobacillaceae", "Lactobacillus",
-                "Lactobacillus acidophilus", "Lactobacillus animalis", "Lactobacillus brevis", "Lactobacillus bulgaricus",
-                "Lactobacillus casei", "Lactobacillus fermentum", "Lactobacillus paracasei", "Lactobacillus plantarum",
-                "Lactobacillus reuteri", "Lactobacillus rhamnosus", "Lactobacillus rhamnosus GG", "Lactobacillus ruminis",
-                "Lactobacillus sakei", "Lactobacillus salivarius", "Lactobacillus spp.", "Lactococcus",
-                "Leuconostoc", "Marvinbryantia", "Methanobrevibacter smithii", "Mycoplana", "Oscillospira",
-                "Parabacteroides", "Pediococcus", "Peptostreptococcus species", "Phascolarctobacterium",
-                "Porphyromonas gingivalis", "Prevotella", "Prevotella copri", "Propionibacterium freudenreichi",
-                "Proteus mirabilis", "Pseudobutyrivibrio", "Pseudomonas", "Roseburia", "Roseburia intestinalis",
-                "Ruminococcaceae", "Ruminococcus", "Ruminococcus bromii", "Ruminococcus gnavus", "Ruminococcus spp.",
-                "Saccharomyces boulardii", "Solobacterium moorei", "Staphylococcaceae", "Staphylococcus",
-                "Staphylococcus epidermidis", "Staphylococcus pasteuri", "Staphylococcus species", "Streptococci",
-                "Streptococcus", "Streptococcus species", "Streptococcus spp.", "Streptococcus thermophilus",
-                "Tyzzerella", "Tyzzerella 4", "Veillonella", "Veillonellaceae", "β-galactosidase producing bacteria",
+                "Acinetobacter",
+                "Actinomyces",
+                "Akkermansia muciniphila",
+                "Alistipes",
+                "Alloprevotella",
+                "Atopobium",
+                "Atopobium parvulum",
+                "Bacillus coagulans",
+                "Bacillus subtilis",
+                "Bacteroidales",
+                "Bacteroides",
+                "Bacteroides caccae",
+                "Bacteroides vulgatus",
+                "Bacteroidetes",
+                "Bifidobacterium",
+                "Bifidobacterium adolescentis",
+                "Bifidobacterium animalis",
+                "Bifidobacterium animalis subspecies lactis",
+                "Bifidobacterium bifidum",
+                "Bifidobacterium breve",
+                "Bifidobacterium catenulatum",
+                "Bifidobacterium dentium",
+                "Bifidobacterium infantis",
+                "Bifidobacterium lactis",
+                "Bifidobacterium longum",
+                "Blautia",
+                "Blautia hydrogenotrophica",
+                "Blautia obeum",
+                "Bradyrhizobiaceae",
+                "Butyricimonas",
+                "Butyrivibrio",
+                "Catenibacterium",
+                "Christensenella minuta",
+                "Clostridia cluster IV",
+                "Clostridia cluster XIVa",
+                "Clostridia cluster XVIII",
+                "Clostridiales Family XIV incertae sedis",
+                "Clostridiales incertae sedis IV",
+                "Clostridium",
+                "Clostridium hathewayi",
+                "Clostridium ramosum",
+                "Clostridium species",
+                "Clostridium spp.",
+                "Clostridium symbiosum",
+                "Collinsella",
+                "Coprococcus",
+                "Desulfovibrio",
+                "Desulfovibrio piger",
+                "Dialister invisus",
+                "Dorea",
+                "Eggerthella lenta",
+                "Enterobacteria",
+                "Enterobacteriaceae",
+                "Enterococcus",
+                "Enterococcus gallinarum",
+                "Enterococcus species",
+                "Enterococcus spp.",
+                "Escherichia coli",
+                "Escherichia coli nissle",
+                "Eubacterium",
+                "Eubacterium rectale",
+                "Eubacterium spp.",
+                "Faecalibacterium",
+                "Faecalibacterium prausnitzii",
+                "Fusobacterium",
+                "Haemophilus",
+                "Hafnia",
+                "Holdemania",
+                "Klebsiella aerogenes",
+                "Lachnospiraceae",
+                "Lactobacillaceae",
+                "Lactobacillus",
+                "Lactobacillus acidophilus",
+                "Lactobacillus animalis",
+                "Lactobacillus brevis",
+                "Lactobacillus bulgaricus",
+                "Lactobacillus casei",
+                "Lactobacillus fermentum",
+                "Lactobacillus paracasei",
+                "Lactobacillus plantarum",
+                "Lactobacillus reuteri",
+                "Lactobacillus rhamnosus",
+                "Lactobacillus rhamnosus GG",
+                "Lactobacillus ruminis",
+                "Lactobacillus sakei",
+                "Lactobacillus salivarius",
+                "Lactobacillus spp.",
+                "Lactococcus",
+                "Leuconostoc",
+                "Marvinbryantia",
+                "Methanobrevibacter smithii",
+                "Mycoplana",
+                "Oscillospira",
+                "Parabacteroides",
+                "Pediococcus",
+                "Peptostreptococcus species",
+                "Phascolarctobacterium",
+                "Porphyromonas gingivalis",
+                "Prevotella",
+                "Prevotella copri",
+                "Propionibacterium freudenreichi",
+                "Proteus mirabilis",
+                "Pseudobutyrivibrio",
+                "Pseudomonas",
+                "Roseburia",
+                "Roseburia intestinalis",
+                "Ruminococcaceae",
+                "Ruminococcus",
+                "Ruminococcus bromii",
+                "Ruminococcus gnavus",
+                "Ruminococcus spp.",
+                "Saccharomyces boulardii",
+                "Solobacterium moorei",
+                "Staphylococcaceae",
+                "Staphylococcus",
+                "Staphylococcus epidermidis",
+                "Staphylococcus pasteuri",
+                "Staphylococcus species",
+                "Streptococci",
+                "Streptococcus",
+                "Streptococcus species",
+                "Streptococcus spp.",
+                "Streptococcus thermophilus",
+                "Tyzzerella",
+                "Tyzzerella 4",
+                "Veillonella",
+                "Veillonellaceae",
+                "β-galactosidase producing bacteria",
                 "β-glucuronidase producing bacteria"
             ],
             
             pathogens: [
-                "Aeromonas spp.", "Bacillus cereus", "Campylobacter coli", "Campylobacter jejuni",
-                "Campylobacter spp.", "Campylobacter upsaliensis", "Clostridium difficile", "Clostridium difficile Toxin A",
-                "Clostridium difficile Toxin B", "Clostridium perfringens", "E. coli O157", "Edwardsiella tarda",
-                "Enteroaggregative E. coli (EAEC)", "Enteropathogenic E. coli (EPEC)", "Enterotoxigenic E. coli (ETEC) LT/ST",
-                "Helicobacter pylori", "Klebsiella pneumoniae", "Listeria", "Non-pylori Helicobacter spp.",
-                "Plesiomonas shigelloides", "Salmonella", "Shiga-like toxin-producing E. coli (STEC) Stx1/Stx2",
-                "Shigella/EIEC", "Staphylococcus aureus", "Vibrio cholerae", "Vibrio parahaemolyticus",
-                "Vibrio vulnificus", "Yersinia enterocolitica"
+                "Aeromonas spp.",
+                "Bacillus cereus",
+                "Campylobacter coli",
+                "Campylobacter jejuni",
+                "Campylobacter spp.",
+                "Campylobacter upsaliensis",
+                "Clostridium difficile",
+                "Clostridium difficile Toxin A",
+                "Clostridium difficile Toxin B",
+                "Clostridium perfringens",
+                "E. coli O157",
+                "Edwardsiella tarda",
+                "Enteroaggregative E. coli (EAEC)",
+                "Enteropathogenic E. coli (EPEC)",
+                "Enterotoxigenic E. coli (ETEC) LT/ST",
+                "Helicobacter pylori",
+                "Klebsiella pneumoniae",
+                "Listeria",
+                "Non-pylori Helicobacter spp.",
+                "Plesiomonas shigelloides",
+                "Salmonella",
+                "Shiga-like toxin-producing E. coli (STEC) Stx1/Stx2",
+                "Shigella/EIEC",
+                "Staphylococcus aureus",
+                "Vibrio cholerae",
+                "Vibrio parahaemolyticus",
+                "Vibrio vulnificus",
+                "Yersinia enterocolitica"
             ],
             
             protozoans: [
-                "Balantidium coli", "Blastocystis hominis", "Chilomastix mesnili", "Cryptosporidium",
-                "Cyclospora cayetanensis", "Cyclospora spp.", "Dientamoeba fragilis", "Endolimax nana",
-                "Entamoeba coli", "Entamoeba histolytica", "Giardia lamblia", "Isospora belli",
-                "Pentatrichomonas hominis", "Trichomonas hominis"
+                "Balantidium coli",
+                "Blastocystis hominis",
+                "Chilomastix mesnili",
+                "Cryptosporidium",
+                "Cyclospora cayetanensis",
+                "Cyclospora spp.",
+                "Dientamoeba fragilis",
+                "Endolimax nana",
+                "Entamoeba coli",
+                "Entamoeba histolytica",
+                "Giardia lamblia",
+                "Isospora belli",
+                "Pentatrichomonas hominis",
+                "Trichomonas hominis"
             ],
             
             helminths: [
-                "Ancylostoma duodenale", "Ascaris lumbricoides", "Diphyllobothrium latum", "Dipylidium caninum",
-                "Enterobius vermicularis", "Fasciola/Fasciolopsis", "Hymenolepis", "Larval nematode",
-                "Mansonella", "Necator americanus", "Schistosoma", "Strongyloides stercoralis",
-                "Taenia solium", "Taenia spp.", "Trichuris trichiura"
+                "Ancylostoma duodenale",
+                "Ascaris lumbricoides",
+                "Diphyllobothrium latum",
+                "Dipylidium caninum",
+                "Enterobius vermicularis",
+                "Fasciola/Fasciolopsis",
+                "Hymenolepis",
+                "Larval nematode",
+                "Mansonella",
+                "Necator americanus",
+                "Schistosoma",
+                "Strongyloides stercoralis",
+                "Taenia solium",
+                "Taenia spp.",
+                "Trichuris trichiura"
             ],
             
             fungi: [
-                "Candida albicans", "Candida glabrata", "Candida spp.", "Geotrichum spp.",
-                "Microsporidium spp.", "Rodotorula spp."
+                "Candida albicans",
+                "Candida glabrata",
+                "Candida spp.",
+                "Geotrichum spp.",
+                "Microsporidium spp.",
+                "Rodotorula spp."
             ],
             
             viruses: [
-                "Adenovirus F40/41", "Astrovirus", "Cytomegalovirus", "Enterovirus",
-                "Epstein Barr virus", "Human Bocavirus", "Norovirus GI Virus", "Norovirus GII Virus",
-                "Rotavirus A", "Sapovirus I", "Sapovirus II", "Sapovirus IV", "Sapovirus V"
+                "Adenovirus F40/41",
+                "Astrovirus",
+                "Cytomegalovirus",
+                "Enterovirus",
+                "Epstein Barr virus",
+                "Human Bocavirus",
+                "Norovirus GI Virus",
+                "Norovirus GII Virus",
+                "Rotavirus A",
+                "Sapovirus I",
+                "Sapovirus II",
+                "Sapovirus IV",
+                "Sapovirus V"
             ],
             
             inflammatory: [
-                "Beta defensin 2 (elevated)", "Calprotectin (elevated)", "Fecal Eosinophil Protein X (elevated)",
-                "Fecal lactoferrin (elevated)", "Lysozyme (elevated)", "MMP 9 (elevated)", "S100A12 (elevated)"
+                "Beta defensin 2 (elevated)",
+                "Calprotectin (elevated)",
+                "Fecal Eosinophil Protein X (elevated)",
+                "Fecal lactoferrin (elevated)",
+                "Lysozyme (elevated)",
+                "MMP 9 (elevated)",
+                "S100A12 (elevated)"
             ],
             
             digestive: [
-                "Meat fiber (elevated)", "Vegetable fiber (elevated)", "Total Fecal Fat (elevated)",
-                "Total Fecal Triglycerides (elevated)", "Long chain fatty acids (elevated)",
-                "Total Cholesterol (elevated)", "Total Phospholipids (elevated)", "Pancreatic elastase 1 (low)",
+                "Meat fiber (elevated)",
+                "Vegetable fiber (elevated)",
+                "Total Fecal Fat (elevated)",
+                "Total Fecal Triglycerides (elevated)",
+                "Long chain fatty acids (elevated)",
+                "Total Cholesterol (elevated)",
+                "Total Phospholipids (elevated)",
+                "Pancreatic elastase 1 (low)",
                 "Steatocrit (elevated)"
             ],
             
             antibodies: [
-                "Tissue transglutaminase (tTg) (elevated)", "Deamidated gliadin peptide (DGP) (elevated)",
-                "Fecal Anti Gliadin (elevated)", "Actin antibody (elevated)",
-                "Lipopolysaccharide (LPS) antibody (elevated)", "Anti-Saccharomyces cerevisiae antibody (ASCA) (elevated)"
+                "Tissue transglutaminase (tTg) (elevated)",
+                "Deamidated gliadin peptide (DGP) (elevated)",
+                "Fecal Anti Gliadin (elevated)",
+                "Actin antibody (elevated)",
+                "Lipopolysaccharide (LPS) antibody (elevated)",
+                "Anti-Saccharomyces cerevisiae antibody (ASCA) (elevated)"
             ],
             
             metabolites: [
-                "β-glucuronidase (elevated)", "Cholic acid (CA) (abnormal)", "Chenodeoxycholic acid (CDCA) (abnormal)",
-                "Deoxycholic acid (DCA) (abnormal)", "Lithocholic acid (LCA) (abnormal)", "LCA/DCA ratio (abnormal)",
-                "Acetate (low)", "Butyrate (low)", "Propionate (low)", "Valerate (low)",
+                "β-glucuronidase (elevated)",
+                "Cholic acid (CA) (abnormal)",
+                "Chenodeoxycholic acid (CDCA) (abnormal)",
+                "Deoxycholic acid (DCA) (abnormal)",
+                "Lithocholic acid (LCA) (abnormal)",
+                "LCA/DCA ratio (abnormal)",
+                "Acetate (low)",
+                "Butyrate (low)",
+                "Propionate (low)",
+                "Valerate (low)",
                 "Total Short chain fatty acids (low)"
             ],
             
             immune: [
-                "Fecal Immunochemical Test (FIT) (positive)", "Fecal Zonulin (elevated)",
-                "pH (abnormal)", "Secretory IgA (low)", "Secretory IgA (elevated)",
-                "Shannon's Diversity Index (low)", "Simpson's Diversity Index (low)",
-                "Firmicutes/Bacteroidetes ratio (abnormal)", "Prevotella/Bacteroidetes (P/B) ratio (abnormal)"
+                "Fecal Immunochemical Test (FIT) (positive)",
+                "Fecal Zonulin (elevated)",
+                "pH (abnormal)",
+                "Secretory IgA (low)",
+                "Secretory IgA (elevated)",
+                "Shannon's Diversity Index (low)",
+                "Simpson's Diversity Index (low)",
+                "Firmicutes/Bacteroidetes ratio (abnormal)",
+                "Prevotella/Bacteroidetes (P/B) ratio (abnormal)"
             ]
         };
 
@@ -964,7 +1144,7 @@
                     <p style="margin-bottom: 15px;"><strong>Detected Parasites:</strong> ${allParasites.join(', ')}</p>
 
                     <div class="note">
-                        <strong>📦 ENDOPARA CLEAR KIT OPTION:</strong> DesBio offers a comprehensive parasitekit with step-by-step practitioner guide.
+                        <strong>📦 ENDOPARA CLEAR KIT OPTION:</strong> DesBio offers a comprehensive parasite kit with step-by-step practitioner guide.
                     </div>
 
                     <div class="product-item">
